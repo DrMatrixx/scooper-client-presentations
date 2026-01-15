@@ -206,6 +206,6 @@ git push         # Deploy to Vercel
 
 ## Deployment
 
-- **Vercel URL:** (add your URL here)
+- **Vercel URL:** https://automate.scooperai.com
 - **GitHub:** https://github.com/DrMatrixx/scooper-client-presentations
 - Push to `master` → auto-deploys

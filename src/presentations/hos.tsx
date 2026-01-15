@@ -529,10 +529,10 @@ const presentation: PresentationConfig = {
               </div>
             ))}
           </div>
-          <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-white font-semibold cursor-pointer hover:opacity-90 transition-opacity text-sm sm:text-base">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-white font-semibold cursor-pointer hover:opacity-90 transition-opacity text-sm sm:text-base">
             <Rocket size={16} className="sm:w-[18px] sm:h-[18px]" />
             Schedule Discovery Call
-          </div>
+          </a>
           <div className="mt-6 sm:mt-8 flex items-center justify-center gap-2 sm:gap-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
               <Bot size={16} className="text-white sm:w-[18px] sm:h-[18px]" />

@@ -2,13 +2,92 @@
 
 A file-based routing system for client presentations. Drop a `.tsx` file and it's automatically available at a URL.
 
+## Agent Workflow: Processing New Presentations
+
+When the user adds code to `new-presentation.tsx`, follow these steps:
+
+### Step 1: Read and Analyze
+1. Read `new-presentation.tsx` in the project root
+2. Identify the client name from the content (look for title, company name, etc.)
+3. Identify all slides (look for `if (s === 'slideName')` patterns or similar)
+
+### Step 2: Convert to Presentation Format
+Transform the code to match this structure:
+
+```tsx
+import type { PresentationConfig } from '../types/presentation';
+import { GradientText } from '../components/GradientText';
+// Import only the icons actually used in the presentation
+import { Rocket, Users, Clock, /* etc */ } from 'lucide-react';
+
+const presentation: PresentationConfig = {
+  title: 'Client Name',
+  description: 'Brief description for link previews',
+  slides: [
+    {
+      id: 'title',
+      render: () => (
+        // Slide JSX content here
+      ),
+    },
+    // More slides...
+  ],
+};
+
+export default presentation;
+```
+
+**Conversion rules:**
+- Each `if (s === 'slideName') return (...)` becomes `{ id: 'slideName', render: () => (...) }`
+- Replace inline `G` component with imported `<GradientText>`
+- Remove unused icon imports
+- Keep all Tailwind classes and styling intact
+- Preserve the exact slide content/JSX
+
+### Step 3: Save the Presentation
+1. Determine filename from client name (lowercase, hyphenated): `client-name.tsx`
+2. Save to `src/presentations/client-name.tsx`
+3. Delete `new-presentation.tsx` after successful conversion
+
+### Step 4: Update Link Preview Metadata
+Add client-specific meta tags to `index.html` OR create a note that link previews will use defaults.
+
+For custom previews per presentation, the current setup uses global defaults:
+- Title: "Scooper AI"
+- Description: "AI Automation Solutions for Business"
+- Image: `/scoop.png`
+
+### Step 5: Ensure "Book a Call" Button Has Link
+Make sure any CTA button links to: `https://cal.com/scooper-ai/discover`
+
+```tsx
+<a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="...">
+  Schedule Discovery Call
+</a>
+```
+
+### Step 6: Build and Push
+```bash
+npm run build                    # Verify no errors
+git add .
+git commit -m "Add [client-name] presentation"
+git push                         # Auto-deploys to Vercel
+```
+
+### Step 7: Confirm to User
+Tell the user:
+- URL: `https://[vercel-domain]/client-name`
+- Presentation is live after Vercel deploys (~30 seconds)
+
+---
+
 ## How It Works
 
 - `src/presentations/hos.tsx` → `yoursite.com/hos`
 - `src/presentations/acme.tsx` → `yoursite.com/acme`
 - `/` redirects to scooperai.com
 
-## Adding a New Presentation
+## Adding a New Presentation (Manual)
 
 1. Create a file in `src/presentations/` (e.g., `client-name.tsx`)
 2. Use this template:
@@ -124,3 +203,9 @@ git push         # Deploy to Vercel
 - URL-based slide tracking (`/hos?slide=3`)
 - Responsive design (mobile + desktop)
 - Auto-discovery of presentation files
+
+## Deployment
+
+- **Vercel URL:** (add your URL here)
+- **GitHub:** https://github.com/DrMatrixx/scooper-client-presentations
+- Push to `master` → auto-deploys

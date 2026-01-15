@@ -1,7 +1,7 @@
 import type { PresentationConfig } from '../types/presentation';
 import {
   TrendingUp, Clock, Zap, Shield, Building2, ArrowRight, ArrowUp,
-  CheckCircle, Lightbulb, Brain, DollarSign, BarChart3, Bot, Key
+  CheckCircle, Lightbulb, Brain, DollarSign, BarChart3, Bot, Key, Rocket
 } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie,
@@ -443,6 +443,12 @@ const presentation: PresentationConfig = {
           <div className="p-4 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/30 text-center">
             <p className="text-sm text-neutral-300">Not "Does AI deliver value?" but:</p>
             <p className="text-base sm:text-lg font-bold mt-1 text-white">Who will move fast enough to capture it?</p>
+          </div>
+          <div className="pt-4 text-center">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full text-white font-semibold hover:opacity-90 transition-opacity text-sm sm:text-base">
+              <Rocket size={18} />
+              Start Your AI Transformation
+            </a>
           </div>
         </div>
       ),

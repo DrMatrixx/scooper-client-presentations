@@ -47,7 +47,7 @@ export default presentation;
 ### Step 3: Save the Presentation
 1. Determine filename from client name (lowercase, hyphenated): `client-name.tsx`
 2. Save to `src/presentations/client-name.tsx`
-3. Delete `new-presentation.tsx` after successful conversion
+3. Keep `new-presentation.tsx` as-is (do NOT delete it - user uses it as a staging area)
 
 ### Step 4: Update Link Preview Metadata
 Add client-specific meta tags to `index.html` OR create a note that link previews will use defaults.

@@ -11,7 +11,7 @@ export function SlideNavigation({ currentSlide, totalSlides, onNavigate }: Slide
   const goToNext = () => onNavigate(Math.min(totalSlides - 1, currentSlide + 1));
 
   return (
-    <div className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 border-t border-white/5 bg-gray-950/80 backdrop-blur-sm">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 border-t border-white/5 bg-gray-950/80 backdrop-blur-sm">
       <button
         onClick={goToPrev}
         disabled={currentSlide === 0}

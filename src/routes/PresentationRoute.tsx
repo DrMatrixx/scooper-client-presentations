@@ -48,7 +48,7 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
 
   return (
     <PresentationShell>
-      <div className="flex-1 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+      <div className="flex-1 flex items-center justify-center p-3 sm:p-6 pb-20 sm:pb-24 overflow-y-auto">
         {presentation.slides[currentSlide].render()}
       </div>
       <SlideNavigation

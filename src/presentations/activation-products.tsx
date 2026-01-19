@@ -47,7 +47,7 @@ const presentation: PresentationConfig = {
           {/* Company logo - centered */}
           <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
             <img
-              src="/Activation_Logo.avif"
+              src="/activation-logo.webp"
               alt="Activation Products"
               className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
             />

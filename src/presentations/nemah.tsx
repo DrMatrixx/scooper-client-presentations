@@ -1,10 +1,7 @@
 import type { PresentationConfig } from '../types/presentation';
 import { GradientText } from '../components/GradientText';
 import {
-  Users,
   Clock,
-  MessageSquare,
-  ShoppingCart,
   TrendingUp,
   ArrowRight,
   CheckCircle,
@@ -13,9 +10,12 @@ import {
   AlertCircle,
   RefreshCw,
   Sparkles,
-  Heart,
   BarChart3,
   Zap,
+  Package,
+  Search,
+  FileText,
+  DollarSign,
 } from 'lucide-react';
 
 const presentation: PresentationConfig = {
@@ -69,19 +69,19 @@ const presentation: PresentationConfig = {
 
           {/* Value proposition question */}
           <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">
-            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could recover</p>
+            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could save</p>
             <span className="animate-glow inline-block text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
-              $100K–$200K+
+              15–25%
             </span>
-            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in lost carts, churn, and manual inefficiency?</p>
+            <p className="text-gray-400 text-sm sm:text-base mt-1">on procurement costs while cutting sourcing time by 60%?</p>
           </div>
 
           {/* Key pain points - 3 cards with icons */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-300">
             {[
-              { value: '80%+', label: 'Carts abandoned', icon: ShoppingCart },
-              { value: '4-8 hrs', label: 'Response delay', icon: Clock },
-              { value: '67%', label: 'One-time buyers', icon: Users },
+              { value: '20+ hrs', label: 'Weekly sourcing', icon: Search },
+              { value: '3-4 wks', label: 'Supplier vetting', icon: Clock },
+              { value: '15-20%', label: 'Cost leakage', icon: DollarSign },
             ].map((item, i) => (
               <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -105,7 +105,7 @@ const presentation: PresentationConfig = {
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                5 custom automations to achieve <span className="text-white font-bold">24/7 instant support</span>, recover <span className="text-white font-bold">15-25% of abandoned carts</span>, and boost LTV by <span className="text-white font-bold">50-75%</span>
+                5 custom automations to cut sourcing time by <span className="text-white font-bold">60%+</span>, reduce procurement costs by <span className="text-white font-bold">15-25%</span>, and enable <span className="text-white font-bold">data-driven supplier decisions</span>
               </p>
             </div>
           </div>
@@ -125,11 +125,11 @@ const presentation: PresentationConfig = {
       id: 'reality',
       render: () => {
         const tasks = [
-          { task: 'Responding to product questions', time: '2-3 hrs/day', issue: 'Delayed responses lose sales' },
-          { task: 'Following up on abandoned carts', time: '1-2 hrs/day', issue: 'Manual tracking misses opportunities' },
-          { task: 'Processing subscription inquiries', time: '1-2 hrs/day', issue: 'Repetitive questions drain team' },
-          { task: 'Sending post-purchase follow-ups', time: '1-2 hrs/day', issue: 'Inconsistent nurture sequences' },
-          { task: 'Managing rewards & referrals', time: '1 hr/day', issue: 'Manual updates cause errors' },
+          { task: 'Searching for new ingredient suppliers', time: '4-6 hrs/wk', issue: 'Manual research across platforms' },
+          { task: 'Vetting and qualifying vendors', time: '3-5 hrs/wk', issue: 'No centralized evaluation process' },
+          { task: 'Requesting and comparing quotes', time: '3-4 hrs/wk', issue: 'Email back-and-forth delays' },
+          { task: 'Tracking contracts & renewals', time: '2-3 hrs/wk', issue: 'Spreadsheet chaos, missed terms' },
+          { task: 'Monitoring supplier performance', time: '2-3 hrs/wk', issue: 'Reactive vs proactive management' },
         ];
 
         return (
@@ -141,7 +141,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
               <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-5">
-                Running a DTC skincare brand for moms and babies means juggling customer education, trust-building, and retention — all while managing a growing product catalog.
+                Running a DTC skincare brand means managing a complex web of ingredient suppliers, packaging vendors, and manufacturing partners — all while ensuring quality, compliance, and cost efficiency.
               </p>
 
               <div className="space-y-2 sm:space-y-3">
@@ -161,7 +161,7 @@ const presentation: PresentationConfig = {
 
             <div className="text-center">
               <p className="text-gray-400 text-xs sm:text-sm">
-                This adds up to <span className="text-white font-bold">35-45% of productive hours</span> on tasks that don't require human judgment.
+                This adds up to <span className="text-white font-bold">15-20+ hours weekly</span> on manual sourcing and procurement tasks.
               </p>
             </div>
           </div>
@@ -174,10 +174,10 @@ const presentation: PresentationConfig = {
       id: 'cost',
       render: () => {
         const metrics = [
-          { icon: ShoppingCart, value: '80%+', metric: 'Cart Abandonment', desc: 'Industry avg for beauty/skincare' },
-          { icon: Clock, value: '4-8 hrs', metric: 'Avg Response Time', desc: 'Outside business hours' },
-          { icon: Users, value: '67%', metric: 'One-Time Buyers', desc: 'Never return for second purchase' },
-          { icon: AlertCircle, value: '25-30%', metric: 'Support Load', desc: 'Repetitive product questions' },
+          { icon: DollarSign, value: '15-20%', metric: 'Cost Leakage', desc: 'From suboptimal supplier choices' },
+          { icon: Clock, value: '3-4 wks', metric: 'Supplier Onboarding', desc: 'Manual vetting process' },
+          { icon: AlertCircle, value: 'Low', metric: 'Spend Visibility', desc: 'Fragmented data sources' },
+          { icon: Package, value: '5-10%', metric: 'Stock-out Risk', desc: 'Poor demand forecasting' },
         ];
 
         return (
@@ -202,7 +202,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 p-3 sm:p-4 text-center">
               <p className="text-rose-400 text-xs sm:text-sm">
-                Estimate: <span className="text-white font-bold">$150K-$300K/year</span> impacted by lost conversions, churn, and inefficiencies
+                Estimate: <span className="text-white font-bold">$75K-$150K/year</span> lost to procurement inefficiencies, missed savings, and supply disruptions
               </p>
             </div>
           </div>
@@ -215,23 +215,23 @@ const presentation: PresentationConfig = {
       id: 'opportunity',
       render: () => {
         const todayItems = [
-          'Hours-long response delays',
-          'Manual cart follow-up (or none)',
-          'Generic email blasts',
-          'Reactive support only',
-          'Inconsistent customer journeys',
+          'Manual supplier research',
+          'Spreadsheet-based tracking',
+          'Email-based RFQ process',
+          'Reactive risk management',
+          'Siloed procurement data',
         ];
         const automatedItems = [
-          'Instant 24/7 responses',
-          'Automated recovery sequences',
-          'Personalized nurture flows',
-          'Proactive engagement',
-          'Consistent brand experience',
+          'AI-powered supplier discovery',
+          'Centralized procurement hub',
+          'Automated quote comparison',
+          'Proactive risk alerts',
+          'Real-time spend analytics',
         ];
         const summaryMetrics = [
-          { icon: TrendingUp, metric: '+25-40%', label: 'Recovery Rate' },
-          { icon: Clock, metric: '85%', label: 'Time Saved' },
-          { icon: Sparkles, metric: '24/7', label: 'Coverage' },
+          { icon: TrendingUp, metric: '15-25%', label: 'Cost Savings' },
+          { icon: Clock, metric: '60%+', label: 'Time Saved' },
+          { icon: Sparkles, metric: '95%', label: 'Data Accuracy' },
         ];
 
         return (
@@ -288,11 +288,11 @@ const presentation: PresentationConfig = {
       id: 'whatChanges',
       render: () => {
         const automations = [
-          { num: '01', title: 'Smart Chatbot', desc: 'Product advisor & support', icon: MessageSquare },
-          { num: '02', title: 'Cart Recovery', desc: 'Automated sequences', icon: ShoppingCart },
-          { num: '03', title: 'Nurture Flows', desc: 'Lifecycle automation', icon: Heart },
-          { num: '04', title: 'CRM Sync', desc: 'Unified customer data', icon: RefreshCw },
-          { num: '05', title: 'Analytics Hub', desc: 'Real-time dashboards', icon: BarChart3 },
+          { num: '01', title: 'AI Sourcing', desc: 'Supplier discovery', icon: Search },
+          { num: '02', title: 'Smart RFQ', desc: 'Automated quoting', icon: FileText },
+          { num: '03', title: 'Spend Analytics', desc: 'Cost optimization', icon: BarChart3 },
+          { num: '04', title: 'Risk Monitor', desc: 'Proactive alerts', icon: AlertCircle },
+          { num: '05', title: 'Contract AI', desc: 'Lifecycle management', icon: RefreshCw },
         ];
 
         return (
@@ -330,45 +330,45 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 6: Automation 1 - Smart Chatbot
+    // Slide 6: Automation 1 - AI-Powered Supplier Discovery
     {
       id: 'auto1',
       render: () => {
         const capabilities = [
-          'Product recommendations based on skin type, pregnancy stage, or baby age',
-          'Ingredient safety questions answered instantly',
-          'Order tracking and subscription management',
-          'Seamless handoff to human support when needed',
-          'Learns from every interaction to improve responses',
+          'AI scans databases to find ingredient & packaging suppliers matching your criteria',
+          'Automated supplier qualification based on certifications, capacity, and compliance',
+          'Real-time market intelligence on pricing trends and availability',
+          'Supplier comparison dashboards with quality scores',
+          'Learns your preferences to surface better matches over time',
         ];
 
         return (
           <div className="w-full max-w-3xl px-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <MessageSquare size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <Search size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Automation 01</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Product Advisor & Support Bot</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">AI-Powered Supplier Discovery</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                A conversational AI trained on Nēmah's product catalog, ingredients, and brand values. Guides expecting and new moms to the right products while handling routine support questions 24/7.
+                An AI system that continuously scans supplier databases, trade platforms, and industry sources to identify and pre-qualify vendors for your ingredients, packaging, and manufacturing needs.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">4-8 hrs</p>
-                  <p className="text-gray-500 text-xs">Avg response time</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">3-4 wks</p>
+                  <p className="text-gray-500 text-xs">To find & vet suppliers</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">&lt;30 sec</p>
-                  <p className="text-gray-500 text-xs">Instant responses</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">2-3 days</p>
+                  <p className="text-gray-500 text-xs">Pre-qualified matches</p>
                 </div>
               </div>
 
@@ -384,7 +384,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 60-70% of inquiries resolved without human intervention
+                <span className="font-bold">Impact:</span> 80% reduction in supplier research time
               </p>
             </div>
           </div>
@@ -392,45 +392,45 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 7: Automation 2 - Cart Recovery
+    // Slide 7: Automation 2 - Smart RFQ Automation
     {
       id: 'auto2',
       render: () => {
         const capabilities = [
-          'Multi-channel sequences (email, SMS, on-site)',
-          'Personalized messaging based on cart contents',
-          'Smart timing optimized for beauty shoppers',
-          'Dynamic incentives (free shipping, samples)',
-          'A/B testing for continuous optimization',
+          'Automated RFQ generation based on inventory needs and forecasts',
+          'Simultaneous quote requests to multiple pre-qualified suppliers',
+          'AI-powered quote comparison and negotiation recommendations',
+          'Automated follow-ups and deadline tracking',
+          'Historical pricing analysis for better negotiation leverage',
         ];
 
         return (
           <div className="w-full max-w-3xl px-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <ShoppingCart size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <FileText size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Automation 02</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Intelligent Cart Recovery</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Smart RFQ & Quote Management</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                Automated sequences that re-engage shoppers who abandon their carts. Uses behavioral triggers, personalized content, and smart incentives to recover lost sales without damaging margins.
+                Automates the entire request-for-quote process — from generating RFQs to collecting, comparing, and analyzing supplier responses. Ensures you always get competitive pricing with minimal effort.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">80%+</p>
-                  <p className="text-gray-500 text-xs">Carts abandoned</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">5-7 days</p>
+                  <p className="text-gray-500 text-xs">Per RFQ cycle</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">15-25%</p>
-                  <p className="text-gray-500 text-xs">Carts recovered</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">1-2 days</p>
+                  <p className="text-gray-500 text-xs">Automated comparison</p>
                 </div>
               </div>
 
@@ -446,7 +446,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> Estimated $50K-$100K+ in recovered revenue annually
+                <span className="font-bold">Impact:</span> 10-15% average cost savings through better quote comparison
               </p>
             </div>
           </div>
@@ -454,140 +454,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 8: Automation 3 - Nurture Flows
+    // Slide 8: Automation 3 - Spend Analytics
     {
       id: 'auto3',
       render: () => {
         const capabilities = [
-          'Welcome series for new customers with product education',
-          'Pregnancy journey sequences (trimester-based)',
-          'Postpartum care recommendations',
-          'Replenishment reminders based on usage patterns',
-          'Win-back campaigns for lapsed customers',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4">
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Heart size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Automation 03</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Lifecycle Nurture Sequences</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                Automated email and SMS flows that guide customers through their motherhood journey. Delivers the right content and product recommendations at each stage — pregnancy, postpartum, and beyond.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">23%</p>
-                  <p className="text-gray-500 text-xs">Repeat purchase rate</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">35-40%</p>
-                  <p className="text-gray-500 text-xs">Repeat purchase rate</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 50-75% increase in customer lifetime value
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 9: Automation 4 - CRM Sync
-    {
-      id: 'auto4',
-      render: () => {
-        const capabilities = [
-          'Real-time sync between Shopify, Klaviyo, and support tools',
-          'Unified customer profiles with full purchase history',
-          'Automated tagging (pregnancy stage, product preferences)',
-          'Subscription status tracking and alerts',
-          'Ambassador/referral program integration',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4">
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <RefreshCw size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Automation 04</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">CRM & Data Synchronization</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                Connects all customer touchpoints into a single source of truth. Ensures every team member and automation has access to complete, up-to-date customer information.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Siloed</p>
-                  <p className="text-gray-500 text-xs">Disconnected systems</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Unified</p>
-                  <p className="text-gray-500 text-xs">360° customer view</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> Zero manual data entry, 100% data accuracy
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 10: Automation 5 - Analytics Hub
-    {
-      id: 'auto5',
-      render: () => {
-        const capabilities = [
-          'Real-time revenue and conversion dashboards',
-          'Cart recovery performance tracking',
-          'Email/SMS campaign analytics',
-          'Customer cohort analysis by acquisition source',
-          'Automated weekly performance reports',
+          'Real-time spend visibility across all categories and suppliers',
+          'AI identifies cost-saving opportunities and consolidation options',
+          'Automated spend categorization and compliance monitoring',
+          'Benchmark pricing against market rates and historical data',
+          'Predictive analytics for budget planning and cost forecasting',
         ];
 
         return (
@@ -597,26 +473,26 @@ const presentation: PresentationConfig = {
                 <BarChart3 size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-amber-400 text-xs">Automation 05</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Performance Analytics Hub</h2>
+                <p className="text-amber-400 text-xs">Automation 03</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Spend Analytics & Cost Optimization</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                A centralized dashboard that tracks all automation performance, customer behavior, and revenue impact. Provides actionable insights without manual report building.
+                AI-powered spend analytics that consolidates all procurement data, identifies savings opportunities, and provides actionable recommendations for cost optimization across your supplier network.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Hours</p>
-                  <p className="text-gray-500 text-xs">To pull reports</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Limited</p>
+                  <p className="text-gray-500 text-xs">Spend visibility</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Instant</p>
-                  <p className="text-gray-500 text-xs">Real-time insights</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">100%</p>
+                  <p className="text-gray-500 text-xs">Real-time visibility</p>
                 </div>
               </div>
 
@@ -632,7 +508,131 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> Data-driven decisions in minutes, not days
+                <span className="font-bold">Impact:</span> 15-25% procurement cost reduction identified
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 9: Automation 4 - Supplier Risk Monitoring
+    {
+      id: 'auto4',
+      render: () => {
+        const capabilities = [
+          'Continuous monitoring of supplier financial health and stability',
+          'Real-time alerts for supply chain disruptions and geopolitical risks',
+          'Automated compliance tracking (certifications, quality standards)',
+          'Performance scorecards with delivery and quality metrics',
+          'Alternative supplier recommendations when risks are detected',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <AlertCircle size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Automation 04</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Supplier Risk Monitoring</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                AI-powered risk monitoring that continuously scans for supplier vulnerabilities, compliance issues, and supply chain disruptions. Get proactive alerts before problems impact your operations.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Reactive</p>
+                  <p className="text-gray-500 text-xs">Discover issues late</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Proactive</p>
+                  <p className="text-gray-500 text-xs">Early warning alerts</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 90% reduction in supply chain disruptions
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 10: Automation 5 - Contract AI
+    {
+      id: 'auto5',
+      render: () => {
+        const capabilities = [
+          'Centralized contract repository with full-text search',
+          'AI-powered contract review and key clause extraction',
+          'Automated renewal alerts and renegotiation triggers',
+          'Version tracking and change history management',
+          'Compliance monitoring for term adherence and SLAs',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <RefreshCw size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Automation 05</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Contract AI & Lifecycle Management</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                AI-powered contract management that automates the entire contract lifecycle — from creation and review to renewal and compliance tracking. Never miss a renewal or unfavorable auto-renewal again.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
+                  <p className="text-gray-500 text-xs">Spreadsheet tracking</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Automated</p>
+                  <p className="text-gray-500 text-xs">Proactive management</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 100% contract visibility, zero missed renewals
               </p>
             </div>
           </div>
@@ -645,10 +645,10 @@ const presentation: PresentationConfig = {
       id: 'results',
       render: () => {
         const results = [
-          { icon: Clock, metric: 'Response Time', before: '4-8 hours', after: '<30 seconds' },
-          { icon: ShoppingCart, metric: 'Cart Recovery', before: '5-10%', after: '15-25%' },
-          { icon: Users, metric: 'Repeat Purchases', before: '23%', after: '35-40%' },
-          { icon: Zap, metric: 'Manual Support', before: '100%', after: '30-40%' },
+          { icon: Clock, metric: 'Sourcing Time', before: '3-4 weeks', after: '2-3 days' },
+          { icon: DollarSign, metric: 'Cost Savings', before: '0%', after: '15-25%' },
+          { icon: Package, metric: 'RFQ Cycle', before: '5-7 days', after: '1-2 days' },
+          { icon: Zap, metric: 'Manual Work', before: '20+ hrs/wk', after: '5-7 hrs/wk' },
         ];
 
         return (
@@ -680,9 +680,9 @@ const presentation: PresentationConfig = {
 
             <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-3 sm:p-4 text-center">
               <p className="text-white text-sm sm:text-lg font-semibold">
-                Annual Value: <span className="text-amber-400">$100K-$200K+</span>
+                Annual Value: <span className="text-amber-400">$75K-$150K+</span>
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm">From recovered carts, increased LTV, and time savings</p>
+              <p className="text-gray-500 text-xs sm:text-sm">From procurement savings, time efficiency, and risk mitigation</p>
             </div>
           </div>
         );
@@ -698,19 +698,19 @@ const presentation: PresentationConfig = {
             title: 'Foundation',
             time: 'Weeks 1-4',
             status: 'Quick Wins',
-            items: ['Cart recovery flows', 'CRM integration', 'Basic chatbot'],
+            items: ['Supplier database setup', 'Spend data integration', 'Contract repository'],
           },
           {
             title: 'Automation',
             time: 'Weeks 5-8',
             status: 'Core System',
-            items: ['Advanced chatbot training', 'Nurture sequences', 'Support automation'],
+            items: ['AI sourcing engine', 'RFQ automation', 'Risk monitoring'],
           },
           {
             title: 'Intelligence',
             time: 'Weeks 9-12',
             status: 'Full Operation',
-            items: ['Analytics dashboard', 'A/B testing', 'Optimization'],
+            items: ['Spend analytics', 'Contract AI', 'Continuous optimization'],
           },
         ];
 
@@ -809,19 +809,19 @@ const presentation: PresentationConfig = {
       render: () => (
         <div className="text-center w-full max-w-2xl px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            Ready to <GradientText>Transform</GradientText> Operations?
+            Ready to <GradientText>Transform</GradientText> Procurement?
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 max-w-lg mx-auto">
-            Let's discuss how these automations can work specifically for Nēmah.
-            We'll map your workflows, identify quick wins, and build a system that grows with you.
+            Let's discuss how AI-powered sourcing and procurement can work specifically for Nēmah.
+            We'll map your supplier workflows, identify quick wins, and build a system that scales with you.
           </p>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
             {[
               { value: '12 wks', label: 'To deploy' },
-              { value: '$100K+', label: 'Annual value' },
-              { value: '+50%', label: 'LTV increase' },
+              { value: '15-25%', label: 'Cost savings' },
+              { value: '60%+', label: 'Time saved' },
             ].map((item, i) => (
               <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-4">
                 <p className="text-amber-400 text-lg sm:text-2xl font-bold">{item.value}</p>

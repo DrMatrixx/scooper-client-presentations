@@ -66,7 +66,16 @@ Make sure any CTA button links to: `https://cal.com/scooper-ai/discover`
 </a>
 ```
 
-### Step 6: Build and Push
+### Step 6: Link Scooper AI Website
+Ensure "Scooper AI" text in the About Us or closing slides links to: `https://scooperai.com`
+
+```tsx
+<a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-amber-400 transition-colors">
+  Scooper AI
+</a>
+```
+
+### Step 7: Build and Push
 ```bash
 npm run build                    # Verify no errors
 git add .
@@ -74,7 +83,7 @@ git commit -m "Add [client-name] presentation"
 git push                         # Auto-deploys to Vercel
 ```
 
-### Step 7: Confirm to User
+### Step 8: Confirm to User
 Tell the user:
 - URL: `https://[vercel-domain]/client-name`
 - Presentation is live after Vercel deploys (~30 seconds)

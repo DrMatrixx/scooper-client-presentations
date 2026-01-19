@@ -708,7 +708,7 @@ const presentation: PresentationConfig = {
                 <Bot size={24} className="text-white sm:w-7 sm:h-7" />
               </div>
               <div>
-                <p className="text-white text-lg sm:text-xl font-bold">Scooper AI</p>
+                <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="text-white text-lg sm:text-xl font-bold hover:text-amber-400 transition-colors">Scooper AI</a>
                 <p className="text-gray-400 text-sm">AI Automation Agency</p>
               </div>
             </div>
@@ -784,7 +784,7 @@ const presentation: PresentationConfig = {
               <Bot size={16} className="text-white sm:w-[18px] sm:h-[18px]" />
             </div>
             <span className="text-gray-400 text-sm">
-              Prepared by <span className="text-white font-medium">Scooper AI</span>
+              Prepared by <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-amber-400 transition-colors">Scooper AI</a>
             </span>
           </div>
         </div>

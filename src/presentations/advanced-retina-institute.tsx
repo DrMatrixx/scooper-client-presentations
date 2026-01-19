@@ -21,34 +21,102 @@ const presentation: PresentationConfig = {
   title: 'Advanced Retina Institute',
   description: 'Operational Transformation Through Intelligent Automation',
   slides: [
-    // Slide 1: Title
+    // Slide 1: Title - Enhanced with key value props
     {
       id: 'title',
       render: () => (
-        <div className="text-center w-full max-w-2xl px-4">
-          {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-6 sm:mb-8">
+        <div className="text-center w-full max-w-3xl px-4">
+          {/* CSS for animations */}
+          <style>{`
+            @keyframes glow {
+              0%, 100% { filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3)); }
+              50% { filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.6)); }
+            }
+            @keyframes borderGlow {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes fadeInUp {
+              from { opacity: 0; transform: translateY(20px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-glow { animation: glow 3s ease-in-out infinite; }
+            .animate-border-glow { animation: borderGlow 2s ease-in-out infinite; }
+            .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+            .animation-delay-100 { animation-delay: 0.1s; opacity: 0; }
+            .animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
+            .animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
+            .animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
+            .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+          `}</style>
+
+          {/* Small badge */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-4 sm:mb-5 animate-fade-in-up">
             <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             <span className="text-gray-400 text-xs sm:text-sm">AI Automation Proposal</span>
           </div>
 
-          {/* Company name */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
-            Advanced Retina Institute
-          </h1>
+          {/* Company logo - centered */}
+          <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
+            <img
+              src="/advanced-retina-institue-site-logo.jpg"
+              alt="Advanced Retina Institute"
+              className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
+            />
+            <p className="text-gray-500 text-sm">Prepared exclusively for your practice</p>
+          </div>
 
-          {/* Tagline with gradient */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-4 sm:mb-6">
-            Operational Transformation Through <GradientText>Intelligent Automation</GradientText>
-          </p>
+          {/* Value proposition question */}
+          <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">
+            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could recover</p>
+            <span className="animate-glow inline-block text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
+              $100K–$200K
+            </span>
+            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in lost efficiency and missed patients?</p>
+          </div>
 
-          {/* Decorative line */}
-          <div className="w-24 sm:w-32 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-6 sm:mb-8" />
+          {/* Key pain points they'll recognize - with icons and glassmorphism */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-300">
+            {[
+              { value: '23%', label: 'Calls unanswered', icon: Phone },
+              { value: '7+ hrs', label: 'Daily admin work', icon: Clock },
+              { value: '15-22%', label: 'No-show rate', icon: Calendar },
+            ].map((item, i) => (
+              <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <item.icon size={16} className="text-rose-400/70 mx-auto mb-2 sm:w-5 sm:h-5" />
+                  <p className="text-rose-400 text-xl sm:text-2xl font-bold">{item.value}</p>
+                  <p className="text-gray-500 text-xs mt-1">{item.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-          {/* Description */}
-          <p className="text-gray-500 text-xs sm:text-sm max-w-lg mx-auto">
-            A strategic proposal to automate patient communication, scheduling, and referral management — reducing manual workload while increasing patient accessibility and practice efficiency.
-          </p>
+          {/* What we'll show them - animated gradient border */}
+          <div className="relative max-w-lg mx-auto mb-6 sm:mb-8 animate-fade-in-up animation-delay-400">
+            {/* Animated gradient border */}
+            <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 rounded-2xl animate-border-glow opacity-60 blur-[1px]" />
+            <div className="relative glass bg-gray-950/80 rounded-2xl p-4 sm:p-5 border border-emerald-500/30">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <Zap size={14} className="text-emerald-400" />
+                </div>
+                <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
+              </div>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                5 custom automations to cut admin time by <span className="text-white font-bold">60%+</span>, reduce no-shows by <span className="text-white font-bold">30-50%</span>, and ensure <span className="text-white font-bold">zero missed calls</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Subtle CTA to continue */}
+          <div className="flex items-center justify-center gap-2 text-gray-500 text-xs sm:text-sm animate-fade-in-up animation-delay-400">
+            <span>Press</span>
+            <div className="px-2.5 py-1.5 bg-white/10 rounded-lg text-gray-400 font-mono text-xs border border-white/10 shadow-inner">→</div>
+            <span>to see how</span>
+          </div>
         </div>
       ),
     },

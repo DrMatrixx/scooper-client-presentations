@@ -110,7 +110,11 @@ const presentation: PresentationConfig = {
     {
       id: 'reality',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Current Reality</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Where Time Goes Today</h2>
           <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
@@ -142,7 +146,11 @@ const presentation: PresentationConfig = {
     {
       id: 'cost',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Cost</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">What This Actually Costs</h2>
           <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
@@ -171,7 +179,11 @@ const presentation: PresentationConfig = {
     {
       id: 'opportunity',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Opportunity</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">What If This Was <GradientText>Automated</GradientText>?</h2>
           <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
@@ -219,7 +231,11 @@ const presentation: PresentationConfig = {
     {
       id: 'whatChanges',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Solution</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Five Automations That <GradientText>Transform</GradientText> Operations</h2>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
@@ -249,7 +265,11 @@ const presentation: PresentationConfig = {
     {
       id: 'auto1',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
               <MessageSquare size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -290,7 +310,11 @@ const presentation: PresentationConfig = {
     {
       id: 'auto2',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
               <Database size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -328,7 +352,11 @@ const presentation: PresentationConfig = {
     {
       id: 'auto3',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
               <RefreshCw size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -367,7 +395,11 @@ const presentation: PresentationConfig = {
     {
       id: 'auto4',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
               <FileText size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -409,7 +441,11 @@ const presentation: PresentationConfig = {
     {
       id: 'auto5',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
               <Settings size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -459,7 +495,11 @@ const presentation: PresentationConfig = {
     {
       id: 'dubai',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Dubai Context</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Built for How <GradientText>Dubai</GradientText> Works</h2>
           <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-3 sm:mb-4">
@@ -486,7 +526,11 @@ const presentation: PresentationConfig = {
     {
       id: 'results',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Expected Results</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">What This Delivers</h2>
           <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
@@ -525,7 +569,11 @@ const presentation: PresentationConfig = {
     {
       id: 'roadmap',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Implementation</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Phased <GradientText>Rollout</GradientText></h2>
           <div className="space-y-2 sm:space-y-3">
@@ -561,7 +609,11 @@ const presentation: PresentationConfig = {
     {
       id: 'aboutUs',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Your Implementation Partner</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">About <GradientText>Scooper AI</GradientText></h2>
           <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">

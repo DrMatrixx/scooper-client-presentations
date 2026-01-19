@@ -111,7 +111,11 @@ const presentation: PresentationConfig = {
     {
       id: 'overview',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Overview</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">Executive Summary</h2>
@@ -160,7 +164,11 @@ const presentation: PresentationConfig = {
     {
       id: 'currentState',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Current State</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">Challenges & <GradientText>Opportunity</GradientText></h2>
@@ -212,7 +220,11 @@ const presentation: PresentationConfig = {
     {
       id: 'vision',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">The Vision</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">AI-Powered <GradientText>Operating System</GradientText></h2>
@@ -255,7 +267,11 @@ const presentation: PresentationConfig = {
     {
       id: 'solutions',
       render: () => (
-        <div className="w-full max-w-5xl px-6">
+        <div className="w-full max-w-5xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">The Solution</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">Eight Automation <GradientText>Opportunities</GradientText></h2>
@@ -298,7 +314,11 @@ const presentation: PresentationConfig = {
     {
       id: 'deepdive-support',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/20">
               <span className="text-amber-400 font-bold text-lg">01-02</span>
@@ -371,7 +391,11 @@ const presentation: PresentationConfig = {
     {
       id: 'deepdive-retention',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/20">
               <span className="text-amber-400 font-bold text-lg">03-04</span>
@@ -444,7 +468,11 @@ const presentation: PresentationConfig = {
     {
       id: 'roadmap',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Implementation</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">90-Day <GradientText>Roadmap</GradientText></h2>
@@ -493,7 +521,11 @@ const presentation: PresentationConfig = {
     {
       id: 'impact',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Results</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">Projected <GradientText>Impact</GradientText></h2>
@@ -550,7 +582,11 @@ const presentation: PresentationConfig = {
     {
       id: 'nextSteps',
       render: () => (
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-6 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <div className="text-center mb-8">
             <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Action Plan</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">Recommended Next Steps</h2>

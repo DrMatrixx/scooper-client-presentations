@@ -183,6 +183,56 @@ Make sure any CTA button links to: `https://cal.com/scooper-ai/discover`
 </a>
 ```
 
+### Step 6b: Add "Book a Call" CTA to All Inner Slides
+Add a small, persistent "Book a Call" button to all slides EXCEPT the first (title) and last (closing) slides. This allows viewers to book a call from any page in the presentation.
+
+**Implementation:**
+1. Add `relative` class to the slide's main container div
+2. Add the CTA anchor element as the first child inside the container
+
+**CTA Button Template:**
+```tsx
+<a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+  <Rocket size={12} />
+  Book a Call
+</a>
+```
+
+**Example - Adding CTA to a slide:**
+```tsx
+// BEFORE:
+{
+  id: 'reality',
+  render: () => (
+    <div className="w-full max-w-3xl px-4">
+      <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Current Reality</p>
+      {/* ... rest of slide content ... */}
+    </div>
+  ),
+}
+
+// AFTER:
+{
+  id: 'reality',
+  render: () => (
+    <div className="w-full max-w-3xl px-4 relative">
+      <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+        <Rocket size={12} />
+        Book a Call
+      </a>
+      <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Current Reality</p>
+      {/* ... rest of slide content ... */}
+    </div>
+  ),
+}
+```
+
+**Notes:**
+- Make sure `Rocket` is imported from `lucide-react`
+- The button is positioned at top-right with `absolute -top-2 right-4`
+- Uses amber color theme to match the presentation styling
+- DO NOT add to title slide (first slide) or closing slide (last slide with main CTA)
+
 ### Step 7: Link Scooper AI Website
 Ensure "Scooper AI" text in the About Us or closing slides links to: `https://scooperai.com`
 

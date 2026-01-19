@@ -134,7 +134,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Current Reality</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               Where Time Goes Today
@@ -182,7 +186,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Cost</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               What This Actually Costs
@@ -238,7 +246,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Opportunity</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               What If This Was <GradientText>Automated</GradientText>?
@@ -299,7 +311,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Solution</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               5 Automations That <GradientText>Transform</GradientText> Operations
@@ -346,7 +362,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                 <Phone size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -408,7 +428,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                 <Calendar size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -470,7 +494,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                 <Database size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -532,7 +560,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                 <Eye size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -594,7 +626,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                 <Stethoscope size={16} className="text-amber-400 sm:w-5 sm:h-5" />
@@ -655,7 +691,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Expected Results</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">What This Delivers</h2>
 
@@ -718,7 +758,11 @@ const presentation: PresentationConfig = {
         ];
 
         return (
-          <div className="w-full max-w-3xl px-4">
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Implementation</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               Phased <GradientText>Rollout</GradientText>
@@ -760,7 +804,11 @@ const presentation: PresentationConfig = {
     {
       id: 'aboutUs',
       render: () => (
-        <div className="w-full max-w-3xl px-4">
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Your Implementation Partner</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
             About <GradientText>Scooper AI</GradientText>

@@ -2,7 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes/router'
+import { initPostHog } from './lib/posthog'
 import './index.css'
+
+// Initialize PostHog analytics
+initPostHog();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

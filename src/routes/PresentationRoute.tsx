@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import type { PresentationConfig } from '../types/presentation';
 import { PresentationShell } from '../components/PresentationShell';
 import { SlideNavigation } from '../components/SlideNavigation';
+import { posthog } from '../lib/posthog';
 
 interface PresentationRouteProps {
   presentation: PresentationConfig;
@@ -10,7 +11,9 @@ interface PresentationRouteProps {
 
 export function PresentationRoute({ presentation }: PresentationRouteProps) {
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
   const slideParam = searchParams.get('slide');
+  const presentationName = location.pathname.replace('/', '') || 'home';
 
   const [currentSlide, setCurrentSlide] = useState(() => {
     const parsed = slideParam ? parseInt(slideParam, 10) : 0;
@@ -30,6 +33,18 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
   useEffect(() => {
     document.title = presentation.title;
   }, [presentation.title]);
+
+  // Track slide views
+  useEffect(() => {
+    const slideId = presentation.slides[currentSlide]?.id || `slide-${currentSlide}`;
+    posthog.capture('slide_viewed', {
+      presentation: presentationName,
+      presentation_title: presentation.title,
+      slide_index: currentSlide,
+      slide_id: slideId,
+      total_slides: presentation.slides.length,
+    });
+  }, [currentSlide, presentationName, presentation.title, presentation.slides]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -55,6 +70,7 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
         currentSlide={currentSlide}
         totalSlides={presentation.slides.length}
         onNavigate={setCurrentSlide}
+        presentationName={presentationName}
       />
     </PresentationShell>
   );

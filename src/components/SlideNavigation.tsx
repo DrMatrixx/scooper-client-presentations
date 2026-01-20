@@ -1,14 +1,45 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { posthog } from '../lib/posthog';
 
 interface SlideNavigationProps {
   currentSlide: number;
   totalSlides: number;
   onNavigate: (index: number) => void;
+  presentationName?: string;
 }
 
-export function SlideNavigation({ currentSlide, totalSlides, onNavigate }: SlideNavigationProps) {
-  const goToPrev = () => onNavigate(Math.max(0, currentSlide - 1));
-  const goToNext = () => onNavigate(Math.min(totalSlides - 1, currentSlide + 1));
+export function SlideNavigation({ currentSlide, totalSlides, onNavigate, presentationName }: SlideNavigationProps) {
+  const goToPrev = () => {
+    const newSlide = Math.max(0, currentSlide - 1);
+    posthog.capture('slide_navigation', {
+      action: 'prev',
+      from_slide: currentSlide,
+      to_slide: newSlide,
+      presentation: presentationName,
+    });
+    onNavigate(newSlide);
+  };
+
+  const goToNext = () => {
+    const newSlide = Math.min(totalSlides - 1, currentSlide + 1);
+    posthog.capture('slide_navigation', {
+      action: 'next',
+      from_slide: currentSlide,
+      to_slide: newSlide,
+      presentation: presentationName,
+    });
+    onNavigate(newSlide);
+  };
+
+  const goToSlide = (index: number) => {
+    posthog.capture('slide_navigation', {
+      action: 'dot_click',
+      from_slide: currentSlide,
+      to_slide: index,
+      presentation: presentationName,
+    });
+    onNavigate(index);
+  };
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 border-t border-white/5 bg-gray-950/80 backdrop-blur-sm">
@@ -25,7 +56,7 @@ export function SlideNavigation({ currentSlide, totalSlides, onNavigate }: Slide
         {Array.from({ length: totalSlides }).map((_, i) => (
           <button
             key={i}
-            onClick={() => onNavigate(i)}
+            onClick={() => goToSlide(i)}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
               i === currentSlide
                 ? 'bg-gradient-to-r from-amber-500 to-orange-500 w-4 sm:w-6'

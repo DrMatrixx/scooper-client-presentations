@@ -7,6 +7,12 @@ export const initPostHog = () => {
       person_profiles: 'identified_only',
       capture_pageview: true,
       capture_pageleave: true,
+      // Session recordings
+      disable_session_recording: false,
+      session_recording: {
+        maskAllInputs: false,
+        maskTextSelector: undefined,
+      },
     });
 
     // Global click tracking for CTAs and external links

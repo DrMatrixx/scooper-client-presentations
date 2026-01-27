@@ -60,7 +60,7 @@ const presentation: PresentationConfig = {
             <img
               src="/Prismatic_Lockup-03.webp"
               alt="Prismatics"
-              className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
+              className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3 invert"
             />
             <p className="text-gray-500 text-sm">Prepared exclusively for Prismatics</p>
           </div>

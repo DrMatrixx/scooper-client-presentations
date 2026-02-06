@@ -8,5 +8,6 @@ export interface Slide {
 export interface PresentationConfig {
   title: string;
   description?: string;
+  theme?: 'dark' | 'light';
   slides: Slide[];
 }

@@ -61,8 +61,10 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [presentation.slides.length]);
 
+  const theme = presentation.theme || 'dark';
+
   return (
-    <PresentationShell>
+    <PresentationShell theme={theme}>
       <div className="flex-1 flex items-center justify-center p-3 sm:p-6 pb-20 sm:pb-24 overflow-y-auto">
         {presentation.slides[currentSlide].render()}
       </div>
@@ -71,6 +73,7 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
         totalSlides={presentation.slides.length}
         onNavigate={setCurrentSlide}
         presentationName={presentationName}
+        theme={theme}
       />
     </PresentationShell>
   );

@@ -56,7 +56,7 @@ const presentation: PresentationConfig = {
 
           <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
             <img
-              src="/logo-wifimedia.webp"
+              src="/wifimedialogonew.svg"
               alt="Wifimedia"
               className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
             />

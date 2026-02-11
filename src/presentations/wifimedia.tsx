@@ -1,7 +1,6 @@
 import type { PresentationConfig } from '../types/presentation';
 import { GradientText } from '../components/GradientText';
 import {
-  ShoppingCart,
   Clock,
   TrendingUp,
   ArrowRight,
@@ -11,15 +10,17 @@ import {
   BarChart3,
   Zap,
   MessageSquare,
-  Package,
   Users,
-  Star,
-  Store,
+  FileText,
+  Target,
+  Calendar,
+  Wrench,
+  ClipboardList,
 } from 'lucide-react';
 
 const presentation: PresentationConfig = {
-  title: 'Wifimedia',
-  description: 'Operational Transformation Through Intelligent Automation — AI Proposal for Wifimedia B.V.',
+  title: 'Wifimedia Projects',
+  description: 'Operational Transformation Through Intelligent Automation — AI Proposal for Wifimedia Projects',
   slides: [
     // Slide 1: Title
     {
@@ -57,25 +58,25 @@ const presentation: PresentationConfig = {
           <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
             <img
               src="/wifimedialogonew.svg"
-              alt="Wifimedia"
-              className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
+              alt="Wifimedia Projects"
+              className="h-16 sm:h-20 md:h-24 w-auto mx-auto mb-3"
             />
-            <p className="text-gray-500 text-sm">Prepared exclusively for Wifimedia B.V.</p>
+            <p className="text-gray-500 text-sm">Prepared exclusively for Wifimedia Projects</p>
           </div>
 
           <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">
-            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could recover</p>
+            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could unlock</p>
             <span className="animate-glow inline-block text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
-              €75K–€150K
+              €50K–€100K
             </span>
-            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in operational efficiency and recovered sales?</p>
+            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in freed capacity and faster project delivery?</p>
           </div>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-300">
             {[
-              { value: '60-70%', label: 'Time on non-expertise tasks', icon: Clock },
-              { value: '~70%', label: 'Cart abandonment rate', icon: ShoppingCart },
-              { value: '47 hrs', label: 'Avg lead response (industry)', icon: MessageSquare },
+              { value: '3-5 days', label: 'Project scoping time', icon: ClipboardList },
+              { value: '24-48 hrs', label: 'Quote turnaround', icon: FileText },
+              { value: '40-60%', label: 'Time on admin tasks', icon: Clock },
             ].map((item, i) => (
               <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -98,7 +99,7 @@ const presentation: PresentationConfig = {
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                6 custom automations to boost conversions by <span className="text-white font-bold">15-30%</span>, free <span className="text-white font-bold">25-35 hrs/week</span>, and enable <span className="text-white font-bold">24/7 customer engagement</span>
+                5 custom automations to cut project admin by <span className="text-white font-bold">50%+</span>, respond to inquiries in <span className="text-white font-bold">&lt;5 minutes</span>, and deliver quotes <span className="text-white font-bold">same-day</span>
               </p>
             </div>
           </div>
@@ -117,12 +118,12 @@ const presentation: PresentationConfig = {
       id: 'reality',
       render: () => {
         const tasks = [
-          { task: 'Pre-sales product questions (email, chat, phone)', time: '2-3 hrs/day', issue: 'Prospects leave without buying' },
-          { task: 'Order status & shipping follow-ups', time: '1-2 hrs/day', issue: 'Negative reviews, support bottleneck' },
-          { task: 'Manual product data updates', time: '3-5 hrs/week', issue: 'Outdated specs, pricing errors' },
-          { task: 'Stock levels & supplier availability', time: '2-3 hrs/week', issue: 'Overselling, backorder frustration' },
-          { task: 'Post-purchase follow-up & reviews', time: '1-2 hrs/week', issue: 'Missed repeat sales & referrals' },
-          { task: 'B2B/Projects quoting & intake', time: '2-4 hrs/week', issue: 'Slow response to high-value leads' },
+          { task: 'Project inquiry response & initial scoping', time: '2-4 hrs/inquiry', issue: 'Delayed responses lose high-value projects' },
+          { task: 'Site visits & technical assessments', time: '3-5 hrs/project', issue: 'Scheduling back-and-forth wastes time' },
+          { task: 'Quote generation & proposal writing', time: '4-8 hrs/quote', issue: 'Complex projects require manual calculation' },
+          { task: 'Client communication during projects', time: '1-2 hrs/day', issue: 'Status updates scattered across channels' },
+          { task: 'Experience Center visit coordination', time: '1-2 hrs/visit', issue: 'Manual booking and follow-up' },
+          { task: 'Post-installation support & documentation', time: '2-3 hrs/project', issue: 'Handoff details often incomplete' },
         ];
 
         return (
@@ -138,7 +139,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
               <p className="text-gray-400 text-sm sm:text-base mb-4 sm:mb-5">
-                20+ years building the Netherlands' leading streaming audio and video specialist — Sonos, Sennheiser, Ubiquiti, and dozens of premium brands. Your expertise is the competitive advantage, but operations consume enormous capacity.
+                15+ years building creative lifestyle solutions for homes and businesses — from GelreDome to luxury villas. Your expertise in audio, video, smart home, and networking is what sets you apart. But project administration consumes the hours that should go to design and delivery.
               </p>
 
               <div className="space-y-2 sm:space-y-3">
@@ -158,7 +159,7 @@ const presentation: PresentationConfig = {
 
             <div className="text-center">
               <p className="text-gray-500 text-xs sm:text-sm">
-                This adds up to <span className="text-white font-bold">60-70% of team hours</span> on tasks that don't require deep product expertise.
+                This adds up to <span className="text-white font-bold">40-60% of team capacity</span> on tasks that don't require your technical expertise.
               </p>
             </div>
           </div>
@@ -171,10 +172,10 @@ const presentation: PresentationConfig = {
       id: 'cost',
       render: () => {
         const metrics = [
-          { icon: TrendingUp, value: '2-4%', metric: 'Conversion Rate', desc: 'Every % point = recovered revenue' },
-          { icon: Clock, value: '47 hrs', metric: 'Avg Lead Response', desc: 'vs 5 min for 100x better conversion' },
-          { icon: ShoppingCart, value: '~70%', metric: 'Cart Abandonment', desc: '€500+ items left behind' },
-          { icon: Store, value: 'Underused', metric: 'Experience Center', desc: 'Gap between visit and purchase' },
+          { icon: MessageSquare, value: '24-48 hrs', metric: 'Quote Turnaround', desc: 'Competitors who quote faster win' },
+          { icon: Target, value: '15-25%', metric: 'Lost Project Leads', desc: 'From slow response times' },
+          { icon: Clock, value: '8-12 hrs', metric: 'Per Project Admin', desc: 'Before installation even starts' },
+          { icon: Users, value: 'Limited', metric: 'Project Capacity', desc: 'Team maxed on current workload' },
         ];
 
         return (
@@ -185,7 +186,7 @@ const presentation: PresentationConfig = {
             </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Cost</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-              What The Status Quo Costs
+              What This Actually Costs
             </h2>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
@@ -203,7 +204,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/30 p-3 sm:p-4 text-center">
               <p className="text-rose-400 text-xs sm:text-sm">
-                Conservative annual estimate of recoverable value: <span className="text-white font-bold">€75,000–€150,000</span>
+                Estimated annual impact: <span className="text-white font-bold">€50,000–€100,000</span> in lost projects, delayed revenue, and constrained growth
               </p>
             </div>
           </div>
@@ -216,23 +217,23 @@ const presentation: PresentationConfig = {
       id: 'opportunity',
       render: () => {
         const todayItems = [
-          'Pre-sales questions answered during business hours only',
-          'Order status inquiries handled manually via email',
-          'Cart abandonment goes mostly unaddressed',
-          'B2B project inquiries sit in inbox until someone is free',
-          'Post-visit Experience Center follow-up is ad hoc',
+          'Project inquiries wait hours or days for response',
+          'Quotes take 2-3 days of back-and-forth',
+          'Site visit scheduling is manual coordination',
+          'Client updates sent ad-hoc via email/phone',
+          'Experience Center visits booked manually',
         ];
         const automatedItems = [
-          'AI product advisor available 24/7, trained on your catalog',
-          'Instant automated tracking updates via email and chat',
-          'Personalized recovery sequences triggered within minutes',
-          'Instant intake, qualification, and routing to Projects team',
-          'Automated personalized follow-up based on products shown',
+          'Instant acknowledgment with smart qualification',
+          'Same-day quotes with automated scoping tools',
+          'Self-service scheduling with calendar sync',
+          'Automated project status dashboards for clients',
+          'Online booking with pre-visit questionnaires',
         ];
         const summaryMetrics = [
-          { icon: TrendingUp, metric: '15-30%', label: 'Conversion boost' },
-          { icon: Clock, metric: '25-35 hrs', label: 'Freed per week' },
-          { icon: Zap, metric: '24/7', label: 'Availability' },
+          { icon: TrendingUp, metric: '2-3x', label: 'More projects' },
+          { icon: Clock, metric: '50%+', label: 'Less admin' },
+          { icon: Zap, metric: '<5 min', label: 'Response time' },
         ];
 
         return (
@@ -293,12 +294,11 @@ const presentation: PresentationConfig = {
       id: 'whatChanges',
       render: () => {
         const automations = [
-          { num: '01', title: 'AI Product Advisor', desc: '24/7 chatbot', icon: MessageSquare },
-          { num: '02', title: 'Cart Recovery', desc: 'Abandoned cart', icon: ShoppingCart },
-          { num: '03', title: 'B2B Intake', desc: 'Project leads', icon: Users },
-          { num: '04', title: 'Post-Purchase', desc: 'Reviews & upsell', icon: Star },
-          { num: '05', title: 'Experience Center', desc: 'Booking & nurture', icon: Store },
-          { num: '06', title: 'Inventory Alerts', desc: 'Stock & pricing', icon: Package },
+          { num: '01', title: 'Project Intake', desc: 'Lead qualification', icon: Target },
+          { num: '02', title: 'Smart Quoting', desc: 'Proposal system', icon: FileText },
+          { num: '03', title: 'Client Portal', desc: 'Project updates', icon: BarChart3 },
+          { num: '04', title: 'Experience Center', desc: 'Booking & nurture', icon: Calendar },
+          { num: '05', title: 'Post-Install', desc: 'Support & handoff', icon: Wrench },
         ];
 
         return (
@@ -309,14 +309,16 @@ const presentation: PresentationConfig = {
             </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Solution</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-              6 Automations That <GradientText>Transform</GradientText> Operations
+              5 Automations That <GradientText>Transform</GradientText> Operations
             </h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
               {automations.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4 text-center hover:border-amber-500/30 hover:bg-white/[0.07] transition-all"
+                  className={`bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4 text-center hover:border-amber-500/30 hover:bg-white/[0.07] transition-all ${
+                    i === automations.length - 1 && automations.length % 2 === 1 ? 'col-span-2 sm:col-span-1' : ''
+                  }`}
                 >
                   <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-lg bg-amber-500/20 flex items-center justify-center mb-2 sm:mb-3">
                     <item.icon size={16} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
@@ -330,7 +332,7 @@ const presentation: PresentationConfig = {
 
             <div className="mt-4 sm:mt-6 text-center">
               <p className="text-gray-500 text-xs sm:text-sm">
-                Each automation is built specifically for Wifimedia's e-commerce operations and premium audio/video catalog.
+                Each automation is built specifically for custom AV installation workflows — Living and Business projects.
               </p>
             </div>
           </div>
@@ -338,16 +340,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 6: Automation 1 - AI Product Advisor
+    // Slide 6: Automation 1 - Project Intake
     {
       id: 'auto1',
       render: () => {
         const capabilities = [
-          'Trained on Wifimedia\'s full product catalog, specs, and compatibility data',
-          'Multi-language support (Dutch, English, German — matching shipping regions)',
-          'Seamless handoff to human staff with full conversation history',
-          'Product comparison and recommendation logic based on customer needs',
-          'Captures lead information for follow-up on high-value inquiries',
+          'Instant acknowledgment when inquiry comes in via website, email, or phone',
+          'Smart intake form captures project type, scope, budget range, and timeline',
+          'Automatic categorization: Living vs Business, complexity level, service areas',
+          'Lead scoring to prioritize high-value projects (GelreDome-scale vs small installs)',
+          'Auto-routing to the right team member based on expertise and availability',
         ];
 
         return (
@@ -358,161 +360,29 @@ const presentation: PresentationConfig = {
             </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <MessageSquare size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <Target size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Automation 01</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Product Advisor</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Project Intake & Qualification</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                An intelligent chatbot on wifimedia.eu (and optionally WhatsApp) that understands your full catalog — from the difference between Sonos Arc and Arc Ultra to which Ubiquiti setup suits a three-story home.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Business hrs</p>
-                  <p className="text-gray-500 text-xs">15-20 questions/day</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">24/7</p>
-                  <p className="text-gray-500 text-xs">Instant responses</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 2-3 hrs/day freed; 10-20% conversion improvement on chat sessions
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 7: Automation 2 - Cart Recovery Engine
-    {
-      id: 'auto2',
-      render: () => {
-        const capabilities = [
-          'Triggered sequences via email (and optionally SMS) at 1hr, 24hr, and 72hr intervals',
-          'Dynamic product imagery and pricing pulled from live catalog',
-          'Urgency triggers for limited-stock or sale items',
-          'A/B testing framework to optimize subject lines, timing, and offers',
-          'Integration with Shopify for real-time cart data',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4 relative">
-            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-              <Rocket size={12} />
-              Book a Call
-            </a>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <ShoppingCart size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Automation 02</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Cart Recovery Engine</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Multi-step recovery system that activates within minutes. Product-specific messaging — reminding customers why that Sennheiser AMBEO Mini at €544 is worth coming back for, or that the WiiM streamer pairs perfectly with speakers they've browsed.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">~3%</p>
-                  <p className="text-gray-500 text-xs">Recovery rate</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">8-12%</p>
-                  <p className="text-gray-500 text-xs">Target recovery rate</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> €15,000–€40,000/year in recovered revenue
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 8: Automation 3 - B2B Project Intake
-    {
-      id: 'auto3',
-      render: () => {
-        const capabilities = [
-          'Smart intake form with conditional logic (residential vs. commercial, single-room vs. whole-home)',
-          'Automated lead scoring based on project size, budget, and timeline',
-          'Instant confirmation email with relevant case studies/portfolio items',
-          'CRM integration for pipeline tracking and follow-up automation',
-          'Automated reminders for quotes pending response',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4 relative">
-            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-              <Rocket size={12} />
-              Book a Call
-            </a>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Users size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Automation 03</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">B2B Project Intake & Qualification</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Wifimedia Projects — your custom installation arm for smart entertainment — is a high-margin growth channel. This automation creates structured intake that captures requirements, scores leads, and routes qualified prospects to your team within minutes.
+                When a potential client reaches out about a home cinema, smart home integration, or commercial AV project, the system instantly responds, gathers requirements, and qualifies the opportunity — so your team only spends time on projects worth pursuing.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
                   <p className="text-white text-xl sm:text-2xl font-bold">24-48 hrs</p>
-                  <p className="text-gray-500 text-xs">Inquiry response</p>
+                  <p className="text-gray-500 text-xs">First response</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
                   <p className="text-white text-xl sm:text-2xl font-bold">&lt;5 min</p>
-                  <p className="text-gray-500 text-xs">Auto-acknowledgment</p>
+                  <p className="text-gray-500 text-xs">Qualified & routed</p>
                 </div>
               </div>
 
@@ -528,7 +398,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 50-70% reduction in B2B lead qualification time
+                <span className="font-bold">Impact:</span> Recover 15-25% of lost project leads; 2-3 hours saved per inquiry
               </p>
             </div>
           </div>
@@ -536,16 +406,148 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 9: Automation 4 - Post-Purchase Experience
+    // Slide 7: Automation 2 - Smart Quoting
+    {
+      id: 'auto2',
+      render: () => {
+        const capabilities = [
+          'Structured scoping questionnaire captures all technical requirements upfront',
+          'Pre-built pricing templates for common configurations (multiroom audio, home cinema, etc.)',
+          'Auto-generated proposals with your branding, project visuals, and payment terms',
+          'Integration with supplier pricing for accurate equipment costs',
+          'Quote tracking with automated follow-up sequences for pending proposals',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <FileText size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Automation 02</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Smart Quoting & Proposals</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
+                Transform quote generation from a 4-8 hour manual process into a same-day deliverable. The system guides scoping, pulls pricing, and generates professional proposals — you just review and send.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">2-3 days</p>
+                  <p className="text-gray-500 text-xs">Quote delivery</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Same day</p>
+                  <p className="text-gray-500 text-xs">Quote delivery</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 60-70% faster quotes; 20-30% higher close rate from speed advantage
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 8: Automation 3 - Client Portal
+    {
+      id: 'auto3',
+      render: () => {
+        const capabilities = [
+          'Dedicated project page for each client with real-time status updates',
+          'Milestone tracking: design → procurement → installation → handoff',
+          'Automated notifications when project moves to next phase',
+          'Document sharing: floor plans, equipment specs, installation photos',
+          'Integrated scheduling for site visits and installation dates',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <BarChart3 size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Automation 03</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Client Project Portal</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
+                Give clients visibility into their project without constant phone calls and emails. A branded portal shows exactly where their installation stands, what's next, and when — reducing "status update" requests by 80%+.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">1-2 hrs/day</p>
+                  <p className="text-gray-500 text-xs">Status update calls</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Self-serve</p>
+                  <p className="text-gray-500 text-xs">Clients check portal</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 80% fewer status inquiries; improved client satisfaction and referrals
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 9: Automation 4 - Experience Center
     {
       id: 'auto4',
       render: () => {
         const capabilities = [
-          'Product-specific setup guides and tips delivered automatically post-delivery',
-          'Timed review requests optimized for Trustpilot submission',
-          'Cross-sell and accessory recommendations based on purchase history',
-          'Warranty registration reminders',
-          'Re-engagement sequences for customers who haven\'t purchased in 6+ months',
+          'Online booking widget for Experience Center visits at Mercatorweg 28',
+          'Pre-visit questionnaire captures interests, budget, and project scope',
+          'Automated reminders (24hr and 2hr before) with directions and parking info',
+          'Post-visit follow-up sequence with personalized recommendations',
+          'Integration with CRM to track visit-to-project conversion',
         ];
 
         return (
@@ -556,29 +558,29 @@ const presentation: PresentationConfig = {
             </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Star size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <Calendar size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Automation 04</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Post-Purchase Experience</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Experience Center Booking</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                The moment after purchase is when loyalty is built or lost — especially for premium equipment where setup can be complex. This delivers the right content at the right time: setup guides, review requests, and thoughtful cross-sell suggestions.
+                Your Arnhem Experience Center is where clients see solutions firsthand and projects get signed. This automation maximizes its impact by streamlining booking, preparing visitors, and following up systematically to convert visits into contracts.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Generic</p>
-                  <p className="text-gray-500 text-xs">Order confirmation only</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
+                  <p className="text-gray-500 text-xs">Email/phone coordination</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">30-day</p>
-                  <p className="text-gray-500 text-xs">Personalized journey</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Self-service</p>
+                  <p className="text-gray-500 text-xs">Online booking + nurture</p>
                 </div>
               </div>
 
@@ -594,7 +596,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 15-25% increase in review submission; 10-20% repeat purchase improvement
+                <span className="font-bold">Impact:</span> 25-35% higher visit-to-project conversion; 1-2 hours saved per booking
               </p>
             </div>
           </div>
@@ -602,16 +604,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 10: Automation 5 - Experience Center Booking
+    // Slide 10: Automation 5 - Post-Installation
     {
       id: 'auto5',
       render: () => {
         const capabilities = [
-          'Online booking widget integrated into wifimedia.eu with calendar sync',
-          'Pre-visit questionnaire capturing interests and budget for staff prep',
-          'Automated appointment reminders (24hr and 2hr before)',
-          'Post-visit follow-up sequence with personalized product links and quotes',
-          'Integration with CRM to track visit-to-purchase conversion',
+          'Digital handoff package: equipment manuals, system diagrams, warranty info',
+          'Automated user guides specific to installed systems (Sonos, Ubiquiti, etc.)',
+          'Scheduled check-in sequences at 1 week, 1 month, and 6 months post-install',
+          'Support ticket system for issues with automatic triage and routing',
+          'Warranty expiration reminders with upgrade/maintenance offers',
         ];
 
         return (
@@ -622,29 +624,29 @@ const presentation: PresentationConfig = {
             </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Store size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <Wrench size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Automation 05</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Experience Center Booking & Nurture</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Post-Installation Support</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Your Arnhem Experience Center is a massive differentiator — customers rave about it in reviews. This automation maximizes its impact by making booking effortless, preparing visitors before arrival, and following up systematically to close the sale.
+                The project doesn't end at installation. This system ensures clean handoffs, proactive support, and ongoing client relationships — turning one-time projects into repeat customers and referral sources.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
-                  <p className="text-gray-500 text-xs">Coordination & ad hoc follow-up</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Ad hoc</p>
+                  <p className="text-gray-500 text-xs">Manual handoff docs</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Automated</p>
-                  <p className="text-gray-500 text-xs">Self-service + personalized nurture</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Systematic</p>
+                  <p className="text-gray-500 text-xs">Automated support flow</p>
                 </div>
               </div>
 
@@ -660,7 +662,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 20-30% improvement in visit-to-purchase conversion
+                <span className="font-bold">Impact:</span> 30-40% increase in referrals; recurring revenue from maintenance contracts
               </p>
             </div>
           </div>
@@ -668,81 +670,15 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 11: Automation 6 - Inventory & Pricing Alerts
-    {
-      id: 'auto6',
-      render: () => {
-        const capabilities = [
-          'Real-time inventory dashboard with threshold-based alerts',
-          'Automated low-stock notifications to relevant team members',
-          'Supplier availability sync and reorder recommendations',
-          'Top-product competitor price tracking with change alerts',
-          'Weekly automated inventory health report',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4 relative">
-            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-              <Rocket size={12} />
-              Book a Call
-            </a>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Package size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Automation 06</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Inventory & Pricing Alert Dashboard</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Consumer electronics inventory moves fast — products go in and out of stock, suppliers change availability, and competitors adjust pricing daily. This creates a real-time dashboard that monitors stock levels and flags significant competitor price changes.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
-                  <p className="text-gray-500 text-xs">Reactive to stockouts</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Proactive</p>
-                  <p className="text-gray-500 text-xs">Alerts at thresholds</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/30 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 30-50% reduction in stockout incidents; faster competitive response
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 12: Expected Results
+    // Slide 11: Expected Results
     {
       id: 'results',
       render: () => {
         const results = [
-          { icon: Clock, metric: 'Response Time', before: '2-12 hrs (biz hours)', after: '<2 min, 24/7' },
-          { icon: ShoppingCart, metric: 'Cart Recovery', before: '~2-3%', after: '8-12%' },
-          { icon: BarChart3, metric: 'Manual Workload', before: '25-35 hrs/week', after: 'Reduced 60-70%' },
-          { icon: Star, metric: 'Review Collection', before: 'Ad hoc', after: 'Systematic +15-25%' },
+          { icon: MessageSquare, metric: 'Inquiry Response', before: '24-48 hours', after: '<5 minutes' },
+          { icon: FileText, metric: 'Quote Turnaround', before: '2-3 days', after: 'Same day' },
+          { icon: Clock, metric: 'Admin Time/Project', before: '8-12 hours', after: '3-4 hours' },
+          { icon: TrendingUp, metric: 'Project Capacity', before: 'Maxed out', after: '2-3x more' },
         ];
 
         return (
@@ -778,16 +714,16 @@ const presentation: PresentationConfig = {
 
             <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-lg sm:rounded-xl border border-amber-500/30 p-3 sm:p-4 text-center">
               <p className="text-white text-sm sm:text-lg font-semibold">
-                Annual Value: <span className="text-amber-400">€75,000–€150,000</span>
+                Annual Value: <span className="text-amber-400">€50,000–€100,000</span>
               </p>
-              <p className="text-gray-400 text-xs sm:text-sm">Recovered revenue + freed capacity + improved conversion</p>
+              <p className="text-gray-400 text-xs sm:text-sm">Freed capacity + faster close rates + more projects delivered</p>
             </div>
           </div>
         );
       },
     },
 
-    // Slide 13: Roadmap
+    // Slide 12: Roadmap
     {
       id: 'roadmap',
       render: () => {
@@ -796,19 +732,19 @@ const presentation: PresentationConfig = {
             title: 'Foundation',
             time: 'Weeks 1-4',
             status: 'Quick Wins',
-            items: ['AI Product Advisor deployed', 'Cart Recovery Engine connected', 'CRM & data infrastructure'],
+            items: ['Project intake automation', 'CRM setup & migration', 'Experience Center booking'],
           },
           {
             title: 'Automation',
             time: 'Weeks 5-8',
             status: 'Core System',
-            items: ['B2B Project Intake launched', 'Post-Purchase sequences active', 'Experience Center booking live'],
+            items: ['Smart quoting system', 'Client portal deployment', 'Automated follow-ups'],
           },
           {
             title: 'Intelligence',
             time: 'Weeks 9-12',
             status: 'Full Operation',
-            items: ['Inventory & Pricing Dashboard', 'Performance analytics & A/B testing', 'Optimization & refinement'],
+            items: ['Post-install support flows', 'Analytics dashboards', 'System optimization'],
           },
         ];
 
@@ -855,7 +791,7 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 14: About Us
+    // Slide 13: About Us
     {
       id: 'aboutUs',
       render: () => (
@@ -909,25 +845,25 @@ const presentation: PresentationConfig = {
       ),
     },
 
-    // Slide 15: Closing/CTA
+    // Slide 14: Closing/CTA
     {
       id: 'closing',
       render: () => (
         <div className="text-center w-full max-w-2xl px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            Ready to Transform <GradientText>Wifimedia's Operations</GradientText>?
+            Ready to Scale <GradientText>Wifimedia Projects</GradientText>?
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 max-w-lg mx-auto">
-            You've built the Netherlands' leading streaming specialist over 20 years.
-            The next step isn't working harder — it's letting intelligent automation handle the operational weight so your team can focus on what they do best.
+            You've spent 15+ years perfecting creative lifestyle solutions for homes and businesses.
+            These automations handle the admin so your team can focus on what they do best — designing and delivering exceptional AV experiences.
           </p>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
             {[
               { value: '~12 wks', label: 'To deploy' },
-              { value: '24/7', label: 'Coverage' },
-              { value: '€75K+', label: 'Annual value' },
+              { value: '50%+', label: 'Less admin' },
+              { value: '€50K+', label: 'Annual value' },
             ].map((item, i) => (
               <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-4">
                 <p className="text-amber-400 text-lg sm:text-2xl font-bold">{item.value}</p>

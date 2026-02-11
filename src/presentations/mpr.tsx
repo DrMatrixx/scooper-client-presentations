@@ -68,7 +68,7 @@ const presentation: PresentationConfig = {
           <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">
             <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could recover</p>
             <span className="animate-glow inline-block text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
-              €15K–€25K
+              €30K–€50K
             </span>
             <p className="text-gray-400 text-sm sm:text-base mt-1">per year in productive hours — with your 5-person team?</p>
           </div>
@@ -159,7 +159,7 @@ const presentation: PresentationConfig = {
 
             <div className="text-center">
               <p className="text-gray-500 text-xs sm:text-sm">
-                Damjan said it well: <span className="text-gray-300 italic">"In PR things are unfortunately not as structured as in digital marketing."</span>
+                As you know: <span className="text-gray-300 italic">"In PR things are unfortunately not as structured as in digital marketing."</span> That's exactly where automation adds value.
               </p>
             </div>
           </div>
@@ -204,7 +204,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 p-3 sm:p-4 text-center">
               <p className="text-rose-400 text-xs sm:text-sm">
-                Total value at stake: <span className="text-white font-bold">€15,000–€25,000/year</span> in recovered productive hours
+                Total value at stake: <span className="text-white font-bold">€30,000–€50,000/year</span> in recovered productive hours
               </p>
             </div>
           </div>
@@ -438,7 +438,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Automated pipeline that takes coverage URLs (or pulls from monitoring), captures screenshots, calculates metrics, and assembles branded, client-ready reports. Tamara's reporting time cut by 60-70%.
+                Automated pipeline that takes coverage URLs (or pulls from monitoring), captures screenshots, calculates metrics, and assembles branded, client-ready reports. Reporting time cut by 60-70%.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -505,7 +505,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                Centralized journalist relationship system covering Slovenia and Croatia. Tracks every interaction, preference, and beat — so Anja's 25 years of relationships are institutionalized, not stuck in her inbox.
+                Centralized journalist relationship system covering Slovenia and Croatia. Tracks every interaction, preference, and beat — so decades of relationships are institutionalized, not stuck in individual inboxes.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -551,7 +551,7 @@ const presentation: PresentationConfig = {
           'Client-facing status page showing campaign progress',
           'Event coordination: venue → permits → branding → media invites',
           'Integration with Google Workspace, calendar, email',
-          'Status dashboards for Andreja to track everything at a glance',
+          'Status dashboards to track everything at a glance',
         ];
 
         return (
@@ -639,7 +639,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4">
-                AI content assistant trained on MPR's tone and past work. Generates first drafts of press releases, pitches, and social content that Kaja and the team then refine. 62% of PR time is content creation — cut it in half.
+                AI content assistant trained on MPR's tone and past work. Generates first drafts of press releases, pitches, and social content that your team then refines. 62% of PR time is content creation — cut it in half.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -719,9 +719,9 @@ const presentation: PresentationConfig = {
 
             <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-lg sm:rounded-xl border border-violet-500/20 p-3 sm:p-4 text-center">
               <p className="text-white text-sm sm:text-lg font-semibold">
-                Annual Value: <span className="text-violet-400">€15,000–€25,000</span>
+                Annual Value: <span className="text-violet-400">€30,000–€50,000</span>
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm">in recovered productive hours (conservative estimate)</p>
+              <p className="text-gray-500 text-xs sm:text-sm">in recovered productive hours + new client capacity</p>
             </div>
           </div>
         );
@@ -921,7 +921,7 @@ const presentation: PresentationConfig = {
             {[
               { value: '12 wks', label: 'To deploy' },
               { value: '15-20 hrs', label: 'Weekly saved' },
-              { value: '€15K+', label: 'Annual value' },
+              { value: '€30K+', label: 'Annual value' },
             ].map((item, i) => (
               <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-4">
                 <p className="text-violet-400 text-lg sm:text-2xl font-bold">{item.value}</p>

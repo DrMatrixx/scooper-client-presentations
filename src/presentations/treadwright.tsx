@@ -58,7 +58,7 @@ const presentation: PresentationConfig = {
 
           <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
             <img
-              src="/treadwright logo.avif"
+              src="/treadwright-logo.avif"
               alt="TreadWright Tires"
               className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl shadow-lg mb-3"
             />

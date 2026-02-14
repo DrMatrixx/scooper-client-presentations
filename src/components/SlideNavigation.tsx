@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { posthog } from '../lib/posthog';
 
 interface SlideNavigationProps {
   currentSlide: number;
@@ -7,41 +6,10 @@ interface SlideNavigationProps {
   onNavigate: (index: number) => void;
   presentationName?: string;
   theme?: 'dark' | 'light';
+  visitedSlides?: Set<number>;
 }
 
-export function SlideNavigation({ currentSlide, totalSlides, onNavigate, presentationName, theme = 'dark' }: SlideNavigationProps) {
-  const goToPrev = () => {
-    const newSlide = Math.max(0, currentSlide - 1);
-    posthog.capture('slide_navigation', {
-      action: 'prev',
-      from_slide: currentSlide,
-      to_slide: newSlide,
-      presentation: presentationName,
-    });
-    onNavigate(newSlide);
-  };
-
-  const goToNext = () => {
-    const newSlide = Math.min(totalSlides - 1, currentSlide + 1);
-    posthog.capture('slide_navigation', {
-      action: 'next',
-      from_slide: currentSlide,
-      to_slide: newSlide,
-      presentation: presentationName,
-    });
-    onNavigate(newSlide);
-  };
-
-  const goToSlide = (index: number) => {
-    posthog.capture('slide_navigation', {
-      action: 'dot_click',
-      from_slide: currentSlide,
-      to_slide: index,
-      presentation: presentationName,
-    });
-    onNavigate(index);
-  };
-
+export function SlideNavigation({ currentSlide, totalSlides, onNavigate, theme = 'dark', visitedSlides }: SlideNavigationProps) {
   const isLight = theme === 'light';
 
   return (
@@ -51,7 +19,7 @@ export function SlideNavigation({ currentSlide, totalSlides, onNavigate, present
         : 'border-white/5 bg-gray-950/80'
     }`}>
       <button
-        onClick={goToPrev}
+        onClick={() => onNavigate(Math.max(0, currentSlide - 1))}
         disabled={currentSlide === 0}
         className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg disabled:opacity-30 transition-all text-sm ${
           isLight
@@ -63,24 +31,37 @@ export function SlideNavigation({ currentSlide, totalSlides, onNavigate, present
         <span className="hidden sm:inline">Prev</span>
       </button>
 
-      <div className="flex items-center gap-1">
-        {Array.from({ length: totalSlides }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goToSlide(i)}
-            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
-              i === currentSlide
-                ? 'bg-gradient-to-r from-amber-500 to-orange-500 w-4 sm:w-6'
-                : isLight
-                  ? 'bg-gray-300 hover:bg-gray-400'
-                  : 'bg-white/20 hover:bg-white/40'
-            }`}
-          />
-        ))}
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          {Array.from({ length: totalSlides }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => onNavigate(i)}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
+                i === currentSlide
+                  ? 'bg-gradient-to-r from-amber-500 to-orange-500 w-4 sm:w-6'
+                  : visitedSlides?.has(i)
+                    ? isLight
+                      ? 'bg-amber-300/50 hover:bg-amber-400/60'
+                      : 'bg-amber-500/30 hover:bg-amber-500/50'
+                    : isLight
+                      ? 'bg-gray-300 hover:bg-gray-400'
+                      : 'bg-white/20 hover:bg-white/40'
+              }`}
+              style={i > 0 && i % 5 === 0 ? { marginLeft: '4px' } : undefined}
+            />
+          ))}
+        </div>
+
+        <span className={`text-xs font-mono tabular-nums ml-2 ${
+          isLight ? 'text-gray-400' : 'text-gray-500'
+        }`}>
+          {currentSlide + 1} / {totalSlides}
+        </span>
       </div>
 
       <button
-        onClick={goToNext}
+        onClick={() => onNavigate(Math.min(totalSlides - 1, currentSlide + 1))}
         disabled={currentSlide === totalSlides - 1}
         className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg disabled:opacity-30 transition-all text-sm ${
           isLight

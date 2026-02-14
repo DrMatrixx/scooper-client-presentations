@@ -3,3 +3,78 @@
 body {
   margin: 0;
 }
+
+/* ─── Centralized shared animations ─── */
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3)); }
+  50% { filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.6)); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-glow { animation: glow 3s ease-in-out infinite; }
+.animate-border-glow { animation: borderGlow 2s ease-in-out infinite; }
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+.animation-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
+
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Staggered content entrance animations ─── */
+
+@keyframes staggerFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-stagger > * > * {
+  animation: staggerFadeUp 0.4s ease-out both;
+}
+
+.slide-stagger > * > *:nth-child(1) { animation-delay: 0ms; }
+.slide-stagger > * > *:nth-child(2) { animation-delay: 60ms; }
+.slide-stagger > * > *:nth-child(3) { animation-delay: 120ms; }
+.slide-stagger > * > *:nth-child(4) { animation-delay: 180ms; }
+.slide-stagger > * > *:nth-child(5) { animation-delay: 240ms; }
+.slide-stagger > * > *:nth-child(6) { animation-delay: 300ms; }
+.slide-stagger > * > *:nth-child(7) { animation-delay: 360ms; }
+.slide-stagger > * > *:nth-child(8) { animation-delay: 420ms; }
+.slide-stagger > * > *:nth-child(9) { animation-delay: 480ms; }
+.slide-stagger > * > *:nth-child(10) { animation-delay: 540ms; }
+
+/* ─── Background orb drift animations ─── */
+
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.97); }
+}
+
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 25px) scale(0.95); }
+  66% { transform: translate(20px, -15px) scale(1.04); }
+}
+
+.orb-drift-1 {
+  animation: orbDrift1 20s ease-in-out infinite;
+}
+
+.orb-drift-2 {
+  animation: orbDrift2 25s ease-in-out infinite;
+}

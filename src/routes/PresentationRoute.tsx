@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'motion/react';
 import type { PresentationConfig } from '../types/presentation';
 import { PresentationShell } from '../components/PresentationShell';
 import { SlideNavigation } from '../components/SlideNavigation';
@@ -19,6 +20,36 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
     const parsed = slideParam ? parseInt(slideParam, 10) : 0;
     return isNaN(parsed) ? 0 : Math.max(0, Math.min(parsed, presentation.slides.length - 1));
   });
+
+  const [direction, setDirection] = useState(0);
+  const [visitedSlides, setVisitedSlides] = useState<Set<number>>(() => new Set([
+    isNaN(slideParam ? parseInt(slideParam, 10) : 0) ? 0 : Math.max(0, Math.min(slideParam ? parseInt(slideParam, 10) : 0, presentation.slides.length - 1))
+  ]));
+
+  const totalSlides = presentation.slides.length;
+  const slideRef = useRef(currentSlide);
+  slideRef.current = currentSlide;
+
+  const navigateTo = useCallback((target: number, action: string) => {
+    const clamped = Math.max(0, Math.min(target, totalSlides - 1));
+    if (clamped === slideRef.current) return;
+
+    setDirection(clamped > slideRef.current ? 1 : -1);
+
+    posthog.capture('slide_navigation', {
+      action,
+      from_slide: slideRef.current,
+      to_slide: clamped,
+      presentation: presentationName,
+    });
+
+    setCurrentSlide(clamped);
+    setVisitedSlides(prev => {
+      const next = new Set(prev);
+      next.add(clamped);
+      return next;
+    });
+  }, [totalSlides, presentationName]);
 
   // Update URL when slide changes
   useEffect(() => {
@@ -42,38 +73,87 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
       presentation_title: presentation.title,
       slide_index: currentSlide,
       slide_id: slideId,
-      total_slides: presentation.slides.length,
+      total_slides: totalSlides,
     });
-  }, [currentSlide, presentationName, presentation.title, presentation.slides]);
+  }, [currentSlide, presentationName, presentation.title, presentation.slides, totalSlides]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault();
-        setCurrentSlide((prev) => Math.min(presentation.slides.length - 1, prev + 1));
+        navigateTo(slideRef.current + 1, 'keyboard_next');
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        setCurrentSlide((prev) => Math.max(0, prev - 1));
+        navigateTo(slideRef.current - 1, 'keyboard_prev');
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [presentation.slides.length]);
+  }, [navigateTo]);
 
   const theme = presentation.theme || 'dark';
 
+  const slideVariants = {
+    enter: (d: number) => ({
+      x: d > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (d: number) => ({
+      x: d > 0 ? -300 : 300,
+      opacity: 0,
+    }),
+  };
+
+  const progressPercent = totalSlides > 1 ? ((currentSlide) / (totalSlides - 1)) * 100 : 100;
+
   return (
     <PresentationShell theme={theme}>
-      <div className="flex-1 flex items-center justify-center p-3 sm:p-6 pb-20 sm:pb-24 overflow-y-auto">
-        {presentation.slides[currentSlide].render()}
+      {/* Progress bar */}
+      <motion.div
+        className="fixed top-0 left-0 h-[2px] z-50 bg-gradient-to-r from-amber-500 to-orange-500"
+        animate={{ width: `${progressPercent}%` }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      />
+
+      <div className="flex-1 flex items-center justify-center p-3 sm:p-6 pb-20 sm:pb-24 overflow-hidden relative">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={currentSlide}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(_e, info) => {
+              if (info.offset.x < -50) {
+                navigateTo(currentSlide + 1, 'swipe_next');
+              } else if (info.offset.x > 50) {
+                navigateTo(currentSlide - 1, 'swipe_prev');
+              }
+            }}
+            className="w-full flex items-center justify-center slide-stagger"
+          >
+            {presentation.slides[currentSlide].render()}
+          </motion.div>
+        </AnimatePresence>
       </div>
+
       <SlideNavigation
         currentSlide={currentSlide}
-        totalSlides={presentation.slides.length}
-        onNavigate={setCurrentSlide}
+        totalSlides={totalSlides}
+        onNavigate={(index) => navigateTo(index, index > currentSlide ? 'dot_next' : index < currentSlide ? 'dot_prev' : 'dot_click')}
         presentationName={presentationName}
         theme={theme}
+        visitedSlides={visitedSlides}
       />
     </PresentationShell>
   );

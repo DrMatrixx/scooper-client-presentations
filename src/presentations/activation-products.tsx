@@ -1,15 +1,30 @@
 import type { PresentationConfig } from '../types/presentation';
 import { GradientText } from '../components/GradientText';
 import {
-  TrendingUp, DollarSign, Users, Clock, Target, CheckCircle,
-  ArrowRight, Bot, Shield, Rocket, Layers, Sparkles, Package, RotateCcw,
-  BookOpen, HelpCircle, Star, ShoppingCart, MessageSquare
+  Users,
+  Clock,
+  MessageSquare,
+  ShoppingCart,
+  TrendingUp,
+  ArrowRight,
+  CheckCircle,
+  Bot,
+  Rocket,
+  AlertCircle,
+  Sparkles,
+  Zap,
+  Shield,
+  Star,
+  RotateCcw,
+  BookOpen,
+  HelpCircle,
 } from 'lucide-react';
 
 const presentation: PresentationConfig = {
   title: 'Activation Products',
   description: 'AI Automation Proposal - Scaling Customer Health Journeys Through Intelligent Automation',
   slides: [
+    // Slide 1: Title
     {
       id: 'title',
       render: () => (
@@ -81,12 +96,12 @@ const presentation: PresentationConfig = {
             <div className="relative glass bg-gray-950/80 rounded-2xl p-4 sm:p-5 border border-emerald-500/30">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                  <Sparkles size={14} className="text-emerald-400" />
+                  <Zap size={14} className="text-emerald-400" />
                 </div>
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                5 automation modules across 90 days to achieve <span className="text-white font-bold">30–40% fewer support tickets</span>, <span className="text-white font-bold">15–25% more repeat purchases</span>, and <span className="text-white font-bold">$250K–$600K annual impact</span>
+                5 automation modules to achieve <span className="text-white font-bold">30–40% fewer support tickets</span>, <span className="text-white font-bold">15–25% more repeat purchases</span>, and <span className="text-white font-bold">$250K–$600K annual impact</span>
               </p>
             </div>
           </div>
@@ -99,538 +114,900 @@ const presentation: PresentationConfig = {
         </div>
       ),
     },
+
+    // Slide 2: Current Reality
     {
-      id: 'overview',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Overview</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Executive Summary</h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            {[
-              { icon: Target, label: 'Opportunity', text: 'Connect existing tools into an intelligent customer journey', color: 'from-amber-500/20 to-amber-600/10' },
-              { icon: TrendingUp, label: 'Impact', text: '$250K–$600K annual recovered revenue & savings', color: 'from-emerald-500/20 to-emerald-600/10' },
-              { icon: Clock, label: 'Timeline', text: '90 days with quick wins in Week 1', color: 'from-cyan-500/20 to-cyan-600/10' },
-              { icon: DollarSign, label: 'Capacity', text: '15–25 hrs/week freed from repetitive work', color: 'from-violet-500/20 to-violet-600/10' }
-            ].map((item, i) => (
-              <div key={i} className={`relative overflow-hidden rounded-2xl border border-white/10 p-5 bg-gradient-to-br ${item.color}`}>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
-                    <item.icon size={18} className="text-white" />
+      id: 'reality',
+      render: () => {
+        const tasks = [
+          { task: 'Subscription support requests', time: '20-30 min/ticket', issue: 'Manual pause, skip, swap, cancel processing via Gorgias' },
+          { task: 'Post-purchase product education', time: '3-5 hrs/wk', issue: 'Answering "how do I use this?" and "when will I see results?"' },
+          { task: 'Abandoned cart follow-up', time: 'Revenue loss', issue: 'Generic or no recovery — no health-goal personalization' },
+          { task: 'Affiliate inquiry management', time: '15-20 min each', issue: 'Onboarding, commissions, promo assets via manual email' },
+          { task: 'Review & social proof management', time: '2-3 hrs/wk', issue: '7,467+ reviews across platforms — no automated routing' },
+          { task: 'Order & shipping inquiries (WISMO)', time: '30-40% tickets', issue: '"Where is my order?" consuming Gorgias capacity' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Current Reality</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              Where Your Team's Time Goes
+            </h2>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
+              <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-5">
+                A family-founded DTC supplement brand with ~50 employees, 150,000+ customers, and a subscription-first model — creating operational demands that consume your team's bandwidth daily.
+              </p>
+
+              <div className="space-y-2 sm:space-y-3">
+                {tasks.map((item, i) => (
+                  <div key={i} className="flex items-center justify-between gap-2 p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white text-sm sm:text-base font-medium truncate">{item.task}</p>
+                      <p className="text-gray-500 text-xs hidden sm:block">{item.issue}</p>
+                    </div>
+                    <div className="text-amber-400 font-semibold text-xs sm:text-sm whitespace-nowrap">
+                      {item.time}
+                    </div>
                   </div>
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</p>
-                  <p className="text-white text-sm font-medium leading-relaxed">{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-5">
-              <div className="flex items-center gap-3 mb-4">
-                <Package size={16} className="text-amber-400" />
-                <p className="text-white font-medium text-sm">About Activation Products</p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { text: 'DTC Natural Supplements', icon: '💊' },
-                  { text: 'Cobourg, Ontario, Canada', icon: '🍁' },
-                  { text: 'Family-Founded Brand', icon: '👨‍👩‍👦' },
-                  { text: '~$16.5M Revenue', icon: '💰' },
-                  { text: '~50 Employees', icon: '👥' },
-                  { text: '150,000+ Customers', icon: '🌍' }
-                ].map((item, i) => (
-                  <span key={i} className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-xl text-gray-300 text-xs border border-white/5">
-                    <span>{item.icon}</span>
-                    {item.text}
-                  </span>
                 ))}
               </div>
             </div>
-            <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-5">
-              <div className="flex items-center gap-3 mb-4">
-                <Layers size={16} className="text-amber-400" />
-                <p className="text-white font-medium text-sm">Detected Tool Stack</p>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {['Shopify', 'Gorgias', 'Facebook Pixel', 'Shogun'].map((tool, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-amber-500/10 rounded-lg text-amber-300 text-xs border border-amber-500/10">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-              <div className="bg-amber-500/5 rounded-xl p-3 border border-amber-500/10">
-                <p className="text-amber-400/80 text-xs font-medium mb-1">Maturity: Tool-Rich, Disconnected</p>
-                <p className="text-gray-400 text-xs leading-relaxed">You have the right pieces in place — they need the connective tissue.</p>
-              </div>
+
+            <div className="text-center">
+              <p className="text-gray-400 text-xs sm:text-sm">
+                This adds up to <span className="text-white font-bold">25-35% of team capacity</span> consumed by repetitive tasks that automation could handle.
+              </p>
             </div>
           </div>
-        </div>
-      ),
+        );
+      },
     },
+
+    // Slide 3: Cost
     {
-      id: 'operationalReality',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Current Reality</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">What Your Team Handles <GradientText>Every Day</GradientText></h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            {[
-              { icon: RotateCcw, title: 'Subscription Support', time: '20–30 min/ticket', desc: 'Manual pause, skip, swap, cancel processing through Gorgias' },
-              { icon: BookOpen, title: 'Product Education', time: '3–5 hrs/week', desc: 'Answering "how do I use this?" and "when will I see results?"' },
-              { icon: ShoppingCart, title: 'Cart Abandonment', time: 'Revenue loss', desc: 'Generic or no recovery — no health-goal personalization' },
-              { icon: Users, title: 'Affiliate Inquiries', time: '15–20 min each', desc: 'Onboarding, commissions, promo assets via manual email' },
-              { icon: Star, title: 'Review Management', time: '2–3 hrs/week', desc: '7,467+ reviews across platforms — no automated routing' },
-              { icon: HelpCircle, title: 'WISMO Inquiries', time: '30–40% of tickets', desc: '"Where is my order?" consuming support capacity' }
-            ].map((item, i) => (
-              <div key={i} className="group bg-gradient-to-br from-rose-500/5 to-transparent rounded-2xl border border-rose-500/10 p-4 hover:border-rose-500/20 transition-all">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center">
-                    <item.icon size={16} className="text-rose-400" />
+      id: 'cost',
+      render: () => {
+        const metrics = [
+          { icon: ShoppingCart, value: '$150K-$400K', metric: 'Cart Abandonment', desc: '70% carts lost, no health-goal recovery' },
+          { icon: RotateCcw, value: '20-30%', metric: 'Subscription Churn', desc: 'No pause/swap at cancellation intent' },
+          { icon: MessageSquare, value: '$19.5K-$45.5K', metric: 'Support Drain', desc: '15-25 hrs/wk on automatable inquiries' },
+          { icon: Shield, value: 'Trust Risk', metric: 'Data Fragmentation', desc: 'Gorgias + Shopify + email disconnected' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Cost</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              What This Actually Costs
+            </h2>
+
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
+              {metrics.map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5">
+                  <div className="flex items-start justify-between mb-2 sm:mb-3">
+                    <item.icon size={16} className="text-rose-400 sm:w-5 sm:h-5" />
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-sm">{item.title}</h3>
-                    <span className="text-rose-400 text-xs font-medium">{item.time}</span>
-                  </div>
+                  <p className="text-rose-400 text-lg sm:text-2xl font-bold mb-1">{item.value}</p>
+                  <p className="text-white font-semibold text-sm sm:text-base mb-1">{item.metric}</p>
+                  <p className="text-gray-500 text-xs hidden sm:block">{item.desc}</p>
                 </div>
-                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <div className="bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 p-3 sm:p-4 text-center">
+              <p className="text-rose-400 text-xs sm:text-sm">
+                Total estimated annual impact: <span className="text-white font-bold">$250,000 – $600,000</span>
+              </p>
+            </div>
           </div>
-          <div className="bg-gradient-to-r from-rose-500/5 via-rose-500/10 to-rose-500/5 rounded-2xl border border-rose-500/10 p-5 text-center">
-            <p className="text-rose-400 font-bold text-2xl mb-1">25–35%</p>
-            <p className="text-gray-400 text-sm">of team capacity consumed by repetitive tasks that could be automated</p>
-          </div>
-        </div>
-      ),
+        );
+      },
     },
+
+    // Slide 4: Competitive Gap
     {
-      id: 'hiddenCosts',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">The Cost of Staying Manual</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Revenue You're <GradientText>Leaving Behind</GradientText></h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
-            {[
-              { title: 'Unrecovered Carts', value: '$150K–$400K', desc: '70.22% average abandonment rate. Products at $39–$99 AOV. Top brands recover 8x more than average.', icon: ShoppingCart, color: 'from-rose-500/10 to-rose-600/5', borderColor: 'border-rose-500/20', valueColor: 'text-rose-400' },
-              { title: 'Subscription Churn', value: '20–30%', desc: 'Subscribers lost who would have stayed if offered pause or swap at the moment of cancellation intent.', icon: RotateCcw, color: 'from-orange-500/10 to-orange-600/5', borderColor: 'border-orange-500/20', valueColor: 'text-orange-400' },
-              { title: 'Support Capacity Drain', value: '$19.5K–$45.5K', desc: '15–25 hours/week on automatable inquiries at $25–35/hr. WISMO, subscription changes, product usage Qs.', icon: MessageSquare, color: 'from-amber-500/10 to-amber-600/5', borderColor: 'border-amber-500/20', valueColor: 'text-amber-400' },
-              { title: 'Data Fragmentation', value: 'Trust Risk', desc: 'Disconnected Gorgias, Shopify, and email data. Customers with issues still get promos for problem products.', icon: Shield, color: 'from-violet-500/10 to-violet-600/5', borderColor: 'border-violet-500/20', valueColor: 'text-violet-400' }
-            ].map((item, i) => (
-              <div key={i} className={`bg-gradient-to-br ${item.color} rounded-2xl border ${item.borderColor} p-5`}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                    <item.icon size={18} className={item.valueColor} />
+      id: 'competitive',
+      render: () => {
+        const competitors = [
+          { name: 'Dr. Mercola', features: 'Sophisticated post-purchase education sequences, AI-driven product recommendation quizzes, subscription management portals' },
+          { name: 'Ancient Nutrition', features: 'Automated onboarding flows, personalized product pairing, one-click pause/swap subscription management' },
+          { name: 'Garden of Life', features: 'Multi-step education sequences, intelligent abandoned cart recovery, proactive replenishment reminders' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Competitive Gap</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              Your Competitors Are Already <GradientText>Automating</GradientText>
+            </h2>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
+              <div className="space-y-3 sm:space-y-4">
+                {competitors.map((item, i) => (
+                  <div key={i} className="p-3 sm:p-4 bg-white/5 rounded-lg sm:rounded-xl">
+                    <p className="text-white font-semibold text-sm sm:text-base mb-1">{item.name}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">{item.features}</p>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-sm">{item.title}</h3>
-                    <span className={`${item.valueColor} text-lg font-bold`}>{item.value}</span>
-                  </div>
-                </div>
-                <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4 text-center">
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Activation Products wins on <span className="text-amber-400 font-bold">founder trust and product quality</span>.
+                But when competitors automate education and retention, the <span className="text-white font-bold">experience gap compounds every quarter</span>.
+              </p>
+            </div>
           </div>
-          <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 rounded-2xl border border-amber-500/20 p-6 text-center">
-            <p className="text-amber-400/80 text-xs uppercase tracking-wider mb-2 font-medium">Estimated Total Annual Opportunity</p>
-            <p className="text-white font-bold text-3xl sm:text-4xl mb-2">$250,000–$600,000</p>
-            <p className="text-gray-400 text-sm">in recovered revenue, reduced costs, and increased customer lifetime value</p>
-          </div>
-        </div>
-      ),
+        );
+      },
     },
+
+    // Slide 5: Opportunity - Today vs Automated
     {
-      id: 'solutions',
-      render: () => (
-        <div className="w-full max-w-5xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Solution Architecture</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Five Automation <GradientText>Modules</GradientText></h2>
-          </div>
-          <div className="mb-6">
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { layer: 'Layer 1', name: 'Lead & Revenue Ops', color: 'from-amber-500 to-orange-500' },
-                { layer: 'Layer 2', name: 'Workflow & Process', color: 'from-amber-600/80 to-orange-600/80' },
-                { layer: 'Layer 3', name: 'Intelligence & Decisions', color: 'from-amber-700/60 to-orange-700/60' }
-              ].map((l, i) => (
-                <div key={i} className={`bg-gradient-to-r ${l.color} rounded-xl p-3 text-center border border-white/10`}>
-                  <p className="text-white/60 text-xs">{l.layer}</p>
-                  <p className="text-white font-semibold text-sm">{l.name}</p>
+      id: 'opportunity',
+      render: () => {
+        const comparisons = [
+          { process: 'New customer buys Ease Magnesium', today: 'Order confirmation only. No education.', automated: '7-day onboarding: Day 1 guide, Day 3 expectations, Day 7 cross-sell' },
+          { process: 'Cart abandoned with Black Cumin Oil', today: 'Generic reminder email (if any)', automated: '1hr immunity email → 24hr bundle suggestion → 72hr FAQ' },
+          { process: 'Subscriber wants to skip a month', today: 'Emails support → 15-30 min manual process', automated: 'Self-service portal: skip in 2 clicks, zero tickets' },
+          { process: '"Where is my order?" inquiry', today: 'Gorgias ticket → manual lookup (10-15 min)', automated: 'Proactive updates + auto-response with live tracking' },
+          { process: 'Customer hasn\'t reordered in 60 days', today: 'No re-engagement. Silent churn.', automated: 'Day 45 check-in → Day 60 replenishment → Day 75 win-back' },
+        ];
+        const summaryMetrics = [
+          { icon: TrendingUp, metric: '$250K-$600K', label: 'Annual Impact' },
+          { icon: Clock, metric: '<2 min', label: 'Response Time' },
+          { icon: Sparkles, metric: '15-25 hrs', label: 'Reclaimed/Week' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Opportunity</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              What If This Was <GradientText>Automated</GradientText>?
+            </h2>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-4 sm:mb-5">
+              <div className="space-y-2 sm:space-y-3">
+                {comparisons.map((item, i) => (
+                  <div key={i} className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
+                    <p className="text-amber-400 text-xs font-semibold mb-1">{item.process}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="flex items-start gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-1.5" />
+                        <span className="text-gray-400 text-xs">{item.today}</span>
+                      </div>
+                      <div className="flex items-start gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
+                        <span className="text-gray-300 text-xs">{item.automated}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              {summaryMetrics.map((item, i) => (
+                <div key={i} className="bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 p-2 sm:p-4 text-center">
+                  <item.icon size={16} className="text-emerald-400 mx-auto mb-1 sm:mb-2 sm:w-5 sm:h-5" />
+                  <p className="text-white text-base sm:text-xl font-bold">{item.metric}</p>
+                  <p className="text-gray-500 text-xs">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-            {[
-              { num: '01', title: 'Cart & Browse Recovery', desc: 'Health-goal-aware abandoned cart flows', icon: ShoppingCart, impact: '$150K–$400K', complexity: 'Low' },
-              { num: '02', title: 'Wellness Onboarding', desc: 'Product-specific post-purchase education', icon: BookOpen, impact: '+15–25% RPR', complexity: 'Medium' },
-              { num: '03', title: 'Subscription Autopilot', desc: 'Self-service, churn prevention, win-back', icon: RotateCcw, impact: '-40–60% tickets', complexity: 'Medium' },
-              { num: '04', title: 'WISMO Deflection', desc: 'Proactive shipping & auto-resolve inquiries', icon: HelpCircle, impact: '-30–40% volume', complexity: 'Low' },
-              { num: '05', title: 'Customer Intelligence', desc: 'Replenishment, VIP scoring, churn prediction', icon: Users, impact: '+10–20% LTV', complexity: 'High' }
-            ].map((module, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl border bg-gradient-to-br from-amber-500/10 to-orange-500/5 border-amber-500/20 hover:border-amber-500/40 p-4 transition-all hover:scale-[1.02]">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform" />
-                <div className="relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-amber-500/30 font-bold text-2xl">{module.num}</span>
-                    <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                      <module.icon size={14} className="text-amber-400" />
-                    </div>
+        );
+      },
+    },
+
+    // Slide 6: Solution Architecture
+    {
+      id: 'whatChanges',
+      render: () => {
+        const automations = [
+          { num: '01', title: 'Cart Recovery', desc: 'Health-goal-aware flows', icon: ShoppingCart, layer: 'Revenue' },
+          { num: '02', title: 'Onboarding', desc: 'Post-purchase education', icon: BookOpen, layer: 'Operations' },
+          { num: '03', title: 'Subscription', desc: 'Lifecycle autopilot', icon: RotateCcw, layer: 'Operations' },
+          { num: '04', title: 'WISMO', desc: 'Proactive support', icon: HelpCircle, layer: 'Operations' },
+          { num: '05', title: 'Intelligence', desc: 'Replenishment & VIP', icon: Users, layer: 'Intelligence' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Solution</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              5 Automations That <GradientText>Transform</GradientText> Operations
+            </h2>
+
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
+              {automations.map((item, i) => (
+                <div
+                  key={i}
+                  className={`bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4 text-center hover:border-amber-500/30 transition-all ${
+                    i === automations.length - 1 && automations.length % 2 === 1 ? 'col-span-2 sm:col-span-1' : ''
+                  }`}
+                >
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-lg bg-amber-500/20 flex items-center justify-center mb-2 sm:mb-3">
+                    <item.icon size={16} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
                   </div>
-                  <h3 className="text-white font-semibold text-sm mb-1">{module.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed mb-3">{module.desc}</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-xs">Impact</span>
-                      <span className="text-emerald-400 text-xs font-medium">{module.impact}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-xs">Complexity</span>
-                      <span className="text-amber-400 text-xs font-medium">{module.complexity}</span>
-                    </div>
-                  </div>
+                  <p className="text-amber-400 text-xs mb-0.5 sm:mb-1">{item.num}</p>
+                  <p className="text-white font-semibold text-xs sm:text-sm mb-0.5 sm:mb-1">{item.title}</p>
+                  <p className="text-gray-500 text-xs hidden sm:block">{item.desc}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 text-center">
-            <p className="text-gray-500 text-sm">Built on your existing stack — <span className="text-gray-300">Shopify + Gorgias + email/SMS platform</span> — no rip-and-replace required</p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 'deepdive-revenue',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/20">
-              <span className="text-amber-400 font-bold text-lg">01-02</span>
+              ))}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">Revenue Recovery & Onboarding</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl border border-white/10 p-6 hover:border-amber-500/20 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                  <ShoppingCart size={18} className="text-amber-400" />
-                </div>
-                <h3 className="text-white font-semibold text-base">Cart & Browse Recovery</h3>
-              </div>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">Health-goal-aware recovery flows that personalize based on immunity, gut health, joint health, etc.</p>
-              <ul className="space-y-2.5 mb-6">
-                {['Categorize by health interest from browse/cart behavior', '1hr → 24hr → 72hr progressive email sequences', 'Dynamic product recs & relevant customer testimonials', 'SMS backup for high-value carts (bundles >$100)', 'Revenue attribution tracking per recovery email'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                    <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/10">
-                  <p className="text-emerald-400 font-bold text-2xl">15–25%</p>
-                  <p className="text-gray-500 text-xs mt-1">recovery increase</p>
-                </div>
-                <div className="bg-cyan-500/10 rounded-xl p-4 text-center border border-cyan-500/10">
-                  <p className="text-cyan-400 font-bold text-2xl">$150K+</p>
-                  <p className="text-gray-500 text-xs mt-1">annual recovery</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl border border-white/10 p-6 hover:border-amber-500/20 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                  <BookOpen size={18} className="text-amber-400" />
-                </div>
-                <h3 className="text-white font-semibold text-base">Wellness Onboarding System</h3>
-              </div>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">Product-specific education sequences for first 30 days — dosing, application, timelines, and cross-sells.</p>
-              <ul className="space-y-2.5 mb-6">
-                {['Day 1: "How to Get the Most From [Product]"', 'Day 3: "What to Expect This Week" + founder story', 'Day 7: Complementary product suggestion', 'Dynamic content: first-time vs. returning customer', 'Built-in Day 7 feedback capture'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                    <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/10">
-                  <p className="text-emerald-400 font-bold text-2xl">+15–25%</p>
-                  <p className="text-gray-500 text-xs mt-1">repeat purchases</p>
-                </div>
-                <div className="bg-violet-500/10 rounded-xl p-4 text-center border border-violet-500/10">
-                  <p className="text-violet-400 font-bold text-2xl">-20–30%</p>
-                  <p className="text-gray-500 text-xs mt-1">usage support tickets</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-5 bg-white/[0.03] rounded-xl border border-white/10 p-4 flex items-center justify-center gap-3">
-            <Layers size={14} className="text-gray-500" />
-            <p className="text-gray-400 text-sm"><span className="text-gray-300">Tech Stack:</span> Shopify + Email/SMS Platform (Klaviyo) + Existing Blog Content</p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 'deepdive-retention',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/20">
-              <span className="text-amber-400 font-bold text-lg">03-04</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">Subscription & Support Automation</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl border border-white/10 p-6 hover:border-amber-500/20 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                  <RotateCcw size={18} className="text-amber-400" />
-                </div>
-                <h3 className="text-white font-semibold text-base">Subscription Lifecycle Autopilot</h3>
-              </div>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">Turn the 60-day minimum / 10-day notice from a friction point into a retention advantage.</p>
-              <ul className="space-y-2.5 mb-6">
-                {['7-day & 3-day proactive renewal reminders', 'Self-service portal: pause, skip, swap, adjust frequency', 'Cancellation intervention with alternative offers', 'Churn-risk scoring from engagement patterns', 'Win-back sequences at Day 30/60/90'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                    <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/10">
-                  <p className="text-emerald-400 font-bold text-2xl">-20–30%</p>
-                  <p className="text-gray-500 text-xs mt-1">sub support tickets</p>
-                </div>
-                <div className="bg-violet-500/10 rounded-xl p-4 text-center border border-violet-500/10">
-                  <p className="text-violet-400 font-bold text-2xl">+10–15%</p>
-                  <p className="text-gray-500 text-xs mt-1">sub retention</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl border border-white/10 p-6 hover:border-amber-500/20 transition-colors">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                  <HelpCircle size={18} className="text-amber-400" />
-                </div>
-                <h3 className="text-white font-semibold text-base">Proactive Support & WISMO Deflection</h3>
-              </div>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">Eliminate 30–40% of Gorgias ticket volume with proactive notifications and auto-resolution.</p>
-              <ul className="space-y-2.5 mb-6">
-                {['Proactive shipping milestone notifications', 'Gorgias auto-response for WISMO with live tracking', 'Intelligent ticket categorization & routing', 'Post-delivery satisfaction check-in', 'Self-service return/exchange initiation'].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                    <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/10">
-                  <p className="text-emerald-400 font-bold text-2xl">-30–40%</p>
-                  <p className="text-gray-500 text-xs mt-1">total ticket volume</p>
-                </div>
-                <div className="bg-cyan-500/10 rounded-xl p-4 text-center border border-cyan-500/10">
-                  <p className="text-cyan-400 font-bold text-2xl">-50–60%</p>
-                  <p className="text-gray-500 text-xs mt-1">WISMO tickets</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-5 bg-white/[0.03] rounded-xl border border-white/10 p-4 flex items-center justify-center gap-3">
-            <Layers size={14} className="text-gray-500" />
-            <p className="text-gray-400 text-sm"><span className="text-gray-300">Tech Stack:</span> Gorgias + Shopify + Subscription App + Shipping Carrier APIs</p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 'impact',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Measurable Transformation</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Projected <GradientText>Impact</GradientText></h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            {[
-              { label: 'Response Time', value: '90–95%', sub: 'reduction', desc: 'From hours to minutes for common inquiries', color: 'from-emerald-500/20 to-emerald-600/10' },
-              { label: 'Cart Recovery', value: '15–25%', sub: 'increase', desc: 'Health-goal personalization above industry avg', color: 'from-cyan-500/20 to-cyan-600/10' },
-              { label: 'Hours Reclaimed', value: '15–25', sub: 'per week', desc: 'Equivalent of 1–2 full-time team members', color: 'from-violet-500/20 to-violet-600/10' },
-              { label: 'Repeat Purchases', value: '15–25%', sub: 'increase', desc: 'From onboarding + replenishment reminders', color: 'from-amber-500/20 to-amber-600/10' }
-            ].map((metric, i) => (
-              <div key={i} className={`relative overflow-hidden rounded-2xl border border-white/10 p-5 bg-gradient-to-br ${metric.color}`}>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="relative">
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">{metric.label}</p>
-                  <p className="text-white font-bold text-2xl">{metric.value}</p>
-                  <p className="text-white/60 text-xs mb-2">{metric.sub}</p>
-                  <p className="text-gray-400 text-xs leading-relaxed">{metric.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 rounded-2xl border border-amber-500/20 p-6 mb-6">
-            <div className="text-center mb-4">
-              <p className="text-amber-400/80 text-xs uppercase tracking-wider mb-2 font-medium">Estimated Annual Impact</p>
-              <p className="text-white font-bold text-3xl sm:text-4xl">$250,000–$600,000</p>
-            </div>
-            <div className="grid grid-cols-4 gap-3 text-center">
+
+            <div className="mt-4 sm:mt-5 grid grid-cols-3 gap-2 sm:gap-3">
               {[
-                { label: 'Cart Recovery', value: '$150K–$400K' },
-                { label: 'Sub Retention', value: '$50K–$100K' },
-                { label: 'Labor Savings', value: '$20K–$45K' },
-                { label: 'LTV Uplift', value: '$30K–$55K' }
+                { label: 'Layer 1: Revenue', desc: 'Lead & conversion operations' },
+                { label: 'Layer 2: Operations', desc: 'Workflow & process automation' },
+                { label: 'Layer 3: Intelligence', desc: 'Decision support & insights' },
               ].map((item, i) => (
-                <div key={i} className="bg-white/5 rounded-xl p-3 border border-white/5">
-                  <p className="text-white font-semibold text-sm">{item.value}</p>
-                  <p className="text-gray-500 text-xs mt-1">{item.label}</p>
+                <div key={i} className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl text-center">
+                  <p className="text-amber-400 font-semibold text-xs sm:text-sm mb-0.5">{item.label}</p>
+                  <p className="text-gray-500 text-xs hidden sm:block">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-5">
-            <div className="flex items-center gap-3 mb-3">
-              <Users size={16} className="text-amber-400" />
-              <p className="text-white font-medium text-sm">Capacity Reclaimed = 1–2 Full-Time Team Members</p>
+        );
+      },
+    },
+
+    // Slide 7: Module 1 - Cart & Browse Recovery
+    {
+      id: 'auto1',
+      render: () => {
+        const capabilities = [
+          'Categorize by health interest from browse/cart behavior (immunity, gut, joint, etc.)',
+          '1hr → 24hr → 72hr progressive email sequences with relevant social proof',
+          'Dynamic product recommendations & customer testimonials per segment',
+          'SMS backup for high-value carts (bundles >$100)',
+          'Revenue attribution tracking per recovery email',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <ShoppingCart size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 01 — Revenue Layer</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Cart & Browse Recovery Engine</h2>
+              </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              23–40 hours/week freed from repetitive tasks. Your team refocuses on high-value customer conversations, content creation, affiliate growth, and product development — the work that actually grows the business.
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                Health-goal-aware recovery flows that personalize messaging based on customer's interest — immunity, gut health, joint health, detox — instead of generic "you left something behind" emails.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">~70%</p>
+                  <p className="text-gray-500 text-xs">Carts lost, $0 recovered</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">15-25%</p>
+                  <p className="text-gray-500 text-xs">Recovery rate increase</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> $150,000–$400,000 in annual recovered revenue
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 8: Module 2 - Wellness Onboarding
+    {
+      id: 'auto2',
+      render: () => {
+        const capabilities = [
+          'Day 1: "How to Get the Most From [Product]" — specific usage instructions',
+          'Day 3: "What to Expect This Week" — managing expectations + founder story',
+          'Day 7: Complementary product suggestion based on purchase mapping',
+          'Dynamic content: first-time buyer vs. returning customer trying new product',
+          'Built-in Day 7 feedback capture ("How\'s your experience so far?")',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <BookOpen size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 02 — Operations Layer</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Wellness Onboarding System</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                Product-specific education sequences for the first 30 days — dosing protocols, application methods, expected timelines, and cross-sell suggestions. Each product gets its own tailored onboarding journey.
+              </p>
+
+              <div className="bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-l-2 border-amber-500/50">
+                <p className="text-gray-500 text-xs mb-1">Real scenario:</p>
+                <p className="text-gray-300 text-xs sm:text-sm italic">
+                  Customer buys Ease Magnesium ($39). Today: receives order confirmation, silence until next promo email. Automated: Day 1 application guide (20-40 sprays, best absorption points), Day 3 "what to expect," Day 7 Perfect K2D3 suggestion for calcium-magnesium balance.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">No follow-up</p>
+                  <p className="text-gray-500 text-xs">Usage Qs flood Gorgias</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">+15-25%</p>
+                  <p className="text-gray-500 text-xs">Repeat purchase rate</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 20-30% reduction in product usage support tickets
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 9: Module 3 - Subscription Lifecycle
+    {
+      id: 'auto3',
+      render: () => {
+        const capabilities = [
+          '7-day and 3-day proactive renewal reminder emails',
+          'Self-service portal: pause, skip, swap product, adjust frequency',
+          'Cancellation intervention flow with alternative offers (pause, swap)',
+          'Churn-risk scoring based on engagement and ordering patterns',
+          'Win-back sequences at Day 30, 60, and 90 after cancellation',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <RotateCcw size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 03 — Operations Layer</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Subscription Lifecycle Autopilot</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                Turns the 60-day minimum subscription with 10-business-day cancellation notice from a friction point into a retention advantage — with proactive reminders, self-service management, and intelligent save flows.
+              </p>
+
+              <div className="bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-l-2 border-rose-500/50">
+                <p className="text-gray-500 text-xs mb-1">Today's reality:</p>
+                <p className="text-gray-400 text-xs sm:text-sm italic">
+                  Customer emails support to skip a month → waits for response → team member verifies subscription, checks timing → processes change → confirms via email. Total: 15-30 minutes per request. Customer who wants to cancel has to plan 10 days ahead — friction that creates negative sentiment.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">15-30 min</p>
+                  <p className="text-gray-500 text-xs">Per subscription change</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">2 clicks</p>
+                  <p className="text-gray-500 text-xs">Zero-ticket self-service</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 20-30% reduction in subscription support tickets, 10-15% retention improvement
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 10: Module 4 - WISMO Deflection
+    {
+      id: 'auto4',
+      render: () => {
+        const capabilities = [
+          'Proactive shipping milestone notifications (shipped, in transit, delivered)',
+          'Gorgias auto-response for WISMO queries with real-time tracking data',
+          'Intelligent ticket categorization and routing for non-routine inquiries',
+          'Post-delivery satisfaction check-in (feeds into review collection)',
+          'Self-service return/exchange initiation portal',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <HelpCircle size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 04 — Operations Layer</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Proactive Support & WISMO Deflection</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                Eliminates 30-40% of Gorgias ticket volume by sending proactive shipping notifications and auto-resolving order status inquiries — so your support team focuses on complex, high-value interactions.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">30-40%</p>
+                  <p className="text-gray-500 text-xs">Tickets are WISMO</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">-50-60%</p>
+                  <p className="text-gray-500 text-xs">WISMO tickets eliminated</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 30-40% reduction in total Gorgias ticket volume
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 11: Module 5 - Customer Intelligence
+    {
+      id: 'auto5',
+      render: () => {
+        const capabilities = [
+          'Product-specific replenishment timing (e.g., Ease Magnesium 250ml ≈ 6-8 weeks)',
+          'Automated replenishment reminders with one-click reorder links',
+          'Customer health scoring based on engagement, purchase frequency, and support',
+          'VIP segmentation with personalized offers and early access',
+          'Churn prediction based on behavioral signals (declining engagement, missed windows)',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <Users size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 05 — Intelligence Layer</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Customer Intelligence & Replenishment</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                AI-driven customer segmentation that tracks purchase patterns and product usage timelines to trigger perfectly-timed replenishment reminders, cross-sell suggestions, and VIP recognition.
+              </p>
+
+              <div className="bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-l-2 border-amber-500/50">
+                <p className="text-gray-500 text-xs mb-1">Real scenario:</p>
+                <p className="text-gray-300 text-xs sm:text-sm italic">
+                  Customer finishes their bottle of Solaris. Today: no reminder, they drift away. Automated: Day 40 — "Running low on Solaris? Reorder now." Day 55 — "It's been a while — how's your experience?" Day 70 — personalized win-back with health stack suggestion.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Reactive</p>
+                  <p className="text-gray-500 text-xs">Customers churn silently</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Predictive</p>
+                  <p className="text-gray-500 text-xs">Perfectly-timed reminders</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 10-20% increase in repeat purchase rate, 15-25% LTV improvement
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 12: Expected Results
+    {
+      id: 'results',
+      render: () => {
+        const results = [
+          { icon: Clock, metric: 'Response Time', before: 'Hours/Days', after: '<2 minutes' },
+          { icon: ShoppingCart, metric: 'Cart Recovery', before: '~0%', after: '15-25%' },
+          { icon: RotateCcw, metric: 'Sub Tickets', before: 'All manual', after: '-20-30%' },
+          { icon: Star, metric: 'Repeat Purchases', before: 'Baseline', after: '+15-25%' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Expected Results</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Measurable Transformation</h2>
+
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
+              {results.map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <item.icon size={14} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
+                    <p className="text-white font-semibold text-xs sm:text-base">{item.metric}</p>
+                  </div>
+                  <div className="flex items-center gap-1 sm:gap-3">
+                    <div className="flex-1 p-1.5 sm:p-2 bg-white/5 rounded-lg text-center">
+                      <p className="text-gray-500 text-xs">Before</p>
+                      <p className="text-gray-400 font-medium text-xs sm:text-sm">{item.before}</p>
+                    </div>
+                    <ArrowRight size={12} className="text-amber-400 shrink-0 sm:w-4 sm:h-4" />
+                    <div className="flex-1 p-1.5 sm:p-2 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-emerald-400 text-xs">After</p>
+                      <p className="text-white font-medium text-xs sm:text-sm">{item.after}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-3 sm:p-4 text-center mb-3">
+              <p className="text-white text-sm sm:text-lg font-semibold">
+                Estimated Annual Revenue Impact: <span className="text-amber-400">$250,000 – $600,000</span>
+              </p>
+              <p className="text-gray-500 text-xs sm:text-sm">Cart recovery + subscription retention + labor savings + LTV uplift</p>
+            </div>
+
+            <div className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-3 text-center">
+              <p className="text-gray-400 text-xs sm:text-sm">
+                Equivalent to adding <span className="text-white font-bold">1-2 full-time team members</span> — without a single new hire
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 13: Why Now
+    {
+      id: 'whyNow',
+      render: () => {
+        const reasons = [
+          { icon: TrendingUp, title: 'Brand Momentum', desc: 'Recently refreshed website and branding, active campaigns — signals investment in growth that automation amplifies' },
+          { icon: Users, title: '150,000+ Customer Base', desc: 'At this scale, manual processes compound. Every month widens the gap between current and potential performance' },
+          { icon: Shield, title: 'Tool-Rich, Disconnected', desc: 'Shopify, Gorgias, Shogun, Facebook Pixel all in place — they just need the connective tissue to work together' },
+          { icon: AlertCircle, title: 'Competitors Are Automating', desc: 'Dr. Mercola, Ancient Nutrition, Garden of Life already run automated onboarding, quizzes, and subscription portals' },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Why Now</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              The <GradientText>Inflection Point</GradientText>
+            </h2>
+
+            <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-5">
+              {reasons.map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5 flex items-start gap-3 sm:gap-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center shrink-0">
+                    <item.icon size={16} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm sm:text-base mb-0.5 sm:mb-1">{item.title}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4 text-center">
+              <p className="text-gray-300 text-xs sm:text-sm">
+                A customer who receives a personalized onboarding sequence in Month 1 has <span className="text-white font-bold">higher lifetime value in Month 12, 24, and beyond</span>. The compounding effect is real.
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 14: Roadmap
+    {
+      id: 'roadmap',
+      render: () => {
+        const phases = [
+          {
+            title: 'Foundation & Quick Wins',
+            time: 'Weeks 1-4',
+            status: 'First Revenue',
+            items: ['Discovery & tool stack audit', 'WISMO auto-resolve', 'Cart recovery v1 (3-email)'],
+            result: '20-30% WISMO reduction in 2 weeks. First recovered revenue in 7 days.',
+          },
+          {
+            title: 'Core Automation Build',
+            time: 'Weeks 5-8',
+            status: 'Full System',
+            items: ['Wellness onboarding (top 5 products)', 'Subscription autopilot', 'Browse abandonment'],
+            result: 'Repeat purchases improving. Subscription tickets declining.',
+          },
+          {
+            title: 'Intelligence & Optimization',
+            time: 'Weeks 9-12',
+            status: 'Optimized',
+            items: ['Replenishment engine', 'VIP segmentation', 'A/B testing all flows'],
+            result: 'All 5 modules live. Measurable ROI across the board.',
+          },
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Implementation</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              90-Day <GradientText>Rollout</GradientText>
+            </h2>
+
+            <div className="space-y-2 sm:space-y-3 mb-4">
+              {phases.map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                        <span className="text-amber-400 font-bold text-sm sm:text-base">{i + 1}</span>
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold text-sm sm:text-base">{item.title}</p>
+                        <p className="text-gray-500 text-xs">{item.time}</p>
+                      </div>
+                    </div>
+                    <span className="px-2 sm:px-3 py-1 bg-amber-500/10 rounded-full text-amber-400 text-xs hidden sm:inline">
+                      {item.status}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2">
+                    {item.items.map((itm, j) => (
+                      <span key={j} className="px-2 sm:px-3 py-1 bg-white/5 rounded-lg text-gray-400 text-xs sm:text-sm">
+                        {itm}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-emerald-400 text-xs">{item.result}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-3 text-center">
+              <p className="text-gray-400 text-xs sm:text-sm">
+                Built on your existing stack — <span className="text-white font-bold">Shopify, Gorgias, and email/SMS platform</span>. No rip-and-replace required.
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 15: About Us
+    {
+      id: 'aboutUs',
+      render: () => (
+        <div className="w-full max-w-3xl px-4 relative">
+          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+            <Rocket size={12} />
+            Book a Call
+          </a>
+          <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Your Implementation Partner</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+            About <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors"><GradientText>Scooper AI</GradientText></a>
+          </h2>
+
+          <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                <Bot size={24} className="text-white sm:w-7 sm:h-7" />
+              </div>
+              <div>
+                <p className="text-white text-lg sm:text-xl font-bold">Scooper AI</p>
+                <p className="text-gray-400 text-sm">AI Automation Agency</p>
+              </div>
+            </div>
+
+            <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-5">
+              We build custom intelligent systems for DTC brands. Every automation is designed around your specific workflows, tools, and team — never off-the-shelf. We build directly into your existing stack — Shopify, Gorgias, Klaviyo — no disruptive migrations.
+            </p>
+
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              {[
+                { title: 'Custom-Built', desc: 'For your workflows' },
+                { title: 'Tool-Native', desc: 'Into your existing stack' },
+                { title: 'Ongoing Support', desc: 'Continuous optimization' },
+              ].map((item, i) => (
+                <div key={i} className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl text-center">
+                  <p className="text-amber-400 font-semibold text-xs sm:text-sm mb-0.5 sm:mb-1">{item.title}</p>
+                  <p className="text-gray-500 text-xs hidden sm:block">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-400 text-xs sm:text-sm">
+              We handle everything — design to deployment to optimization.
             </p>
           </div>
         </div>
       ),
     },
-    {
-      id: 'roadmap',
-      render: () => (
-        <div className="w-full max-w-4xl px-6 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <div className="text-center mb-8">
-            <p className="text-amber-400 text-xs tracking-[0.2em] uppercase mb-3 font-medium">Implementation</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">90-Day <GradientText>Roadmap</GradientText></h2>
-          </div>
-          <div className="relative">
-            <div className="absolute left-[27px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-amber-500 via-orange-500 to-orange-600 hidden sm:block" />
-            <div className="space-y-4">
-              {[
-                { phase: '1', timeline: 'Weeks 1–4', title: 'Foundation & Quick Wins', desc: 'Immediate impact from day one', items: ['Discovery & tool stack audit', 'Gorgias WISMO auto-resolve', 'Cart recovery flow v1 (3-email)', 'Proactive shipping notifications'], result: '20–30% WISMO reduction in 2 weeks. First recovered revenue in 7 days.', color: 'from-amber-500 to-amber-600', iconColor: 'bg-amber-500' },
-                { phase: '2', timeline: 'Weeks 5–8', title: 'Core Automation Build', desc: 'Onboarding, subscriptions, and retention', items: ['Wellness onboarding for top 5 products', 'Subscription lifecycle autopilot', 'Browse abandonment extension', 'Cancellation intervention flows'], result: 'Measurable repeat purchase improvement. Subscription tickets declining.', color: 'from-orange-500 to-orange-600', iconColor: 'bg-orange-500' },
-                { phase: '3', timeline: 'Weeks 9–12', title: 'Intelligence & Optimization', desc: 'AI-driven personalization and scaling', items: ['Replenishment engine for full catalog', 'Customer health scoring & VIP segmentation', 'A/B testing across all flows', 'Churn prediction from behavioral signals'], result: 'Full system operational. All 5 modules live and generating measurable ROI.', color: 'from-orange-600 to-rose-500', iconColor: 'bg-rose-500' }
-              ].map((phase, i) => (
-                <div key={i} className="relative flex gap-6">
-                  <div className={`relative z-10 w-14 h-14 rounded-2xl ${phase.iconColor} flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-amber-500/20 shrink-0 hidden sm:flex`}>
-                    {phase.phase}
-                  </div>
-                  <div className="flex-1 bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl border border-white/10 overflow-hidden hover:border-amber-500/20 transition-colors">
-                    <div className={`bg-gradient-to-r ${phase.color} p-4 flex items-center justify-between`}>
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <span className="sm:hidden w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white font-bold text-sm">{phase.phase}</span>
-                          <h3 className="text-white font-bold text-lg">{phase.title}</h3>
-                        </div>
-                        <p className="text-white/70 text-xs mt-1 hidden sm:block">{phase.desc}</p>
-                      </div>
-                      <span className="px-4 py-1.5 bg-white/20 rounded-full text-white text-sm font-medium">{phase.timeline}</span>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {phase.items.map((item, j) => (
-                          <span key={j} className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-xl text-gray-300 text-xs border border-white/5">
-                            <CheckCircle size={10} className="text-emerald-400" />
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-emerald-400/80 text-xs"><span className="font-medium">Expected:</span> {phase.result}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ),
-    },
+
+    // Slide 16: Closing/CTA
     {
       id: 'closing',
       render: () => (
-        <div className="text-center w-full max-w-3xl px-6">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 mb-8">
-            <Sparkles size={16} className="text-amber-400" />
-            <span className="text-amber-300/90 text-sm font-medium">Let's Build Something Great</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">Ready to <GradientText>Transform</GradientText>?</h2>
-          <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            Activation Products has built a brand trusted by 150,000+ customers. The next chapter isn't about working harder — it's about building the intelligent infrastructure that lets your team, products, and customer relationships generate exponentially more value.
+        <div className="text-center w-full max-w-2xl px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+            Ready to <GradientText>Transform</GradientText>?
+          </h2>
+
+          <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 max-w-lg mx-auto">
+            Activation Products has built a brand trusted by 150,000+ customers.
+            Let's build the intelligent infrastructure that lets your team, products, and customer relationships generate exponentially more value.
           </p>
-          <div className="grid grid-cols-3 gap-4 mb-10">
+
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
             {[
-              { value: '90 days', label: 'Full deployment', color: 'from-amber-500/20 to-amber-600/10' },
-              { value: '$250K+', label: 'Annual opportunity', color: 'from-emerald-500/20 to-emerald-600/10' },
-              { value: '15–25 hrs', label: 'Weekly capacity freed', color: 'from-cyan-500/20 to-cyan-600/10' }
+              { value: '90 days', label: 'To full deployment' },
+              { value: '$250K+', label: 'Annual opportunity' },
+              { value: '15-25 hrs', label: 'Reclaimed weekly' },
             ].map((item, i) => (
-              <div key={i} className={`relative overflow-hidden rounded-2xl border border-white/10 p-5 bg-gradient-to-br ${item.color}`}>
-                <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="relative">
-                  <p className="text-white text-2xl sm:text-3xl font-bold mb-1">{item.value}</p>
-                  <p className="text-gray-400 text-sm">{item.label}</p>
-                </div>
+              <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-4">
+                <p className="text-amber-400 text-lg sm:text-2xl font-bold">{item.value}</p>
+                <p className="text-gray-500 text-xs">{item.label}</p>
               </div>
             ))}
           </div>
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-white font-semibold cursor-pointer hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 transition-all text-base">
-            <Rocket size={20} />
+
+          <a
+            href="https://cal.com/scooper-ai/discover"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-white font-semibold cursor-pointer hover:opacity-90 transition-opacity text-sm sm:text-base"
+          >
+            <Rocket size={16} className="sm:w-[18px] sm:h-[18px]" />
             Schedule Discovery Call
-            <ArrowRight size={18} />
           </a>
-          <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="mt-10 flex items-center justify-center gap-4 group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              <Bot size={22} className="text-white" />
+
+          <div className="mt-6 sm:mt-8 flex items-center justify-center gap-2 sm:gap-3">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+              <Bot size={16} className="text-white sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div className="text-left">
-              <p className="text-gray-300 text-sm font-medium group-hover:text-amber-400 transition-colors">Prepared by Scooper AI</p>
-              <p className="text-gray-500 text-xs">AI Automation Solutions</p>
-            </div>
-          </a>
+            <span className="text-gray-400 text-sm">
+              Prepared by <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-amber-400 transition-colors">Scooper AI</a>
+            </span>
+          </div>
         </div>
       ),
     },

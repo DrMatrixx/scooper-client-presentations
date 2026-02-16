@@ -255,6 +255,91 @@ Tell the user:
 - URL: `https://[vercel-domain]/client-name`
 - Presentation is live after Vercel deploys (~30 seconds)
 
+### Step 10: Create Fibery Task for Outreach
+
+After every successful push, create a task in Fibery to track sending the presentation to the client. Use the Fibery MCP tools.
+
+**Fibery IDs (stable references):**
+- **Project "Send Presentation":** `a035bce0-0986-11f1-8c87-89b3169bc778`
+- **User "Varun R":** `0d64c333-1f51-490f-afb6-aad8d36d732d`
+- **Status "To Do":** `64424c5f-dac9-4b25-9907-437dfdc4e8f0`
+- **Priority "High":** `1f1634e0-fae1-11f0-8a1b-f7b71fb33898`
+
+**Steps:**
+
+1. **Create the task** using `mcp__fibery__create_entity` with type `Management Space/Task`:
+   ```json
+   {
+     "Management Space/Name": "Send Presentation — [Client Name]",
+     "Management Space/Status": {"fibery/id": "64424c5f-dac9-4b25-9907-437dfdc4e8f0"},
+     "Management Space/Related Project": {"fibery/id": "a035bce0-0986-11f1-8c87-89b3169bc778"},
+     "Management Space/Priority": {"fibery/id": "1f1634e0-fae1-11f0-8a1b-f7b71fb33898"}
+   }
+   ```
+
+2. **Write the description** (Markdown) with three sections:
+
+   ```markdown
+   ## Presentation Link
+
+   [Client Name — AI Automation Proposal](https://automate.scooperai.com/client-name)
+
+   ---
+
+   ## Email Body
+
+   **Subject:** [Compelling subject referencing the client's key opportunity/pain point]
+
+   Hi [Name],
+
+   [2-3 sentences showing you understand their business — reference specific details
+   from the presentation like company size, customer count, industry, current tools, etc.]
+
+   I put together a personalized proposal showing how AI automation could help your team
+   [key value prop from the presentation — e.g., "recover $250K–$600K annually"]. It covers:
+
+   - **[Module 1]** — [one-line benefit]
+   - **[Module 2]** — [one-line benefit]
+   - **[Module 3]** — [one-line benefit]
+   - [... list all automation modules from the presentation]
+
+   Here's the proposal: https://automate.scooperai.com/client-name
+
+   It's a 3-minute read. Would love to hear your thoughts — happy to hop on a quick call
+   if any of this resonates.
+
+   Best,
+   Varun
+   Scooper AI
+   https://scooperai.com
+
+   ---
+
+   ## LinkedIn Connection Message
+
+   Hi [Name] — [1-2 sentences showing familiarity with their business]. I put together a
+   short AI automation proposal tailored to your team — covers [2-3 key areas]. Would love
+   to share it if you're open to it!
+   ```
+
+   **Key rules for the description content:**
+   - Extract real details from the presentation (company size, pain points, dollar amounts, modules)
+   - Email subject should be specific and compelling, not generic
+   - LinkedIn message must be under 300 characters
+   - Both messages should feel personalized, not templated
+
+3. **Assign to Varun** using `mcp__fibery__add_collection_items` (Assigned To is a collection field):
+   ```json
+   {
+     "type": "Management Space/Task",
+     "field": "Management Space/Assigned To",
+     "entity": {"fibery/id": "<new-task-id>"},
+     "items": [{"fibery/id": "0d64c333-1f51-490f-afb6-aad8d36d732d"}]
+   }
+   ```
+
+4. **Confirm to user** with the Fibery task link returned from the create call.
+
 ---
 
 ## How It Works
@@ -335,6 +420,19 @@ import { GradientText } from '../components/GradientText';
 import { Rocket, Users, Clock } from 'lucide-react';
 <Rocket size={16} className="text-amber-400" />
 ```
+
+## Mobile Responsiveness Rules
+
+Slides must never have content cut off on mobile. Follow these rules:
+
+1. **Never use `overflow-hidden` on the slide container** — `PresentationRoute.tsx` uses `overflow-x-hidden overflow-y-auto` so slides scroll vertically on small screens. Do not change this back.
+2. **Keep slide content concise** — Aim for slides that fit on mobile without scrolling. If a slide has many items (e.g., 6+ list items), consider:
+   - Using `hidden sm:block` for secondary text (descriptions, subtitles) that aren't critical
+   - Reducing padding on mobile (`p-3 sm:p-5`)
+   - Using smaller text on mobile (`text-xs sm:text-sm`)
+3. **Always use responsive text sizes** — `text-sm sm:text-base`, `text-xs sm:text-sm`, `text-2xl sm:text-3xl`, etc.
+4. **Always use responsive spacing** — `mb-3 sm:mb-5`, `p-3 sm:p-5`, `gap-2 sm:gap-4`, etc.
+5. **Test mentally for mobile** — A mobile viewport is ~375px wide and ~667px tall minus ~80px for the bottom navigation bar. If a slide has more than ~5 cards or ~6 list items, it WILL overflow on mobile — plan accordingly.
 
 ## Styling
 

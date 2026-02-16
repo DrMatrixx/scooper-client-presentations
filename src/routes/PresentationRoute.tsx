@@ -120,7 +120,7 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       />
 
-      <div className="flex-1 flex items-center justify-center p-3 sm:p-6 pb-20 sm:pb-24 overflow-hidden relative">
+      <div className="flex-1 flex overflow-x-hidden overflow-y-auto p-3 sm:p-6 pb-20 sm:pb-24 relative">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentSlide}
@@ -140,7 +140,7 @@ export function PresentationRoute({ presentation }: PresentationRouteProps) {
                 navigateTo(currentSlide - 1, 'swipe_prev');
               }
             }}
-            className="w-full flex items-center justify-center slide-stagger"
+            className="w-full flex items-center justify-center my-auto slide-stagger"
           >
             {presentation.slides[currentSlide].render()}
           </motion.div>

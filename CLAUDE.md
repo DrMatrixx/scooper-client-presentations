@@ -433,6 +433,7 @@ Slides must never have content cut off on mobile. Follow these rules:
 3. **Always use responsive text sizes** — `text-sm sm:text-base`, `text-xs sm:text-sm`, `text-2xl sm:text-3xl`, etc.
 4. **Always use responsive spacing** — `mb-3 sm:mb-5`, `p-3 sm:p-5`, `gap-2 sm:gap-4`, etc.
 5. **Test mentally for mobile** — A mobile viewport is ~375px wide and ~667px tall minus ~80px for the bottom navigation bar. If a slide has more than ~5 cards or ~6 list items, it WILL overflow on mobile — plan accordingly.
+6. **Never use `truncate` on text content** — It forces single-line with ellipsis, cutting off important information on mobile. Let text wrap naturally instead. Use smaller font sizes (`text-xs sm:text-sm`) to fit more content.
 
 ## Styling
 

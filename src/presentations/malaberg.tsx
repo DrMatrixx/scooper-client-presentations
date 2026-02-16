@@ -154,7 +154,7 @@ const presentation: PresentationConfig = {
                 {tasks.map((item, i) => (
                   <div key={i} className="flex items-center justify-between gap-2 p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
                     <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm sm:text-base font-medium truncate">{item.task}</p>
+                      <p className="text-white text-xs sm:text-sm font-medium">{item.task}</p>
                       <p className="text-gray-500 text-xs hidden sm:block">{item.issue}</p>
                     </div>
                     <div className="text-amber-400 font-semibold text-xs sm:text-sm whitespace-nowrap">

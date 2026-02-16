@@ -146,7 +146,7 @@ const presentation: PresentationConfig = {
                 {tasks.map((item, i) => (
                   <div key={i} className="flex items-center justify-between gap-2 p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
                     <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm sm:text-base font-medium truncate">{item.task}</p>
+                      <p className="text-white text-xs sm:text-sm font-medium">{item.task}</p>
                       <p className="text-gray-500 text-xs hidden sm:block">{item.issue}</p>
                     </div>
                     <div className="text-amber-400 font-semibold text-xs sm:text-sm whitespace-nowrap">
@@ -819,7 +819,7 @@ const presentation: PresentationConfig = {
               <div className="space-y-2 sm:space-y-3">
                 {breakdown.map((item, i) => (
                   <div key={i} className="flex items-center justify-between gap-2 p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
-                    <p className="text-white text-xs sm:text-sm font-medium flex-1 min-w-0 truncate">{item.area}</p>
+                    <p className="text-white text-xs sm:text-sm font-medium flex-1 min-w-0">{item.area}</p>
                     <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                       <span className="text-rose-400 text-xs sm:text-sm font-medium">{item.before}</span>
                       <ArrowRight size={10} className="text-gray-600 sm:w-3 sm:h-3" />

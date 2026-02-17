@@ -62,7 +62,6 @@ const presentation: PresentationConfig = {
               alt="Twice"
               className="h-14 sm:h-18 md:h-20 w-auto mx-auto mb-3 invert"
             />
-            <p className="text-gray-500 text-sm">Prepared exclusively for Julian Levine & team</p>
           </div>
 
           <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">

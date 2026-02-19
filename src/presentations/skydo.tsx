@@ -16,7 +16,6 @@ import {
   LineChart,
   Headphones,
   PenTool,
-  AlertTriangle,
 } from 'lucide-react';
 
 const presentation: PresentationConfig = {
@@ -77,7 +76,7 @@ const presentation: PresentationConfig = {
             {[
               { value: '67%', label: 'SDR time on non-selling tasks', icon: Clock },
               { value: '30K+', label: 'Customers, no AI support', icon: Headphones },
-              { value: '0', label: 'AI features vs XFlow', icon: AlertTriangle },
+              { value: '$0', label: 'AI-powered FX advisory', icon: LineChart },
             ].map((item, i) => (
               <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -100,7 +99,7 @@ const presentation: PresentationConfig = {
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                5 AI modules to give your sales team <span className="text-white font-bold">3–5x pipeline</span>, auto-resolve <span className="text-white font-bold">50–70% of support queries</span>, and close the <span className="text-white font-bold">FX intelligence gap</span> with XFlow
+                5 AI modules to give your sales team <span className="text-white font-bold">3–5x pipeline</span>, auto-resolve <span className="text-white font-bold">50–70% of support queries</span>, and deliver <span className="text-white font-bold">AI-powered FX intelligence</span> to 30K+ customers
               </p>
             </div>
           </div>
@@ -175,7 +174,7 @@ const presentation: PresentationConfig = {
         const costs = [
           { icon: Target, value: '67%', metric: 'Sales Productivity Gap', desc: 'SDRs spend 67% of time on non-selling tasks without AI (Salesforce 2025)' },
           { icon: TrendingUp, value: '78%', metric: 'LinkedIn Pipeline Gap', desc: '78% of B2B leads come from LinkedIn — without AI attribution, social optimizes for vanity, not signups' },
-          { icon: Shield, value: '~50%', metric: 'Churn Blind Spot', desc: 'IT services exporters (~50% of revenue) making FX decisions manually — XFlow is exploiting this' },
+          { icon: Shield, value: '~50%', metric: 'Churn Blind Spot', desc: 'IT services exporters (~50% of revenue) making FX decisions manually — no AI advisory to retain them' },
           { icon: Headphones, value: '900+', metric: 'Monthly Support Burden', desc: '30K+ customers at any meaningful contact rate = high-volume repetitive queries ops handles manually' },
         ];
 
@@ -212,7 +211,7 @@ const presentation: PresentationConfig = {
 
             <div className="text-center">
               <p className="text-gray-500 text-xs sm:text-sm italic">
-                XFlow's AI FX analyst is live today. $10M Series A capital is available now. The $5B target is the clock. The window to build the intelligence layer is 6–12 months.
+                $10M Series A capital is available now. The $5B target is the clock. The window to build the intelligence layer is 6–12 months.
               </p>
             </div>
           </div>
@@ -220,60 +219,7 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 4: Competitive AI Gap
-    {
-      id: 'competitive',
-      render: () => (
-        <div className="w-full max-w-3xl px-4 relative">
-          <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-            <Rocket size={12} />
-            Book a Call
-          </a>
-          <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Competitive Gap</p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-            Competitors Are Building <GradientText>AI Advantage</GradientText> Now
-          </h2>
-
-          <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-3 sm:mb-4">
-            <div className="space-y-3 sm:space-y-4">
-              <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-white text-sm sm:text-base font-medium">XFlow</p>
-                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">Live AI FX Analyst</span>
-                </div>
-                <p className="text-gray-400 text-xs sm:text-sm">Real-time USD/INR monitoring, optimal conversion timing recommendations. Actively used in competitive sales conversations against Skydo today.</p>
-              </div>
-              <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-white text-sm sm:text-base font-medium">Airwallex</p>
-                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">Global AI at Scale</span>
-                </div>
-                <p className="text-gray-400 text-xs sm:text-sm">AI across FX management, sales ops, and customer intelligence at unicorn scale. The benchmark Skydo will collide with internationally.</p>
-              </div>
-            </div>
-
-            <div className="mt-3 sm:mt-4 p-2 sm:p-3 bg-amber-500/5 rounded-lg sm:rounded-xl border border-amber-500/10">
-              <p className="text-amber-400 text-xs sm:text-sm font-medium mb-1">The Compounding Effect</p>
-              <p className="text-gray-400 text-xs sm:text-sm">XFlow's AI model improves with every conversion event. Skydo's gap widens with each quarter of inaction. B2B companies using AI in sales see 83% higher revenue growth (Salesforce 2025).</p>
-            </div>
-          </div>
-
-          <div className="bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 p-3 sm:p-4">
-            <div className="flex items-start gap-2 sm:gap-3">
-              <Shield size={16} className="text-emerald-400 shrink-0 mt-0.5 sm:w-5 sm:h-5" />
-              <div>
-                <p className="text-white text-sm sm:text-base font-semibold mb-1">Skydo's Unfair Advantage</p>
-                <p className="text-gray-400 text-xs sm:text-sm">
-                  30,000+ businesses, $10M Series A, one of only 6 RBI PA-CB licenses, 88% YoY team growth. The foundation is built — AI doesn't replace Skydo's moat, it <span className="text-emerald-400 font-medium">amplifies it across every team</span>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-
-    // Slide 5: Today vs AI-Powered
+    // Slide 4: Today vs AI-Powered
     {
       id: 'vision',
       render: () => {
@@ -492,7 +438,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                XFlow already ships this. A $50K/month IT exporter on XFlow who converts at AI-recommended timing saves meaningfully more than a Skydo customer deciding manually. This module delivers competitive parity — and transforms WhatsApp from a notification pipe into a value-delivery channel.
+                A $50K/month IT exporter who converts at AI-recommended timing saves meaningfully more than one deciding manually. This module transforms WhatsApp from a notification pipe into a value-delivery channel — and gives customers a reason to stay.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -520,7 +466,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 10–20% retention improvement in high-volume segments; direct competitive parity with XFlow's marketed AI feature
+                <span className="font-bold">Impact:</span> 10–20% retention improvement in high-volume segments; transforms FX from commodity to value-add service
               </p>
             </div>
           </div>
@@ -558,7 +504,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                With 30,000 customers and 77 people, the CSM team cannot give equal attention to all accounts. An ML model that flags a high-volume IT exporter who hasn't converted FX in 18 days — before they switch to XFlow — is the difference between retaining and losing a $500K+/year account.
+                With 30,000 customers and 77 people, the CSM team cannot give equal attention to all accounts. An ML model that flags a high-volume IT exporter who hasn't converted FX in 18 days — before they churn — is the difference between retaining and losing a $500K+/year account.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -669,7 +615,7 @@ const presentation: PresentationConfig = {
           'Multi-platform generation: LinkedIn posts, Instagram carousels, YouTube scripts, X threads',
           'AI performance analytics: "FX savings content for IT services drives 3x more signups"',
           'Blog-to-social repurposing pipeline — automated multi-format content from each post',
-          'Competitor content signal monitoring across XFlow, PayGlocal, Airwallex, BRISKPE',
+          'Competitor content signal monitoring across PayGlocal, Airwallex, BRISKPE, and others',
         ];
 
         return (

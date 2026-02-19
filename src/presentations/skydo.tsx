@@ -13,7 +13,6 @@ import {
   Brain,
   Target,
   Shield,
-  LineChart,
   Headphones,
   PenTool,
 } from 'lucide-react';
@@ -76,7 +75,7 @@ const presentation: PresentationConfig = {
             {[
               { value: '67%', label: 'SDR time on non-selling tasks', icon: Clock },
               { value: '30K+', label: 'Customers, no AI support', icon: Headphones },
-              { value: '$0', label: 'AI-powered FX advisory', icon: LineChart },
+              { value: 'Reactive', label: 'Churn detection', icon: Shield },
             ].map((item, i) => (
               <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -99,7 +98,7 @@ const presentation: PresentationConfig = {
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                5 AI modules to give your sales team <span className="text-white font-bold">3–5x pipeline</span>, auto-resolve <span className="text-white font-bold">50–70% of support queries</span>, and deliver <span className="text-white font-bold">AI-powered FX intelligence</span> to 30K+ customers
+                4 AI modules to give your sales team <span className="text-white font-bold">3–5x pipeline</span>, auto-resolve <span className="text-white font-bold">50–70% of support queries</span>, and predict churn <span className="text-white font-bold">30–60 days early</span>
               </p>
             </div>
           </div>
@@ -123,7 +122,6 @@ const presentation: PresentationConfig = {
           { task: 'Social: Producing segment-specific content for 4 personas across 5 platforms', time: '8-15 hrs/wk', change: 'AI content engine drafts weekly calendar; team edits and approves' },
           { task: 'Ops: Handling reconciliation, FIRA, payment status queries from 30K+ customers', time: '15-25 hrs/wk', change: 'LLM agent resolves 50-70% of tier-1 queries on WhatsApp in <10 seconds' },
           { task: 'CSM: Discovering churn only after high-volume customers stop transacting', time: 'Reactive', change: 'ML model flags declining activity 30-60 days early; automated intervention' },
-          { task: 'All teams: Customers manually timing FX conversions — no AI advisory', time: 'Competitive risk', change: 'AI FX intelligence recommends optimal conversion timing via WhatsApp' },
         ];
 
         return (
@@ -174,7 +172,7 @@ const presentation: PresentationConfig = {
         const costs = [
           { icon: Target, value: '67%', metric: 'Sales Productivity Gap', desc: 'SDRs spend 67% of time on non-selling tasks without AI (Salesforce 2025)' },
           { icon: TrendingUp, value: '78%', metric: 'LinkedIn Pipeline Gap', desc: '78% of B2B leads come from LinkedIn — without AI attribution, social optimizes for vanity, not signups' },
-          { icon: Shield, value: '~50%', metric: 'Churn Blind Spot', desc: 'IT services exporters (~50% of revenue) making FX decisions manually — no AI advisory to retain them' },
+          { icon: Shield, value: '~50%', metric: 'Churn Blind Spot', desc: 'IT services exporters (~50% of revenue) — churn discovered only after they stop transacting' },
           { icon: Headphones, value: '900+', metric: 'Monthly Support Burden', desc: '30K+ customers at any meaningful contact rate = high-volume repetitive queries ops handles manually' },
         ];
 
@@ -284,10 +282,9 @@ const presentation: PresentationConfig = {
       render: () => {
         const modules = [
           { num: '01', title: 'Sales Intelligence', desc: 'AI outbound agent', icon: Target, layer: 'Sales' },
-          { num: '02', title: 'FX Intelligence', desc: 'Conversion timing AI', icon: LineChart, layer: 'Customer' },
-          { num: '03', title: 'LTV & Churn', desc: 'Predictive retention', icon: Brain, layer: 'Sales' },
-          { num: '04', title: 'Support Agent', desc: 'LLM on WhatsApp', icon: MessageSquare, layer: 'Customer' },
-          { num: '05', title: 'Content Engine', desc: 'AI social pipeline', icon: PenTool, layer: 'Growth' },
+          { num: '02', title: 'LTV & Churn', desc: 'Predictive retention', icon: Brain, layer: 'Customer' },
+          { num: '03', title: 'Support Agent', desc: 'LLM on WhatsApp', icon: MessageSquare, layer: 'Customer' },
+          { num: '04', title: 'Content Engine', desc: 'AI social pipeline', icon: PenTool, layer: 'Growth' },
         ];
 
         return (
@@ -314,7 +311,7 @@ const presentation: PresentationConfig = {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
               {modules.map((item, i) => (
                 <div
                   key={i}
@@ -334,7 +331,7 @@ const presentation: PresentationConfig = {
 
             <div className="mt-4 sm:mt-6 text-center">
               <p className="text-gray-400 text-xs sm:text-sm">
-                Spans 3 layers, touches 4 teams. Module 4 is fastest to deploy. Modules 1 & 3 are tightly linked — sales intelligence feeds retention intelligence.
+                Spans 3 layers, touches 4 teams. Module 3 is fastest to deploy. Modules 1 & 2 are tightly linked — sales intelligence feeds retention intelligence.
               </p>
             </div>
           </div>
@@ -408,80 +405,14 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 8: Module 2 — AI FX Conversion Intelligence
+    // Slide 8: Module 2 — ML Customer LTV & Churn Prediction
     {
       id: 'module2',
       render: () => {
         const capabilities = [
-          'LSTM/transformer ML forecasting across 32 currency pairs using multi-signal inputs',
-          'Personalized WhatsApp alerts with specific INR savings context per customer',
-          'Optional auto-conversion rule engine (customer sets threshold, AI executes)',
-          'Monthly FX savings report per customer — loyalty and retention driver',
-          'Macroeconomic signal integration (RBI policy, Fed decisions, trade balance)',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4 relative">
-            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-              <Rocket size={12} />
-              Book a Call
-            </a>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <LineChart size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Module 02</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI FX Conversion Intelligence</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                A $50K/month IT exporter who converts at AI-recommended timing saves meaningfully more than one deciding manually. This module transforms WhatsApp from a notification pipe into a value-delivery channel — and gives customers a reason to stay.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
-                  <p className="text-gray-500 text-xs">Customer guesses FX timing</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">15–25%</p>
-                  <p className="text-gray-500 text-xs">Better FX outcomes</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 10–20% retention improvement in high-volume segments; transforms FX from commodity to value-add service
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 9: Module 3 — ML Customer LTV & Churn Prediction
-    {
-      id: 'module3',
-      render: () => {
-        const capabilities = [
           'LTV decile scoring at signup, refreshed weekly across all 30,000+ accounts',
           'Behavioral churn detection with specific trigger identification (not just a score)',
-          'Automated CSM alerts: "Optimite has had no FX conversion for 18 days — check in"',
+          'Automated CSM alerts: "Optimite has had no transaction for 18 days — check in"',
           'WhatsApp retention nudges for mid-tier accounts with personalized savings data',
           'ICP feedback loop to sales team — which acquisition channels yield lowest-churn cohorts',
         ];
@@ -497,14 +428,14 @@ const presentation: PresentationConfig = {
                 <Brain size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-amber-400 text-xs">Module 03</p>
+                <p className="text-amber-400 text-xs">Module 02</p>
                 <h2 className="text-xl sm:text-2xl font-bold text-white">ML Customer LTV & Churn Prediction</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                With 30,000 customers and 77 people, the CSM team cannot give equal attention to all accounts. An ML model that flags a high-volume IT exporter who hasn't converted FX in 18 days — before they churn — is the difference between retaining and losing a $500K+/year account.
+                With 30,000 customers and 77 people, the CSM team cannot give equal attention to all accounts. An ML model that flags a high-volume IT exporter who hasn't transacted in 18 days — before they churn — is the difference between retaining and losing a $500K+/year account.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -540,13 +471,13 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 10: Module 4 — LLM Customer Support Agent
+    // Slide 9: Module 3 — LLM Customer Support Agent
     {
-      id: 'module4',
+      id: 'module3',
       render: () => {
         const capabilities = [
           'Natural language responses in English and Hindi via WhatsApp and dashboard',
-          'Full reconciliation breakdown: "Your ₹4,93,000 vs ₹5,00,000 invoice: FX rate 83.12 + $29 fee"',
+          'Full reconciliation breakdown: "Your ₹4,93,000 vs ₹5,00,000 invoice: rate 83.12 + $29 fee"',
           'Automated FIRA resend and payment status lookups in <10 seconds',
           'Seamless escalation to human ops with full conversation context pre-attached',
           'Continuous improvement from human feedback loop on resolved queries',
@@ -563,7 +494,7 @@ const presentation: PresentationConfig = {
                 <MessageSquare size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-amber-400 text-xs">Module 04</p>
+                <p className="text-amber-400 text-xs">Module 03</p>
                 <h2 className="text-xl sm:text-2xl font-bold text-white">LLM Support & Reconciliation Agent</h2>
               </div>
             </div>
@@ -606,14 +537,14 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 11: Module 5 — AI Social Media Content Engine
+    // Slide 10: Module 4 — AI Social Media Content Engine
     {
-      id: 'module5',
+      id: 'module4',
       render: () => {
         const capabilities = [
           'Brand-voice-trained content drafting for IT services, Amazon sellers, design agencies, freelancers',
           'Multi-platform generation: LinkedIn posts, Instagram carousels, YouTube scripts, X threads',
-          'AI performance analytics: "FX savings content for IT services drives 3x more signups"',
+          'AI performance analytics: "Case study content for IT services drives 3x more signups"',
           'Blog-to-social repurposing pipeline — automated multi-format content from each post',
           'Competitor content signal monitoring across PayGlocal, Airwallex, BRISKPE, and others',
         ];
@@ -629,7 +560,7 @@ const presentation: PresentationConfig = {
                 <PenTool size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-amber-400 text-xs">Module 05</p>
+                <p className="text-amber-400 text-xs">Module 04</p>
                 <h2 className="text-xl sm:text-2xl font-bold text-white">AI Social Media Content Engine</h2>
               </div>
             </div>
@@ -678,7 +609,6 @@ const presentation: PresentationConfig = {
       render: () => {
         const results = [
           { icon: TrendingUp, metric: 'Qualified Pipeline', before: 'Manual prospecting', after: '3–5x increase' },
-          { icon: LineChart, metric: 'Customer FX Outcomes', before: 'Manual timing', after: '15–25% better' },
           { icon: Users, metric: 'High-Value Churn', before: 'Reactive discovery', after: '20–35% reduction' },
           { icon: Headphones, metric: 'Support Resolution', before: 'Manual, hours', after: '50–70% auto-resolved' },
         ];
@@ -828,13 +758,13 @@ const presentation: PresentationConfig = {
             title: 'Revenue Intelligence Live',
             time: 'Weeks 5–8',
             status: 'Phase 2',
-            items: ['AI Sales Intelligence with Clay + Persana', 'FX Intelligence model trained & pilot alerts', 'First LTV scores generated for all accounts'],
+            items: ['AI Sales Intelligence with Clay + Persana', 'First LTV scores generated for all accounts', 'Churn prediction model trained & pilot alerts'],
           },
           {
             title: 'Full Integration & Optimization',
             time: 'Weeks 9–12',
             status: 'Phase 3',
-            items: ['LTV & Churn fully live with CSM alerts', 'FX alerts rolled out to 30K+ customers', 'Self-improving feedback loops across all modules'],
+            items: ['LTV & Churn fully live with CSM alerts', 'Content engine at full velocity', 'Self-improving feedback loops across all modules'],
           },
         ];
 
@@ -935,7 +865,7 @@ const presentation: PresentationConfig = {
 
           <div className="text-center">
             <p className="text-gray-400 text-xs sm:text-sm">
-              AI systems improve with data — sales models get sharper, FX predictions get more accurate, support agents expand their knowledge. We manage this continuous improvement.
+              AI systems improve with data — sales models get sharper, churn predictions get more accurate, support agents expand their knowledge. We manage this continuous improvement.
             </p>
           </div>
         </div>

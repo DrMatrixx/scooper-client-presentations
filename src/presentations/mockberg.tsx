@@ -9,20 +9,19 @@ import {
   CheckCircle,
   Bot,
   Zap,
-  Target,
   Shield,
   Headphones,
   PenTool,
-  Globe,
   BarChart3,
   Sparkles,
   Eye,
   Package,
+  MessageSquare,
 } from 'lucide-react';
 
 const presentation: PresentationConfig = {
   title: 'Mockberg',
-  description: 'AI Automation Proposal — Scaling Sweden\'s Fastest-Growing Jewelry & Watch Brand Through AI Intelligence',
+  description: 'AI Automation Proposal — Scaling Mockberg\'s Growth Through AI-Powered Intelligence',
   slides: [
     // Slide 1: Title
     {
@@ -54,7 +53,7 @@ const presentation: PresentationConfig = {
 
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-4 sm:mb-5 animate-fade-in-up">
             <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-gray-400 text-xs sm:text-sm">AI Automation Proposal</span>
+            <span className="text-gray-400 text-xs sm:text-sm">AI Automation Proposal — February 2026</span>
           </div>
 
           <div className="mb-6 sm:mb-8 animate-fade-in-up animation-delay-100">
@@ -63,22 +62,22 @@ const presentation: PresentationConfig = {
               alt="Mockberg"
               className="h-8 sm:h-10 md:h-12 w-auto mx-auto mb-3"
             />
-            <p className="text-gray-500 text-sm">Prepared exclusively for the Mockberg team</p>
+            <p className="text-gray-500 text-sm">Scaling Mockberg's Growth Through AI-Powered Intelligence</p>
           </div>
 
           <div className="mb-5 sm:mb-6 animate-fade-in-up animation-delay-200">
-            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could recover</p>
+            <p className="text-gray-400 text-base sm:text-lg mb-2">What if you could unlock</p>
             <span className="animate-glow inline-block text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
-              2.1M–6.1M SEK
+              10–26 MSEK
             </span>
-            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in lost revenue, ad efficiency, and operational capacity?</p>
+            <p className="text-gray-400 text-sm sm:text-base mt-1">per year in recovered revenue, efficiency, and growth capacity?</p>
           </div>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-300">
             {[
-              { value: 'Slutsåld', label: 'Drops selling out unpredicted', icon: Package },
-              { value: '3–5/wk', label: 'Manual ad creatives vs 50+ AI', icon: PenTool },
-              { value: '25+', label: 'Markets, no AI attribution', icon: Globe },
+              { value: '3–8M', label: 'SEK lost to stockouts yearly', icon: Package },
+              { value: '0%', label: 'Site personalization today', icon: Eye },
+              { value: '7', label: 'People running 115.7M SEK', icon: Users },
             ].map((item, i) => (
               <div key={i} className="group relative p-3 sm:p-4 glass bg-white/5 rounded-2xl border border-rose-500/20 shadow-lg shadow-rose-500/5 hover:shadow-rose-500/10 hover:border-rose-500/40 transition-all duration-300">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -101,7 +100,7 @@ const presentation: PresentationConfig = {
                 <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">In this proposal</span>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                5 AI modules to cut drop stockouts by <span className="text-white font-bold">15–30%</span>, boost paid social ROAS by <span className="text-white font-bold">15–30%</span>, and auto-resolve <span className="text-white font-bold">60–70%</span> of support tickets
+                5 AI modules to reduce stockouts by <span className="text-white font-bold">20–40%</span>, lift conversion by <span className="text-white font-bold">10–23%</span>, and let a 7-person team operate like <span className="text-white font-bold">20</span>
               </p>
             </div>
           </div>
@@ -120,12 +119,12 @@ const presentation: PresentationConfig = {
       id: 'reality',
       render: () => {
         const tasks = [
-          { task: 'Planning SKU production quantities per drop launch', time: '4–8 hrs/wk', change: 'ML forecasting produces demand curve per SKU per market in minutes' },
-          { task: 'Selecting UGC from Sauce library for paid ad campaigns', time: '3–6 hrs/wk', change: 'AI scores every UGC piece by predicted ROAS — top assets auto-routed to ad queue' },
-          { task: 'Writing ad copy for Meta campaigns in 4 languages', time: '5–10 hrs/wk', change: 'Generative AI produces 20+ copy variants in SE, EN, DE, NL in minutes' },
-          { task: 'Responding to sizing, warranty, and return queries', time: '10–20 hrs/wk', change: 'LLM agent resolves 60–70% autonomously; humans handle escalations only' },
-          { task: 'Analyzing international market performance for ad budget', time: '3–5 hrs/wk', change: 'AI attribution model surfaces real ROAS by market and channel in daily digest' },
-          { task: 'Planning product assortment for NK vs. DTC channels', time: 'Unquantified', change: 'AI segmentation reveals which products over-index in-store vs. online per city' },
+          { task: 'Forecasting production quantities for upcoming drops', time: '5–8 hrs/wk', change: 'AI demand forecast per SKU per market replaces spreadsheets + gut feel' },
+          { task: 'Creating ad creative, social content, and email campaigns across SE/EN/DE', time: '10–15 hrs/wk', change: 'Generative AI produces 10x variants for testing; team curates, not creates' },
+          { task: 'Responding to customer emails (orders, returns, sizing) in multiple languages', time: '10–15 hrs/wk', change: 'AI support agent resolves 60%+ instantly in SE/EN/DE, 24/7' },
+          { task: 'Reading reviews and social comments for product insights', time: '3–5 hrs/wk', change: 'NLP Voice-of-Customer extracts themes from 4,273+ reviews automatically' },
+          { task: 'Deciding which products to feature on homepage and collections', time: '3–5 hrs/wk', change: 'AI personalization dynamically orders products per visitor in real-time' },
+          { task: 'Tracking competitor moves (Edblad, Daniel Wellington, About Vintage)', time: '3–5 hrs/wk', change: 'AI competitive monitor delivers weekly digest with trend detection' },
         ];
 
         return (
@@ -141,7 +140,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-4 sm:mb-5">
               <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-5">
-                You've built one of Sweden's fastest-growing DTC jewelry brands. But scaling internationally across 25+ markets with manual processes is the bottleneck.
+                115.7 MSEK with 7 employees = ~16.5 MSEK revenue per person. Every operational bottleneck hits exponentially harder — and AI has outsized impact.
               </p>
 
               <div className="space-y-2 sm:space-y-3">
@@ -161,7 +160,7 @@ const presentation: PresentationConfig = {
 
             <div className="text-center">
               <p className="text-gray-400 text-xs sm:text-sm">
-                <span className="text-white font-bold">77%</span> of ecommerce professionals already use AI daily. Mockberg's team is in the 23% doing it manually.
+                <span className="text-white font-bold">78%</span> of businesses use AI in at least one function (McKinsey, 2025). Shopify + Klaviyo make AI integration possible without rebuilding infrastructure.
               </p>
             </div>
           </div>
@@ -174,10 +173,10 @@ const presentation: PresentationConfig = {
       id: 'cost',
       render: () => {
         const costs = [
-          { icon: Package, value: '15–30%', metric: 'Drop Revenue Lost', desc: 'Sold-out items across multiple product lines — underforecasting on winners, overproduction on slower movers' },
-          { icon: Target, value: '2–3x', metric: 'Influencer ROI Understated', desc: 'Last-click attribution undervalues influencer contribution, leading to underinvestment in your highest-ROI channel' },
-          { icon: PenTool, value: '3–5/wk', metric: 'Creative Bottleneck', desc: 'Manual creative team vs AI-native competitors producing 50+ tested variants per week' },
-          { icon: Eye, value: '0%', metric: 'Personalization Gap', desc: 'Swarovski drives 10% of sales from AI recommendations. Mockberg\'s visitors get static category navigation.' },
+          { icon: Package, value: '3–8M', metric: 'SEK Lost to Stockouts', desc: '"Meddela mig" (Notify me) buttons on product pages confirm demand going unfulfilled across drops' },
+          { icon: Eye, value: '10–23%', metric: 'Conversion Lift Missed', desc: 'Industry benchmark for AI personalization. Every visitor sees the same static site regardless of history.' },
+          { icon: PenTool, value: '60–80%', metric: 'Content Time Saveable', desc: '7 people managing 6+ drops across SE/EN/DE markets. AI generates 10x content variants in minutes.' },
+          { icon: TrendingUp, value: 'Widening', metric: 'Competitor AI Gap', desc: 'AI models improve with data over time. Competitors who adopt first build a compounding intelligence advantage.' },
         ];
 
         return (
@@ -206,14 +205,14 @@ const presentation: PresentationConfig = {
 
             <div className="bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 p-3 sm:p-4 text-center mb-3 sm:mb-4">
               <p className="text-rose-400 text-xs sm:text-sm">
-                Estimated Annual Opportunity: <span className="text-white font-bold">2,100,000–6,100,000 SEK</span>
+                Estimated Annual Opportunity: <span className="text-white font-bold">8–20 MSEK</span>
               </p>
-              <p className="text-gray-500 text-xs mt-1">In recovered revenue, ad efficiency, and operational capacity across all five modules</p>
+              <p className="text-gray-500 text-xs mt-1">In combined lost revenue + operational inefficiency across all five modules</p>
             </div>
 
             <div className="text-center">
               <p className="text-gray-500 text-xs sm:text-sm italic">
-                International expansion across 25+ markets is creating data complexity that requires AI now — each quarter without it is a quarter competitors are learning faster.
+                German market expansion multiplies complexity — AI must arrive before the complexity does, not after. 89% of retail/CPG companies are already using or testing AI (NVIDIA, 2025).
               </p>
             </div>
           </div>
@@ -232,37 +231,37 @@ const presentation: PresentationConfig = {
           </a>
           <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">The Competitive Gap</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-            Competitors Are Building <GradientText>AI Advantage</GradientText> Now
+            The Opportunity to <GradientText>Lead</GradientText>
           </h2>
 
           <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-6 mb-3 sm:mb-4">
             <div className="space-y-3 sm:space-y-4">
               <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
                 <div className="flex items-center justify-between mb-1">
-                  <p className="text-white text-sm sm:text-base font-medium">Swarovski</p>
-                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">AI Recs = 10% Sales</span>
+                  <p className="text-white text-sm sm:text-base font-medium">Edblad</p>
+                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">107 employees</span>
                 </div>
-                <p className="text-gray-400 text-xs sm:text-sm">AI product recommendations confirmed to drive 10% of website sales. Every visitor gets a personalized product grid while Mockberg shows static categories.</p>
-              </div>
-              <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-white text-sm sm:text-base font-medium">PANDORA</p>
-                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">AI Demand Forecasting</span>
-                </div>
-                <p className="text-gray-400 text-xs sm:text-sm">AI-driven demand forecasting across 100+ markets enabling precise collection planning. They predict which collections perform where before production commits.</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Acquired by Ceder Capital (PE). With 107 employees vs. Mockberg's 7, they can absorb inefficiency that Mockberg cannot. AI levels the playing field.</p>
               </div>
               <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
                 <div className="flex items-center justify-between mb-1">
                   <p className="text-white text-sm sm:text-base font-medium">Daniel Wellington</p>
-                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">Shopify Plus AI</span>
+                  <span className="px-2 py-1 bg-rose-500/10 rounded-full text-rose-400 text-xs">Dedicated data team</span>
                 </div>
-                <p className="text-gray-400 text-xs sm:text-sm">Shopify Plus with AI personalization and automated email journeys — the closest Scandinavian comparable running ML recommendations Mockberg is not.</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Pioneered influencer marketing at scale. Has a dedicated data/analytics function. AI gives Mockberg equivalent intelligence without matching their headcount.</p>
+              </div>
+              <div className="p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-white text-sm sm:text-base font-medium">About Vintage</p>
+                  <span className="px-2 py-1 bg-gray-500/10 rounded-full text-gray-400 text-xs">No visible AI</span>
+                </div>
+                <p className="text-gray-400 text-xs sm:text-sm">Copenhagen-based, similar Scandinavian minimalist positioning. Shopify-based, no visible AI differentiation. Both brands are ripe for AI — who moves first wins.</p>
               </div>
             </div>
 
             <div className="mt-3 sm:mt-4 p-2 sm:p-3 bg-amber-500/5 rounded-lg sm:rounded-xl border border-amber-500/10">
               <p className="text-amber-400 text-xs sm:text-sm font-medium mb-1">The Compounding Effect</p>
-              <p className="text-gray-400 text-xs sm:text-sm">AI capabilities compound. Models trained on 2 years of behavior beat models trained on 6 months. The longer Mockberg waits, the larger the data advantage competitors build.</p>
+              <p className="text-gray-400 text-xs sm:text-sm">AI capabilities compound. Recommendation models, demand forecasts, and creative optimization all improve with more data. The earlier Mockberg starts, the wider the AI moat grows.</p>
             </div>
           </div>
 
@@ -270,9 +269,9 @@ const presentation: PresentationConfig = {
             <div className="flex items-start gap-2 sm:gap-3">
               <Shield size={16} className="text-emerald-400 shrink-0 mt-0.5 sm:w-5 sm:h-5" />
               <div>
-                <p className="text-white text-sm sm:text-base font-semibold mb-1">Mockberg's Unfair Advantage</p>
+                <p className="text-white text-sm sm:text-base font-semibold mb-1">Mockberg's First-Mover Advantage</p>
                 <p className="text-gray-400 text-xs sm:text-sm">
-                  4,273+ verified reviews at 4.7 stars, proven influencer drop model, 25+ country distribution, Shopify with AI-ready stack. The foundation is built — AI doesn't replace Mockberg's brand, it <span className="text-emerald-400 font-medium">amplifies it globally</span>.
+                  No Scandinavian affordable-luxury jewelry brand has deployed advanced AI. Mockberg's drop-based model and influencer collaborations generate high-velocity data that AI can <span className="text-emerald-400 font-medium">amplify into a permanent competitive edge</span>.
                 </p>
               </div>
             </div>
@@ -286,11 +285,12 @@ const presentation: PresentationConfig = {
       id: 'vision',
       render: () => {
         const comparisons = [
-          { area: 'Drop Planning', today: 'Manual review of past drops + gut estimate on SKU quantities', ai: 'ML model produces per-SKU, per-market demand forecast 4–6 weeks before drop' },
-          { area: 'Ad Creative', today: 'Copywriter + designer produce 3–5 creatives; Sauce UGC selected manually', ai: 'AI scores UGC library; generates 30+ variants in 4 languages; Advantage+ optimizes' },
-          { area: 'Customer Support', today: 'Team reads and responds to each sizing/warranty query manually', ai: 'LLM resolves 60–70% of tickets instantly, 24/7, in Swedish, English, German' },
-          { area: 'Product Discovery', today: 'Static navigation by category, dial shape, strap type', ai: 'Real-time personalized "complete the stack" recommendations per visitor' },
-          { area: 'International Strategy', today: 'Last-click attribution; budget reallocated manually across 25+ markets', ai: 'ML attribution shows true ROAS by channel + market; AI flags underinvested markets' },
+          { area: 'Drop Demand Planning', today: 'Spreadsheet estimates + gut feel for production quantities', ai: 'ML demand forecast per SKU per market per drop, with confidence intervals' },
+          { area: 'Product Merchandising', today: 'Static collection pages, same for all visitors', ai: 'AI-personalized product ranking and recommendations per visitor, improving with each interaction' },
+          { area: 'Content Creation', today: 'Team manually creates each ad, email, post across SE/EN/DE', ai: 'Generative AI produces 10x creative variants; team curates best performers' },
+          { area: 'Customer Support', today: 'Email-only, business hours, Swedish primarily', ai: '24/7 AI agent in SE/EN/DE resolving 60%+ instantly, smart escalation for complex cases' },
+          { area: 'Customer Intelligence', today: 'Manual review reading, gut-feel product decisions', ai: 'NLP analysis of 4,273+ reviews → automated VoC reports driving collection decisions' },
+          { area: 'Campaign Targeting', today: 'Broad Klaviyo segments, standard flows', ai: 'Predictive LTV scoring, churn risk identification, AI-optimized send times per customer' },
         ];
 
         return (
@@ -324,9 +324,9 @@ const presentation: PresentationConfig = {
 
             <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {[
-                { icon: Package, metric: '15–30%', label: 'Stockout reduction' },
-                { icon: TrendingUp, metric: '15–30%', label: 'ROAS improvement' },
-                { icon: Headphones, metric: '60–70%', label: 'Support auto-resolved' },
+                { icon: TrendingUp, metric: '5–12%', label: 'Revenue uplift' },
+                { icon: PenTool, metric: '60–80%', label: 'Content time saved' },
+                { icon: Clock, metric: '31–48', label: 'Hours/week reclaimed' },
               ].map((item, i) => (
                 <div key={i} className="bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 p-2 sm:p-4 text-center">
                   <item.icon size={16} className="text-emerald-400 mx-auto mb-1 sm:mb-2 sm:w-5 sm:h-5" />
@@ -345,11 +345,11 @@ const presentation: PresentationConfig = {
       id: 'architecture',
       render: () => {
         const modules = [
-          { num: '01', title: 'Drop Forecasting', desc: 'ML demand prediction', icon: BarChart3, layer: 'Revenue' },
-          { num: '02', title: 'Creative Engine', desc: 'UGC scoring + gen AI', icon: Sparkles, layer: 'Creative' },
-          { num: '03', title: 'Personalization', desc: 'On-site + email AI', icon: Eye, layer: 'Creative' },
-          { num: '04', title: 'Support Agent', desc: 'LLM on catalog data', icon: Headphones, layer: 'Ops' },
-          { num: '05', title: 'Market Intel', desc: 'Attribution + entity resolution', icon: Globe, layer: 'Revenue' },
+          { num: '01', title: 'Demand Forecasting', desc: 'ML time-series prediction', icon: BarChart3 },
+          { num: '02', title: 'Personalization', desc: 'Collaborative filtering + behavioral ML', icon: Eye },
+          { num: '03', title: 'Creative Pipeline', desc: 'LLM + diffusion models', icon: Sparkles },
+          { num: '04', title: 'Support Agent', desc: 'LLM + RAG on catalog data', icon: Headphones },
+          { num: '05', title: 'VoC Intelligence', desc: 'NLP sentiment + topic modeling', icon: MessageSquare },
         ];
 
         return (
@@ -365,9 +365,9 @@ const presentation: PresentationConfig = {
 
             <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5">
               {[
-                { label: 'Revenue & Drop Intelligence', icon: BarChart3, color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
-                { label: 'Creative & Customer Intelligence', icon: Sparkles, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
-                { label: 'Operations & Experience', icon: Headphones, color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/20' },
+                { label: 'Revenue & Customer Intelligence', icon: BarChart3, color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
+                { label: 'Generative Creative & Content', icon: Sparkles, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
+                { label: 'Customer Experience', icon: Headphones, color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/20' },
               ].map((layer, i) => (
                 <div key={i} className={`${layer.bg} rounded-lg sm:rounded-xl border ${layer.border} p-2 sm:p-3 text-center`}>
                   <layer.icon size={16} className={`${layer.color} mx-auto mb-1 sm:mb-2 sm:w-5 sm:h-5`} />
@@ -396,7 +396,7 @@ const presentation: PresentationConfig = {
 
             <div className="mt-4 sm:mt-6 text-center">
               <p className="text-gray-400 text-xs sm:text-sm">
-                Built on Mockberg's existing Shopify stack. Modules 3 & 4 are fastest to deploy. Module 1 delivers highest single-module ROI.
+                Built on Mockberg's existing Shopify + Klaviyo stack. All 5 modules pass the AI Substance Test. Module 4 is fastest to deploy. Modules 1 & 2 deliver highest ROI.
               </p>
             </div>
           </div>
@@ -404,16 +404,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 7: Module 1 — AI Drop Demand Forecasting
+    // Slide 7: Module 1 — AI Demand Forecasting Engine
     {
       id: 'module1',
       render: () => {
         const capabilities = [
-          'Per-SKU demand forecast for each drop, per market, with confidence intervals',
-          'Multi-signal ML: Shopify order velocity, influencer audience size, seasonal demand, geographic data',
-          'Auto-generated reorder/production recommendation for supplier 4–6 weeks pre-launch',
-          'Historical backtest against last 3 drops to validate forecast accuracy (MAPE target <20%)',
-          'Human (ops/design lead) reviews and approves AI recommendation before placing supplier order',
+          'SKU-level demand prediction per market (SE, DE, International) with confidence intervals',
+          'Drop-specific production sizing with pre-launch signal analysis from Klaviyo + social',
+          'Automatic stockout risk alerts with reorder recommendations 4–6 weeks before launch',
+          'Seasonal and trend-adjusted forecasting using Google Trends + historical drop performance',
+          'Team reviews and approves all production orders — AI recommends, humans decide',
         ];
 
         return (
@@ -428,25 +428,25 @@ const presentation: PresentationConfig = {
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Module 01</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Drop Demand Forecasting Engine</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Demand Forecasting Engine</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                "Slutsåld" items across multiple product lines confirm the gap. Mockberg runs 4–6 major drops per year — each one is a high-stakes inventory commitment made without ML intelligence. AI demand forecasting turns gut estimates into precision.
+                Visible "Meddela mig" (Notify me) buttons on product pages confirm demand going unfulfilled. With 90% YoY growth and international expansion, manual forecasting becomes increasingly risky. Each drop is a high-stakes inventory commitment — AI turns gut estimates into precision.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
                   <p className="text-white text-xl sm:text-2xl font-bold">Gut Feel</p>
-                  <p className="text-gray-500 text-xs">Manual review 2–3 weeks pre-launch</p>
+                  <p className="text-gray-500 text-xs">Spreadsheets + past experience</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">4–6 Weeks</p>
-                  <p className="text-gray-500 text-xs">ML demand curve per SKU per market</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">20–40%</p>
+                  <p className="text-gray-500 text-xs">Fewer stockouts, per market</p>
                 </div>
               </div>
 
@@ -462,7 +462,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 500,000–1,500,000 SEK/year | Recommended tool: Prediko (Shopify-native) | Complexity: Medium
+                <span className="font-bold">Impact:</span> 3–8 MSEK/year | Tool: Prediko (Shopify-native) | Complexity: Medium
               </p>
             </div>
           </div>
@@ -470,82 +470,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 8: Module 2 — AI Ad Creative & UGC Scoring
+    // Slide 8: Module 2 — AI Personalization & Product Recommendations
     {
       id: 'module2',
       render: () => {
         const capabilities = [
-          'Computer vision scores Sauce UGC library by visual quality, brand alignment, predicted engagement',
-          'NLP model scores caption sentiment and extracts engagement signals from each piece',
-          'Generative AI produces 20+ ad copy variants in Swedish, English, German, Dutch per asset',
-          'Top-ranked UGC auto-flagged for ad use; marketing lead approves before Meta launch',
-          'Weekly creative performance report with AI-recommended optimizations',
-        ];
-
-        return (
-          <div className="w-full max-w-3xl px-4 relative">
-            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
-              <Rocket size={12} />
-              Book a Call
-            </a>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Sparkles size={16} className="text-amber-400 sm:w-5 sm:h-5" />
-              </div>
-              <div>
-                <p className="text-amber-400 text-xs">Module 02</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Ad Creative & UGC Scoring Engine</h2>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                Mockberg's growth was built on paid social. But manual UGC-to-ad pipeline creates a 2–4 week lag. AI-native competitors generate 50+ creative variants per week while Mockberg produces 3–5. This module closes that gap permanently.
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
-                  <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">3–5/wk</p>
-                  <p className="text-gray-500 text-xs">Manual creative production</p>
-                </div>
-                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
-                  <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">50+/wk</p>
-                  <p className="text-gray-500 text-xs">AI-generated, 4 languages</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 sm:space-y-2">
-                {capabilities.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
-                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
-              <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 300,000–900,000 SEK/year | Tools: Pencil / AdCreative.ai + Sauce API | Complexity: Medium-High
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-
-    // Slide 9: Module 3 — AI Personalization Engine
-    {
-      id: 'module3',
-      render: () => {
-        const capabilities = [
-          'Real-time personalized product grid on homepage, product pages, and cart ("Complete the stack")',
-          'Collaborative filtering identifies complementary products per visitor behavior',
-          'ML-predicted optimal email send time per individual customer via Klaviyo AI',
-          'Personalized email product blocks per segment — not one-size-fits-all',
-          'Model retrains weekly on new behavioral data for continuous improvement',
+          'Real-time personalized product carousels on homepage, PDPs, and cart pages',
+          'Collaborative filtering: "Others who bought this also loved..." based on purchase behavior',
+          'Dynamic collection ordering per visitor — returning customers see different rankings than new visitors',
+          'Personalized Klaviyo email product blocks based on individual browsing + purchase history',
+          'Merchandising team sets business rules; AI optimizes within those constraints',
         ];
 
         return (
@@ -559,14 +493,14 @@ const presentation: PresentationConfig = {
                 <Eye size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-amber-400 text-xs">Module 03</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Personalization Engine</h2>
+                <p className="text-amber-400 text-xs">Module 02</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">AI Personalization & Recommendations</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                Mockberg's "mix and stack" jewelry philosophy is perfectly suited for AI cross-sell. A customer who buys Bold Hoops is a strong candidate for the Thin Snake Necklace and Darling Bracelet — but only if the AI surfaces that combination in the moment. Swarovski already generates 10% of sales this way.
+                With 200+ SKUs across watches, earrings, necklaces, bracelets, and rings — the catalog is large enough for meaningful personalization. Industry data: AI personalization lifts conversion by 10–23% and drives 10–30% of e-commerce revenue. At 115.7 MSEK, even a 5% uplift is significant.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -577,8 +511,8 @@ const presentation: PresentationConfig = {
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">10–15%</p>
-                  <p className="text-gray-500 text-xs">Revenue uplift from recs</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">8–15%</p>
+                  <p className="text-gray-500 text-xs">Conversion rate lift</p>
                 </div>
               </div>
 
@@ -594,7 +528,73 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 800,000–2,000,000 SEK/year | Tools: Rebuy Engine + Klaviyo AI | Complexity: Low-Medium
+                <span className="font-bold">Impact:</span> 4–10 MSEK/year | Tools: Nosto or LimeSpot + Klaviyo AI | Complexity: Low–Medium
+              </p>
+            </div>
+          </div>
+        );
+      },
+    },
+
+    // Slide 9: Module 3 — Generative AI Creative & Content Pipeline
+    {
+      id: 'module3',
+      render: () => {
+        const capabilities = [
+          'Multi-language ad creative generation (SE/EN/DE) from a single brief per drop',
+          'A/B test variant generation at scale — 20–50 creative variants per drop launch',
+          'Email campaign copy and subject line generation in Mockberg\'s brand voice',
+          'Product description generation for new SKUs across all markets simultaneously',
+          'Creative team approves all final assets — AI generates drafts, humans curate',
+        ];
+
+        return (
+          <div className="w-full max-w-3xl px-4 relative">
+            <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" className="absolute -top-2 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs font-medium transition-all">
+              <Rocket size={12} />
+              Book a Call
+            </a>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <Sparkles size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-amber-400 text-xs">Module 03</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">Generative AI Creative & Content Pipeline</h2>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
+                7 employees managing 6+ active drops, international markets, and social presence across Instagram/TikTok/YouTube. Content creation is the primary bottleneck. Generative AI doesn't replace your designers — it multiplies their output. Critical for the German market expansion.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
+                  <p className="text-rose-400 text-xs mb-1">Before</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
+                  <p className="text-gray-500 text-xs">Each piece created per market</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
+                  <p className="text-emerald-400 text-xs mb-1">After</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">10x</p>
+                  <p className="text-gray-500 text-xs">Content volume, 3 languages</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 sm:space-y-2">
+                {capabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                    <CheckCircle size={12} className="text-amber-400 shrink-0 sm:w-[14px] sm:h-[14px]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
+              <p className="text-amber-400 text-xs sm:text-sm">
+                <span className="font-bold">Impact:</span> 2–5 MSEK/year | Tools: Pencil + Jasper/Claude | Complexity: Low–Medium
               </p>
             </div>
           </div>
@@ -607,11 +607,11 @@ const presentation: PresentationConfig = {
       id: 'module4',
       render: () => {
         const capabilities = [
-          'LLM trained on Mockberg product catalog, FAQ, warranty policy, and return process',
-          'Real-time Shopify order data integration for order status and return status lookups',
-          'Auto-resolves sizing, waterproofing, warranty, and return queries instantly',
-          'Operates 24/7 in Swedish, English, German, and Dutch across all 25+ markets',
-          'Seamless escalation to human agents with full context for complex cases',
+          'LLM trained on Mockberg product catalog, sizing guides, 60-day return policy, and FAQ',
+          'Real-time Shopify order data integration for instant order status and return initiation',
+          'Product recommendation based on stated preferences and browsing context',
+          'Operates 24/7 in Swedish, English, and German without additional headcount',
+          'Complex or sensitive inquiries escalated to human team with full context summary',
         ];
 
         return (
@@ -632,19 +632,19 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                With 4,273+ reviews and 25+ markets, Mockberg handles a high volume of predictable queries — ring sizing, dial size, waterproofing, warranty, returns. An LLM trained on Mockberg's catalog resolves these better and faster while maintaining 4.7-star service quality at international scale.
+                Currently email-only support (contact@mockberg.com) with no chat widget. International expansion will multiply support volume. With 7 employees, support is already stealing time from higher-value work. A 60-day return policy means return-related inquiries are a significant portion.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
-                  <p className="text-gray-500 text-xs">Every query handled by humans</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Email Only</p>
+                  <p className="text-gray-500 text-xs">Business hours, manual response</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">60–70%</p>
-                  <p className="text-gray-500 text-xs">Auto-resolved, 24/7</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">50–70%</p>
+                  <p className="text-gray-500 text-xs">Auto-resolved, 24/7, 3 languages</p>
                 </div>
               </div>
 
@@ -660,7 +660,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 200,000–500,000 SEK/year | Tool: Gorgias AI (Shopify-native) | Complexity: Low-Medium
+                <span className="font-bold">Impact:</span> 1–3 MSEK/year | Tool: Gorgias AI (Shopify-native) | Complexity: Low
               </p>
             </div>
           </div>
@@ -668,16 +668,16 @@ const presentation: PresentationConfig = {
       },
     },
 
-    // Slide 11: Module 5 — AI International Market Intelligence
+    // Slide 11: Module 5 — NLP Voice-of-Customer Intelligence
     {
       id: 'module5',
       render: () => {
         const capabilities = [
-          'ML multi-touch attribution model replacing last-click across all channels and markets',
-          'Cross-domain entity resolution: unify customer identity across mockberg.com, .us, .eu',
-          'Per-market LTV and ROAS dashboard updated daily with AI-flagged opportunities',
-          'Influencer ROI correctly attributed — typically 2–3x higher than last-click shows',
-          'Competitive pricing and activity monitoring via NLP across 25+ markets',
+          'Automated sentiment scoring per product and per SKU from 4,273+ Stamped + 309+ Trustpilot reviews',
+          'Topic clustering: quality, design, sizing, gifting, value, competitive comparisons',
+          'Trend detection: rising/falling themes month-over-month with real-time spike alerts',
+          'Product development priority suggestions based on customer demand signals',
+          'Product and design team reviews insights and makes all strategic decisions',
         ];
 
         return (
@@ -688,29 +688,29 @@ const presentation: PresentationConfig = {
             </a>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <Globe size={16} className="text-amber-400 sm:w-5 sm:h-5" />
+                <MessageSquare size={16} className="text-amber-400 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <p className="text-amber-400 text-xs">Module 05</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">AI International Market Intelligence</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">NLP Voice-of-Customer Intelligence</h2>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
               <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">
-                A customer buying from mockberg.us then mockberg.eu appears as two people — LTV is invisible, repeat purchase rates are understated. Last-click attribution systematically undervalues influencer contribution by 2–3x. This module gives Mockberg the international intelligence layer its growth demands.
+                4,273+ verified reviews contain structured sentiment data about product quality, sizing, design preferences, and gifting occasions — likely sitting unused beyond star ratings. AI-powered VoC systematizes this: instead of reading reviews manually, the team gets automated intelligence on what customers love and what they want next.
               </p>
 
               <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div className="p-3 sm:p-4 bg-rose-500/10 rounded-lg sm:rounded-xl border border-rose-500/20 text-center">
                   <p className="text-rose-400 text-xs mb-1">Before</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">Last-Click</p>
-                  <p className="text-gray-500 text-xs">Fragmented across 25+ markets</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">Manual</p>
+                  <p className="text-gray-500 text-xs">Anecdotal review reading</p>
                 </div>
                 <div className="p-3 sm:p-4 bg-emerald-500/10 rounded-lg sm:rounded-xl border border-emerald-500/20 text-center">
                   <p className="text-emerald-400 text-xs mb-1">After</p>
-                  <p className="text-white text-xl sm:text-2xl font-bold">True ROAS</p>
-                  <p className="text-gray-500 text-xs">Unified customer LTV per market</p>
+                  <p className="text-white text-xl sm:text-2xl font-bold">4,500+</p>
+                  <p className="text-gray-500 text-xs">Reviews analyzed continuously</p>
                 </div>
               </div>
 
@@ -726,7 +726,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-amber-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-2 sm:p-3 text-center">
               <p className="text-amber-400 text-xs sm:text-sm">
-                <span className="font-bold">Impact:</span> 400,000–1,200,000 SEK/year | Tools: Custom ML + Northbeam/Triple Whale | Complexity: High
+                <span className="font-bold">Impact:</span> 1–3 MSEK/year | Tools: Stamped API + NLP pipeline | Complexity: Medium
               </p>
             </div>
           </div>
@@ -739,10 +739,10 @@ const presentation: PresentationConfig = {
       id: 'results',
       render: () => {
         const results = [
-          { icon: Package, metric: 'Drop Stockout Reduction', before: 'Gut estimates', after: '15–30% reduction' },
-          { icon: TrendingUp, metric: 'Paid Social ROAS', before: 'Manual creative', after: '15–30% improvement' },
-          { icon: Headphones, metric: 'Support Auto-Resolution', before: 'Fully manual', after: '60–70% auto-resolved' },
-          { icon: Eye, metric: 'Revenue from Personalization', before: 'Static navigation', after: '10–15% uplift' },
+          { icon: BarChart3, metric: 'Revenue from Reduced Stockouts', before: 'Gut estimates', after: '3–8 MSEK/yr', basis: 'Module 1' },
+          { icon: Eye, metric: 'Incremental Revenue from Personalization', before: 'Static site', after: '4–10 MSEK/yr', basis: 'Module 2' },
+          { icon: Sparkles, metric: 'Content Efficiency + ROAS', before: 'Manual creative', after: '2–5 MSEK/yr', basis: 'Module 3' },
+          { icon: Headphones, metric: 'Operational Savings from AI Support', before: 'Email-only', after: '1–3 MSEK/yr', basis: 'Module 4' },
         ];
 
         return (
@@ -759,7 +759,7 @@ const presentation: PresentationConfig = {
                 <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5">
                   <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                     <item.icon size={14} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
-                    <p className="text-white font-semibold text-xs sm:text-base">{item.metric}</p>
+                    <p className="text-white font-semibold text-xs sm:text-sm">{item.metric}</p>
                   </div>
                   <div className="flex items-center gap-1 sm:gap-3">
                     <div className="flex-1 p-1.5 sm:p-2 bg-white/5 rounded-lg text-center">
@@ -772,40 +772,16 @@ const presentation: PresentationConfig = {
                       <p className="text-white font-medium text-xs sm:text-sm">{item.after}</p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-5">
-              {[
-                { icon: Globe, metric: 'International Ad Efficiency', before: 'Last-click attribution', after: '10–20% improvement' },
-                { icon: Clock, metric: 'Team Hours Reclaimed', before: 'Manual intelligence layer', after: '27–53 hrs/wk saved' },
-              ].map((item, i) => (
-                <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-5">
-                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                    <item.icon size={14} className="text-amber-400 sm:w-[18px] sm:h-[18px]" />
-                    <p className="text-white font-semibold text-xs sm:text-base">{item.metric}</p>
-                  </div>
-                  <div className="flex items-center gap-1 sm:gap-3">
-                    <div className="flex-1 p-1.5 sm:p-2 bg-white/5 rounded-lg text-center">
-                      <p className="text-gray-500 text-xs">Before</p>
-                      <p className="text-gray-400 font-medium text-xs sm:text-sm">{item.before}</p>
-                    </div>
-                    <ArrowRight size={12} className="text-amber-400 shrink-0 sm:w-4 sm:h-4" />
-                    <div className="flex-1 p-1.5 sm:p-2 bg-emerald-500/10 rounded-lg text-center">
-                      <p className="text-emerald-400 text-xs">After</p>
-                      <p className="text-white font-medium text-xs sm:text-sm">{item.after}</p>
-                    </div>
-                  </div>
+                  <p className="text-gray-600 text-xs mt-1 text-right">{item.basis}</p>
                 </div>
               ))}
             </div>
 
             <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg sm:rounded-xl border border-amber-500/20 p-3 sm:p-4 text-center">
               <p className="text-white text-sm sm:text-lg font-semibold">
-                Annual Impact: <span className="text-amber-400">2,100,000–6,100,000 SEK</span>
+                Annual Impact: <span className="text-amber-400">10–26 MSEK</span>
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm">Conservative estimates, all ranges evidence-based</p>
+              <p className="text-gray-500 text-xs sm:text-sm">~9–22% of current revenue. Conservative estimates, all ranges evidence-based.</p>
             </div>
           </div>
         );
@@ -817,17 +793,17 @@ const presentation: PresentationConfig = {
       id: 'capacity',
       render: () => {
         const savings = [
-          { area: 'Module 1: Drop Demand Forecasting (production planning)', hours: '4–8 hrs/wk' },
-          { area: 'Module 2: AI Ad Creative & UGC (selection, copywriting)', hours: '8–16 hrs/wk' },
-          { area: 'Module 3: Personalization Engine (email, product curation)', hours: '2–4 hrs/wk' },
-          { area: 'Module 4: Customer Support Agent (ticket response)', hours: '10–20 hrs/wk' },
-          { area: 'Module 5: International Intelligence (dashboard, budget)', hours: '3–5 hrs/wk' },
+          { area: 'Module 1: Demand Forecasting (production planning)', hours: '5–8 hrs/wk' },
+          { area: 'Module 2: Personalization (merchandising decisions)', hours: '3–5 hrs/wk' },
+          { area: 'Module 3: Creative Pipeline (content creation)', hours: '10–15 hrs/wk' },
+          { area: 'Module 4: Support Agent (ticket response)', hours: '10–15 hrs/wk' },
+          { area: 'Module 5: VoC Intelligence (review reading, monitoring)', hours: '3–5 hrs/wk' },
         ];
 
         const redirected = [
           { role: 'Design team', focus: 'New collection development, brand creative direction' },
-          { role: 'Marketing', focus: 'Influencer relationships (Kenza, Hanna), new market entry' },
-          { role: 'Operations', focus: 'NK store experience, wholesale partner management' },
+          { role: 'Marketing', focus: 'Influencer relationships, new market entry strategy' },
+          { role: 'Operations', focus: 'German expansion, wholesale partnerships' },
           { role: 'Leadership', focus: 'Strategic growth decisions with AI-powered data' },
         ];
 
@@ -839,11 +815,11 @@ const presentation: PresentationConfig = {
             </a>
             <p className="text-amber-400 text-xs tracking-widest uppercase mb-2">Capacity Reclaimed</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-              <GradientText>27–53 Hours/Week</GradientText> Back to Your Team
+              <GradientText>31–48 Hours/Week</GradientText> Back to Your Team
             </h2>
 
             <div className="bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 p-4 sm:p-5 mb-3 sm:mb-4">
-              <p className="text-gray-400 text-xs sm:text-sm mb-3">Equivalent to adding 1–2 senior team members — without a single new hire.</p>
+              <p className="text-gray-400 text-xs sm:text-sm mb-3">Equivalent to adding 3–5 team members — without a single new hire.</p>
               <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                 {savings.map((item, i) => (
                   <div key={i} className="flex items-center justify-between gap-2 p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-xl">
@@ -853,7 +829,7 @@ const presentation: PresentationConfig = {
                 ))}
               </div>
               <div className="text-center p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
-                <p className="text-emerald-400 text-sm sm:text-base font-bold">Total: ~27–53 hours/week reclaimed</p>
+                <p className="text-emerald-400 text-sm sm:text-base font-bold">Total: ~31–48 hours/week reclaimed</p>
               </div>
             </div>
 
@@ -870,6 +846,9 @@ const presentation: PresentationConfig = {
                   </div>
                 ))}
               </div>
+              <p className="text-gray-500 text-xs mt-3">
+                The team that built 90% YoY growth gets to focus entirely on growth. This is how a 7-person team scales to 200+ MSEK.
+              </p>
             </div>
           </div>
         );
@@ -885,19 +864,19 @@ const presentation: PresentationConfig = {
             title: 'Data Foundation & Quick Wins',
             time: 'Weeks 1–4',
             status: 'Phase 1',
-            items: ['Shopify data audit (18-month order history)', 'Gorgias AI support agent live', 'Klaviyo AI feature activation', 'Meta Advantage+ campaign setup'],
+            items: ['Shopify + Klaviyo data audit', 'Activate Klaviyo dormant AI (free)', 'Gorgias AI support agent live', 'Shopify Search & Discovery configured'],
           },
           {
             title: 'Core AI Engines Live',
             time: 'Weeks 5–8',
             status: 'Phase 2',
-            items: ['Prediko demand forecasting trained', 'Rebuy personalization deployed', 'Sauce-to-Meta UGC pipeline live', 'AI brand-voice trained (SE, EN, DE, NL)'],
+            items: ['Prediko demand forecasting trained', 'Nosto/LimeSpot personalization A/B testing', 'Generative content pipeline: brand-voice trained', 'First AI-generated creative variants in market'],
           },
           {
-            title: 'Full Integration & Optimization',
+            title: 'Optimization & Full Integration',
             time: 'Weeks 9–12',
             status: 'Phase 3',
-            items: ['ML attribution model replacing last-click', 'Cross-domain entity resolution live', 'Per-market AI dashboard operational', '90-day performance review vs. projections'],
+            items: ['NLP VoC: first monthly report delivered', 'All modules interconnected', 'German market content pipeline live', '90-day performance review vs. projections'],
           },
         ];
 
@@ -942,7 +921,7 @@ const presentation: PresentationConfig = {
 
             <div className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-3 sm:p-4">
               <p className="text-gray-400 text-xs sm:text-sm">
-                <span className="text-white font-medium">Built on your existing Shopify stack</span> — Shopify, Klaviyo, Sauce, Meta Ads. Human-in-the-loop on all critical decisions. AI recommends, your team decides. First support agent delivering value by Week 2.
+                <span className="text-white font-medium">Built on your existing Shopify + Klaviyo stack.</span> Human-in-the-loop on all critical decisions. AI recommends, your team decides. First AI support agent delivering value by Week 2.
               </p>
             </div>
           </div>
@@ -1011,17 +990,17 @@ const presentation: PresentationConfig = {
       render: () => (
         <div className="text-center w-full max-w-2xl px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            Ready to Unlock Mockberg's <GradientText>Next Growth Era</GradientText>?
+            Ready to Scale Mockberg's <GradientText>Next Growth Era</GradientText>?
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 max-w-lg mx-auto">
-            Timeless brand. Proven product-market fit. 25+ countries. 4.7-star reputation. The foundation is exceptional — now add the AI intelligence that lets you scale it globally without burning budget or missing drops.
+            90% YoY growth. 22.7% profit margin. 4.7-star reputation. German expansion ahead. The foundation is exceptional — now add the AI intelligence that lets a 7-person team operate like 20.
           </p>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
             {[
               { value: '90 days', label: 'To full AI engine' },
-              { value: '2.1M+ SEK', label: 'Annual impact' },
+              { value: '10M+ SEK', label: 'Annual impact' },
               { value: 'Week 2', label: 'First AI results' },
             ].map((item, i) => (
               <div key={i} className="bg-white/5 rounded-lg sm:rounded-xl border border-white/10 p-2 sm:p-4">

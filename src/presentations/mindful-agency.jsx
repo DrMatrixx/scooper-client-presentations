@@ -5,88 +5,88 @@ const SCOOPER_LOGO = "/scooperai-logo.png";
 const PROSPECT = {
   name: "Michael",
   company: "Mindful Agency",
-  companyDetail: "Boutique PR agency for world-class thought leaders and personal brands",
+  companyDetail: "PR agency for thought leaders and personal brands, ~20-person team",
   industry: "PR & Communications",
-  teamSize: "~10",
-  painNumber: "25–40",
+  teamSize: "~20",
+  painNumber: "80–150",
   painPercent: "60",
-  annualCost: "150K–350K",
+  annualCost: "350K–600K",
   specifics: [
     "Clients include Andrew Huberman, Jim Kwik, Vishen Lakhiani, and Peter Crone",
     "Secured placements in Forbes, NYT, and Joe Rogan",
-    "High-touch boutique PR agency managing 15-25+ active personal brand clients",
-    "Service tiers at $2K and $3.5K+ per month",
+    "~20-person team with dedicated podcast publicist, 15-25+ active clients",
+    "6-month packages from $3,500 with 100% performance guarantee",
   ],
   competitors: {
     line: "88% of organizations now use AI in at least one business function",
-    detail: "Cision uses AI-powered journalist recommendations. Muck Rack offers AI media monitoring. Propel has AI-driven pitching and analytics. Leading PR agencies are adopting AI to scale without sacrificing quality.",
+    detail: "Podseeker uses AI to match guests with 3M+ podcasts. Cision and Muck Rack offer AI media monitoring. Propel has AI-driven pitching. 61% of podcasters now integrate AI tools into their workflows.",
     source: "McKinsey 2025",
   },
   automations: [
     {
+      title: "Podcast Discovery & Matching Agent",
+      desc: "An AI agent that scans millions of podcasts to find the perfect fit for each client — scoring shows by audience size, topic relevance, guest history, and booking likelihood. Delivers ranked target lists weekly for your podcast publicist, turning days of manual research into minutes.",
+      before: { value: "Days", sub: "of manual podcast research" },
+      after: { value: "Minutes", sub: "AI-ranked weekly lists" },
+      flow: [
+        { label: "3M+ Podcast Database", icon: "🌐" },
+        { label: "AI Matching Agent", icon: "🧠" },
+        { label: "Ranked Target Lists", icon: "🎯" },
+      ],
+      color: "#3b82f6",
+      saved: "10–15 hrs/wk",
+    },
+    {
+      title: "Podcast Content Repurposing Agent",
+      desc: "After a client appears on a podcast, an AI agent auto-transcribes the episode, extracts the most quotable moments, generates short-form video clips with captions, writes social captions, newsletter blurbs, and blog post drafts — turning every single appearance into 15+ ready-to-publish content assets.",
+      before: { value: "3–5 hrs", sub: "per appearance, manual" },
+      after: { value: "15+ assets", sub: "generated in minutes" },
+      flow: [
+        { label: "Podcast Episode", icon: "🎙️" },
+        { label: "AI Repurposing Agent", icon: "🧠" },
+        { label: "Clips, Posts & Blogs", icon: "⚡" },
+      ],
+      color: "#f59e0b",
+      saved: "10–20 hrs/wk",
+    },
+    {
+      title: "AI Pitch & Follow-Up Agent",
+      desc: "An AI agent that drafts personalized pitches for each journalist and podcast host — referencing their recent coverage, episode topics, and guest preferences. Then manages follow-up sequences intelligently, tracking engagement and preventing duplicate pitches across your 20-person team.",
+      before: { value: "2–4 hrs/day", sub: "writing & personalizing" },
+      after: { value: "AI-drafted", sub: "team reviews & sends" },
+      flow: [
+        { label: "Journalist & Host Data", icon: "📋" },
+        { label: "AI Writing Agent", icon: "🧠" },
+        { label: "Personalized Pitches", icon: "📬" },
+      ],
+      color: "#10b981",
+      saved: "8–15 hrs/wk",
+    },
+    {
+      title: "Placement Tracking & Reporting Agent",
+      desc: "An automated monitoring agent that continuously scans for all 15-25+ clients' media mentions, published articles, podcast episodes, and social growth — feeding everything into real-time dashboards. Auto-generates branded monthly reports and sends instant alerts when new coverage goes live.",
+      before: { value: "4–8 hrs", sub: "per client per month" },
+      after: { value: "Real-time", sub: "auto-generated dashboards" },
+      flow: [
+        { label: "Media & Podcast Feeds", icon: "📡" },
+        { label: "AI Monitoring Agent", icon: "🧠" },
+        { label: "Live Client Dashboard", icon: "📊" },
+      ],
+      color: "#a855f7",
+      saved: "10–20 hrs/wk",
+    },
+    {
       title: "Intelligent Lead Capture Agent",
-      desc: "An AI agent that captures every inbound lead from website, Instagram DMs, and email — instantly responding with a personalized acknowledgment, qualifying based on audience size, goals, and budget, then routing hot leads directly to your publicists.",
+      desc: "An AI agent that captures every inbound lead from website, Instagram DMs, and email — instantly responding with a personalized acknowledgment, qualifying based on audience size, industry, and goals, then routing high-fit prospects directly to your sales team for discovery calls.",
       before: { value: "6–24 hrs", sub: "lead response time" },
       after: { value: "<2 min", sub: "24/7, 365 days" },
       flow: [
         { label: "Web, Email & DMs", icon: "📧" },
         { label: "AI Qualification Agent", icon: "🧠" },
-        { label: "Routed to Publicist", icon: "🎯" },
-      ],
-      color: "#3b82f6",
-      saved: "5–10 hrs/wk",
-    },
-    {
-      title: "Client Onboarding Engine",
-      desc: "A structured onboarding workflow that triggers automatically when a client signs — guiding them through a branded intake experience collecting bios, headshots, media kits, goals, and NDAs in one pass, then auto-organizing everything in your systems.",
-      before: { value: "5–10 days", sub: "back-and-forth onboarding" },
-      after: { value: "24–48 hrs", sub: "~95% complete at kickoff" },
-      flow: [
-        { label: "New Client Signed", icon: "📋" },
-        { label: "AI Intake Agent", icon: "🧠" },
-        { label: "Complete Client Brief", icon: "✅" },
-      ],
-      color: "#f59e0b",
-      saved: "3–6 hrs/wk",
-    },
-    {
-      title: "Smart Follow-Up Sequences",
-      desc: "After an initial pitch is sent, an AI agent manages follow-up cadence intelligently — tracking opens, clicks, and replies, then triggering personalized follow-ups at optimal intervals. Includes podcast-specific sequences and duplicate-pitch prevention across your team.",
-      before: { value: "1–2", sub: "manual follow-ups" },
-      after: { value: "4–6", sub: "smart, engagement-based" },
-      flow: [
-        { label: "Pitch Engagement Data", icon: "📡" },
-        { label: "AI Sequence Agent", icon: "🧠" },
-        { label: "Timed Follow-Ups", icon: "📬" },
-      ],
-      color: "#10b981",
-      saved: "5–10 hrs/wk",
-    },
-    {
-      title: "Placement Tracking & Reporting",
-      desc: "An automated monitoring system that continuously scans for your clients' media mentions, published articles, podcast episodes, and social growth — feeding everything into a real-time dashboard that both your team and clients can access. Auto-generates branded monthly reports.",
-      before: { value: "4–8 hrs", sub: "per client per month" },
-      after: { value: "Real-time", sub: "auto-generated dashboards" },
-      flow: [
-        { label: "Media & Social Feeds", icon: "📡" },
-        { label: "AI Monitoring Agent", icon: "🧠" },
-        { label: "Live Dashboard", icon: "📊" },
-      ],
-      color: "#a855f7",
-      saved: "8–15 hrs/wk",
-    },
-    {
-      title: "CRM & Pipeline Automation",
-      desc: "A centralized CRM tailored to PR workflows — managing both your client pipeline (prospects to signed to active to renewal) and media relationships (journalist contacts, pitch history, engagement data). Automated reminders for renewals, contract expirations, and check-ins.",
-      before: { value: "Fragmented", sub: "across multiple tools" },
-      after: { value: "Unified", sub: "single auto-updated view" },
-      flow: [
-        { label: "Email & Calendar", icon: "📧" },
-        { label: "AI Pipeline Agent", icon: "🧠" },
-        { label: "Unified CRM View", icon: "⚡" },
+        { label: "Routed to Sales", icon: "🎯" },
       ],
       color: "#ec4899",
-      saved: "3–8 hrs/wk",
+      saved: "5–10 hrs/wk",
     },
   ],
 };
@@ -417,8 +417,8 @@ export default function Brief() {
             <div style={{ fontSize: 10, color: "#f87171", textTransform: "uppercase", letterSpacing: 2.5, fontWeight: 700, marginBottom: 12 }}>Every month without AI</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
               {[
-                { v: 150, s: "+", p: "", sub: "hours of manual work", c: "#fca5a5" },
-                { v: 20, s: "K+", p: "$", sub: "in opportunity cost", c: "#fca5a5" },
+                { v: 500, s: "+", p: "", sub: "hours of manual work", c: "#fca5a5" },
+                { v: 40, s: "K+", p: "$", sub: "in opportunity cost", c: "#fca5a5" },
                 { v: 0, s: "", p: "", sub: "data advantage built", c: "#f87171", raw: "Zero" },
               ].map((m, i) => (
                 <div key={i} style={{ opacity: urgVis ? 1 : 0, transform: urgVis ? "scale(1)" : "scale(0.9)", transition: `all 0.5s ease-out ${0.15 + i * 0.1}s` }}>
@@ -447,8 +447,8 @@ export default function Brief() {
             <div style={{ fontSize: 10, color: "#555", textTransform: "uppercase", letterSpacing: 2.5, marginBottom: 18, fontWeight: 600 }}>What AI unlocks for your team</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
               {[
-                { v: 37, s: " hrs", p: "~", sub: "freed up every week" },
-                { v: 220, s: "K", p: "$", sub: "in reclaimed capacity" },
+                { v: 62, s: " hrs", p: "~", sub: "freed up every week" },
+                { v: 300, s: "K", p: "$", sub: "in reclaimed capacity" },
                 { v: 2, s: "–3x", p: "", sub: "more clients without new hires" },
               ].map((m, i) => (
                 <div key={i} style={{ opacity: sumVis ? 1 : 0, transform: sumVis ? "scale(1)" : "scale(0.9)", transition: `all 0.5s ease-out ${0.15 + i * 0.1}s` }}>

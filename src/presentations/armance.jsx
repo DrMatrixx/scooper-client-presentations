@@ -319,10 +319,10 @@ export default function Brief() {
         borderBottom: scrollY > 60 ? "1px solid rgba(255,255,255,0.04)" : "1px solid transparent",
         transition: "all 0.3s ease",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <a href="https://scooperai.com" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
           <img src={SCOOPER_LOGO} alt="Scooper AI" style={{ width: 26, height: 26, borderRadius: 7, objectFit: "cover" }} />
           <span style={{ fontSize: 12, fontWeight: 700, color: "#fff" }}>Scooper AI</span>
-        </div>
+        </a>
         <a href="https://cal.com/scooper-ai/discover" target="_blank" rel="noopener noreferrer" style={{ padding: "6px 14px", borderRadius: 999, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", color: "#f59e0b", fontSize: 11, fontWeight: 600, textDecoration: "none" }}>
           Book a Call
         </a>

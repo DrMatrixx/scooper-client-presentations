@@ -354,15 +354,8 @@ export default function Brief() {
             We researched {PROSPECT.company} and found {PROSPECT.automations.length} automations that could reclaim that time — worth an estimated <span style={{ color: "#fbbf24", fontWeight: 700 }}>${PROSPECT.annualCost}/year</span>.
           </p>
 
-          {/* Prospect specifics chips */}
-          <div style={{ ...tr(heroVis, 0.32), display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 6, marginBottom: 44 }}>
-            {PROSPECT.specifics.map((s, i) => (
-              <span key={i} style={{ padding: "6px 12px", borderRadius: 999, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", fontSize: 11, color: "#888" }}>{s}</span>
-            ))}
-          </div>
-
           {/* Scroll prompt */}
-          <div style={{ ...tr(heroVis, 0.45), display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+          <div style={{ ...tr(heroVis, 0.32), display: "flex", flexDirection: "column", alignItems: "center", gap: 6, marginTop: 44 }}>
             <span style={{ fontSize: 10, color: "#3a3a45", letterSpacing: 1.5, textTransform: "uppercase" }}>Scroll to explore</span>
             <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="fl0">
               <rect x="1" y="1" width="14" height="22" rx="7" stroke="rgba(245,158,11,0.18)" strokeWidth="1.5" />

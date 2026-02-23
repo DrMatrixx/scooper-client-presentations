@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from 'react';
+
 const SCOOPER_LOGO = "/scooperai-logo.png";
 
 const PROSPECT = {
